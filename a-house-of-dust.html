@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>A House of Dust by Alison Knowles</title>
+	<link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+	<!-- 
+	***** START CSS ***** 
+	-->
+	<style>
+
+		/* You can change the colors, font, and so on below */
+
+		body {
+			margin: 75px;
+			font-size: 32px;
+			font-family: "Rubik", "Courier New", Courier, monospace;
+			font-weight: 400;
+		}
+
+		.button-container {
+			position: fixed;
+			bottom: 75px;
+			left: 75px;
+		}
+
+		.list-one {
+			margin-bottom: 45px;
+		}
+
+		.list-two {
+			text-indent: 3em;
+			font-weight: 700;
+			margin-bottom: 45px;
+			text-transform: uppercase;
+		}
+
+		.list-three {
+			text-indent: 1em;
+			margin-bottom: 45px;
+		}
+
+		.list-four {
+			text-indent: 6em;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+
+	</style>
+	<!-- 
+	***** END CSS ***** 
+	-->
+
+
+	<!-- 
+	***** START JAVASCRIPT ***** 
+	-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			// list one content
+			var one = [
+				"a house of html",
+				"a house of css",
+				"a house of js",
+				"a house of ruby",
+				"a house of rails",
+				"a house of python",
+				"a house of scala",
+				"a house of racket",
+				"a house of fortran",
+				"a house of swift",
+				"a house of java",
+				"a house of ecmascript",
+				"a house of angular",
+				"a house of haskell",
+				"a house of sass",
+				"a house of less",
+				"a house of markdown"
+			];
+
+			// list two content
+			var two = [
+				"recursively",
+				"among other styles",
+				"among small typography",
+				"among high oop",
+				"by a broken screen",
+				"by an overly contrasted monitor",
+				"in a deserted studio",
+				"in virtualbox",
+				"in a heroku app",
+				"in a deserted startup",
+				"in a deserted repository",
+				"in a hot macbook air",
+				"in a server",
+				"in a place with both correct syntax and incorrect semantics",
+				"in an open source environment",
+				"in dense error highlighting",
+				"in green text-ed terminal",
+				"in heavy font sizes",
+				"in my phone",
+				"in Stanford",
+				"in Michigan",
+				"inside a processor",
+				"on AWS",
+				"on the cloud",
+				"on my screen",
+			];
+
+			// list three content
+			var three = [
+				"using natural regex",
+				"using all available gpus",
+				"using webgl",
+				"using firebase"
+			];
+
+			// list four content
+			var four = [
+				"inhabited by very tall tadpoles",
+				"inhabited by all varieties of shoelaces",
+				"inhabited by american diners",
+				"inhabited by children and smaller children",
+				"inhabited by collectors of scripts",
+				"inhabited by fishermen and fish",
+				"inhabited by french and german speaking turnips",
+				"inhabited by enemies",
+				"inhabited by horses & horse children & centaurs",
+				"inhabited by little type families",
+				"inhabited by life",
+				"inhabited by cooking cook cooked",
+				"inhabited by people from many walks of life",
+				"inhabited by people writing many languages wearing no clothing",
+				"inhabited by people who eat snake oil",
+				"inhabited by people who enjoy SEO",
+				"inhabited by people who love to write",
+				"inhabited by people who sleep almost 100% of the time",
+				"inhabited by people who sleep very often",
+				"inhabited by various birds and bird childs",
+				"inhabited by carnivores",
+				"inhabited by friends and friends and maybe some enemies"
+			];
+
+			// This is a very common randomizing function.
+			// It takes a list (array) and returns one at random.
+			function select_random(x){
+				y = x[Math.floor(Math.random()*x.length)];
+				return y;
+			}
+
+			function generate(){
+
+				// Select a random item from each list
+				var selected_one = select_random(one);
+				var selected_two = select_random(two);
+				var selected_three = select_random(three);
+				var selected_four = select_random(four);
+
+				// Take the selected (random) item from list and make it visible
+				$('.list-one').html(selected_one);
+				$('.list-two').html(selected_two);
+				$('.list-three').html(selected_three);
+			    $('.list-four').html(selected_four);
+
+			}
+
+			$('button').click(function(){
+				generate();
+			});
+
+			generate();
+			
+		});
+
+	</script>
+	<!-- 
+	***** END JAVASCRIPT ***** 
+	-->
+
+</head>
+
+<body>
+
+	<!--
+	This is the button.
+	-->
+	<div class="button-container">
+		<button>Again</button>
+	</div>
+
+	<!--
+	This is the visible portion.
+
+	If you want your words or phrases to go side-by-side, change...
+
+	<div></div>
+	to
+	<span></span>
+
+	in the code below.
+	-->
+	<div class="list-one"></div>
+	<div class="list-two"></div>
+	<div class="list-three"></div>
+	<div class="list-four"></div>
+
+</body>
+
+</html>
