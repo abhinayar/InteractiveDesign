@@ -1,0 +1,107 @@
+body {
+	background: black;
+}
+
+.canvas {
+	width: 900px;
+	height: 556px;
+	margin: 100px auto;
+	background: red;
+	position: relative;
+}
+
+.mirrored-wrapper {
+	overflow: hidden;
+	width: 800px;
+	height: 472px;
+	margin: 0 auto;
+	margin-top: 0;
+	margin-left: 50px;
+	display: inline-block;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	z-index: 1;
+	opacity: 0.2;
+}
+
+.mirror {
+	width: 700px;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 300px solid grey;
+	position: absolute;
+	bottom: -30px;
+	left: 50px;
+	z-index: 1;
+	transform: rotateX(60deg);
+}
+
+.ball-wrapper {
+	width: 380px;
+	height: 350px;
+	overflow: hidden;
+	top: 120px;
+	left: 120px;
+	position: absolute;
+	text-align: center;
+	z-index: 10;
+} #ball {
+	width: 380px;
+	height: 380px;
+	background: rgba(255,255,255, 1);
+	border-radius: 200px;
+	margin: 0 auto;
+	background-image: -webkit-linear-gradient(-45deg, rgba(100,100,100,.5) 0%, transparent 100%);
+}
+
+.orange-wrapper {
+	position: absolute;
+	height: 120px;
+	width: 120px;
+	top: 365px;
+	left: 510px;
+	z-index: 12;
+} .orange {
+	height: 120px;
+	width: 140px;
+	border-radius: 46%;
+	background-image: -webkit-linear-gradient(-90deg, rgba(0,0,0,.2) 0%, transparent 100%);
+	background: url(https://www.freecreatives.com/wp-content/uploads/2016/07/Awesome-Orange-peel-Texture.jpg);
+	background-size: 180px;
+	background-repeat: repeat;
+	background-color: orange;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+
+.orange-wrapper.two {
+	left: 565px;
+	z-index: 11;
+	top: 370px;
+} .orange-wrapper.two .orange {
+	height: 100px;
+	width: 125px;
+	border-radius: 47%;
+}
+
+.mirrored {
+	transform: rotateX(180deg) translate3d(-50px, -900px, 0);
+}
+
+.squash-wrapper {
+	width: 200px;
+	height: 120px;
+	position: absolute;
+	z-index: 9;
+} .squash {
+	width: 200px;
+	height: 120px;
+	border-radius: 45%;
+	background: blue;
+	transform: rotateY(40deg) rotateX(10deg);
+}
+
+
+
+
