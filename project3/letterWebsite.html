@@ -1,0 +1,814 @@
+<html>
+    <head>
+        <title>Geometrix Font Website</title>
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet">
+        <!-- JQuery -->
+        <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="style" class="hidden">
+            <style>
+                .hidden {
+                    display: none;
+                }
+                .letter {
+                    height: 200px;
+                    width: 200px;
+                    //background: red;
+                    //margin-right: 30px;
+                    //margin-bottom: 30px;
+                    position: relative;
+                    display: inline-block;
+                    z-index: 1;
+                    overflow: hidden;
+                } .letter.half {
+                    width: 100px;
+                } .letter .part {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    z-index: 2;
+                } 
+                
+                .space {
+                    width: 80px;
+                    height: 200px;
+                } .space .one {
+                    width: 100%;
+                    height: 100px;
+                    //background: rgba(255,255,255,1);
+                } .space .two {
+                    width: 100%;
+                    height: 100px;
+                    //background: #777;
+                    margin-top: 100px;
+                }
+                
+                .space.hover .one {
+                    background: red;
+                } .space.hover .two {
+                    background: #777;
+                }
+                
+                .space:hover>* {
+                    background: none;
+                } 
+                
+                .a .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 0px 200px 100px;
+                    border-color: transparent transparent #777 transparent;
+                } .a .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 100px 200px 0px;
+                    border-color: transparent transparent rgba(255,255,255,1) transparent;
+                    left: 100px;
+                }
+                .b {
+                    width: 180px;
+                }
+                .b .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 30px 0 120px 180px;
+                    border-color: transparent transparent transparent #777;
+                } .b .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 120px 0 30px 180px;
+                    border-color: transparent transparent transparent rgba(255,255,255,1);
+                    top: 50px;
+                }
+                .c {
+                    width: 160px;
+                    transform: scale(1, 1.25);
+                }
+                .c .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 100px 200px 0px 0;
+                    border-color: transparent #777 transparent transparent;
+                } .c .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 200px 100px 0;
+                    border-color: transparent rgba(255,255,255,1) transparent transparent;
+                    top: 100px;
+                }
+                .d {
+                    width: 160px;
+                    transform: rotate(180deg) scale(1, 1.25);
+                }
+                .d .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 100px 200px 0px 0;
+                    border-color: transparent #777 transparent transparent;
+                } .d .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 200px 100px 0;
+                    border-color: transparent rgba(255,255,255,1) transparent transparent;
+                    top: 100px;
+                }
+                .e {
+                    width: 180px;
+                }
+                .e .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 0 90px 180px;
+                    border-color: transparent transparent transparent #777;
+                    z-index: 3;
+                } .e .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 60px 0 60px 150px;
+                    border-color: transparent transparent transparent rgba(255,255,255,1);
+                    z-index: 2;
+                    top: 40px;
+                } .e .three {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 90px 0 0px 180px;
+                    border-color: transparent transparent transparent #777;
+                    z-index: 3;
+                    top: 110px;
+                }
+                .f {
+                    width: 180px;
+                }
+                .f .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 0 90px 180px;
+                    border-color: transparent transparent transparent #777;
+                    z-index: 3;
+                } .f .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 90px 0 0px 150px;
+                    border-color: transparent transparent transparent rgba(255,255,255,1);
+                    z-index: 3;
+                    top: 30px;
+                } .f .three {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 200px 60px 0 0px;
+                    border-color: #777 transparent transparent transparent;
+                    z-index: 2;
+                }
+
+                .g .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 100px 100px 100px 0;
+                    border-color: transparent #777 transparent transparent;
+                } .g .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 0 60px 100px;
+                    border-color: transparent transparent transparent rgba(255,255,255,1);
+                    left: 100px;
+                } .g .three {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 100px 100px 0 0;
+                    border-color: rgba(255,255,255,1) transparent transparent transparent;
+                    top: 100px;
+                    left: 100px;
+                } .g .four {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 0 100px 100px;
+                    border-color: transparent transparent #777 transparent;
+                    top: 100px;
+                    left: 100px;
+                }
+
+                .h {
+                    width: 180px;
+                }
+                .h .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 0 100px 180px;
+                    border-color: transparent transparent #777 transparent;
+                    z-index: 3;
+                } .h .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 100px 180px 0 0;
+                    border-color: rgba(255,255,255,1) transparent transparent transparent;
+                    z-index: 3;
+                    top: 100px;
+                } .h .three {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 100px 0 100px 100px;
+                    border-color: transparent transparent transparent rgba(255,255,255,1);
+                } .h .four {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 100px 100px 125px 0;
+                    border-color: transparent #777 transparent transparent;
+                    left: 100px;
+                }
+
+                .i .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 200px 100px 0 0px;
+                    border-color: #777 transparent transparent transparent;
+                }
+
+                .j .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 200px 100px 0 0px;
+                    border-color: #777 transparent transparent transparent;
+                    left: 100px;
+                } .j .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 100px 60px 0;
+                    border-color: transparent rgba(255,255,255,1) transparent transparent;
+                    top: 140px;
+                }
+
+                .k {
+                    width: 160px;
+                }
+                .k .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 150px 160px 0 0;
+                    border-color: #777 transparent transparent transparent;
+                    z-index: 3;
+                } .k .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 150px 0 0 160px;
+                    margin-top: 50px;
+                    border-color: transparent transparent transparent rgba(255,255,255,1);
+                }
+
+                .l .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 200px 100px 0 0px;
+                    border-color: #777 transparent transparent transparent;
+                    transform: rotateX(180deg);
+                } .l .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 0px 60px 200px;
+                    border-color: transparent transparent rgba(255,255,255,1) transparent;
+                    top: 140px;
+                }
+
+                .m {
+                    width: 180px;
+                }
+                .m .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 200px 100px 0 0px;
+                    border-color: #777 transparent transparent transparent;
+                } .m .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 140px 70px 0 70px;
+                    border-color: rgba(255,255,255,1) transparent transparent transparent;
+                    z-index: 3;
+                    left: 21.5px;
+                } .m .three {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 200px 0px 0 100px;
+                    border-color: #777 transparent transparent transparent;
+                    left: 80px;
+                }
+
+                .n {
+                    width: 160px;
+                }
+                .n .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 0 200px 60px;
+                    border-color: transparent transparent transparent #777;
+                    z-index: 3;
+                } .n .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 140px 50px 200px 0;
+                    border-color: transparent rgba(255,255,255,1) transparent transparent;
+                    left: 35px;
+                    top: -80px;
+                    transform: rotateZ(-14deg);
+                    z-index: 2;
+                } .n .three {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 200px 60px 0px 0px;
+                    border-color: transparent #777 transparent transparent;
+                    left: 100px;
+                    z-index: 2;
+
+                }
+
+                .o .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 100px 100px 0px 0;
+                    border-color: transparent #777 transparent transparent;
+                } .o .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 100px 0 0px 100px;
+                    border-color: transparent transparent transparent rgba(255,255,255,1);
+                    left: 100px;
+                } .o .three {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 100px 100px 0;
+                    border-color: transparent rgba(255,255,255,1) transparent transparent;
+                    top: 100px;
+                } .o .four {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 0 100px 100px;
+                    border-color: transparent transparent transparent #777;
+                    left: 100px;
+                    top: 100px;
+                }
+
+                .p {
+                    width: 160px;
+                }
+                .p .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 60px 0 60px 160px;
+                    border-color: transparent transparent transparent #777;
+                    z-index: 3;
+                } .p .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 0 175px 60px;
+                    border-color: transparent transparent transparent rgba(255,255,255,1);
+                    top: 25px;
+                }
+
+                .q .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 100px 100px 0px 0;
+                    border-color: transparent #777 transparent transparent;
+                } .q .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 100px 0 0px 100px;
+                    border-color: transparent transparent transparent rgba(255,255,255,1);
+                    left: 100px;
+                } .q .three {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 100px 100px 0;
+                    border-color: transparent rgba(255,255,255,1) transparent transparent;
+                    top: 100px;
+                } .q .four {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 0 100px 100px;
+                    border-color: transparent transparent transparent #777;
+                    left: 100px;
+                    top: 100px;
+                } .q .five {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 100px 100px 0px;
+                    border-color: transparent transparent #777 transparent;
+                    left: 100px;
+                    top: 100px;
+                }
+
+                .r {
+                    width: 160px;
+                }
+                .r .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 200px 150px 0 0px;
+                    border-color: #777 transparent transparent transparent;
+                    z-index: 3;
+                } .r .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 0px 100px 75px;
+                    border-color: transparent transparent rgba(255,255,255,1) transparent;
+                    left: 75px;
+                } .r .three {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 120px 0 0px 100px;
+                    border-color: transparent transparent transparent rgba(255,255,255,1);
+                    top: 80px;
+                    left: 60px;
+                }
+
+                .s .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 60px 100px 60px 0;
+                    border-color: transparent #777 transparent transparent;
+                } .s .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 60px 0 60px 100px;
+                    border-color: transparent transparent transparent rgba(255,255,255,1);
+                    left: 100px;
+                    top: 80px;
+                } .s .three {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 50px 0 0px 100px;
+                    border-color: transparent transparent transparent rgba(255,255,255,1);
+                    left: 100px;
+                } .s .four {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 100px 50px 0;
+                    border-color: transparent #777 transparent transparent;
+                    top: 150px;
+                }
+
+                .t .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 30px 200px 0;
+                    border-color: transparent #777 transparent transparent;
+                    left: 70px;
+                    z-index: 3;
+                } .t .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 0 200px 30px;
+                    border-color: transparent transparent transparent rgba(255,255,255,1);
+                    left: 100px;
+                    z-index: 3;
+                } .t .three {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 40px 30px 70px;
+                    border-color: transparent transparent rgba(255,255,255,1) transparent;
+                } .t .four {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 70px 30px 30px;
+                    border-color: transparent transparent #777 transparent;
+                    left: 100px;
+                }
+
+                .u {
+                    width: 160px;
+                }
+                .u .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0px 0 60px 160px;
+                    border-color: transparent transparent transparent #777;
+                    top: 140px;
+                } .u .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 60px 160px 0px 0;
+                    border-color: transparent rgba(255,255,255,1) transparent transparent;
+                    top: 140px;
+                } .u .three {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 60px 140px 0px;
+                    border-color: transparent transparent rgba(255,255,255,1) transparent;
+                } .u .four {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 0px 140px 60px;
+                    border-color: transparent transparent #777 transparent;
+                    left: 100px;
+                }
+
+                .v .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 200px 0px 0 100px;
+                    border-color: #777 transparent transparent transparent;
+                } .v .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 200px 100px 0 0px;
+                    border-color: rgba(255,255,255,1) transparent transparent transparent;
+                    left: 100px;
+                }
+
+                .w .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 200px 60px 0 60px;
+                    border-color: #777 transparent transparent transparent;
+
+                } .w .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 200px 60px 0 60px;
+                    border-color: rgba(255,255,255,1) transparent transparent transparent;
+                    left: 80px;
+                }
+
+                .x {
+                    width: 160px;
+                }
+                .x .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 140px 80px 0 80px;
+                    border-color: #777 transparent transparent transparent;
+                    z-index: 3;
+                } .x .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 80px 140px 80px;
+                    border-color: transparent transparent rgba(255,255,255,1) transparent;
+                    top: 60px;
+                }
+
+                .y {
+                    width: 160px;
+                }
+                .y .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 140px 20px 0 140px;
+                    border-color: #777 transparent transparent transparent;
+                } .y .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 0px 200px 60px;
+                    border-color: transparent transparent rgba(255,255,255,1) transparent;
+                    left: 100px;
+                }
+
+                .z .one {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 60px 240px 0px;
+                    border-color: transparent transparent #777 transparent;
+                    left: 90px;
+                    transform: rotateZ(30deg);
+                    z-index: 3;
+                } .z .two {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 60px 35px 0 120px;
+                    border-color: rgba(255,255,255,1) transparent transparent transparent;
+                } .z .three {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 50px 0 0px 110px;
+                    border-color: transparent transparent transparent rgba(255,255,255,1);
+                    left: 90px;
+                    top: 150px;
+                }
+
+                /*.letter:hover .one, .letter:hover .three, .letter:hover .five {
+                    border-color: rgba(255,255,255,1) !important;
+                    //border: none;
+                } .letter:hover .two, .letter:hover .four {
+                    border-color: #777 !important;
+                    //border: none;
+                }*/
+                .letter.hover .one, .letter.hover .three, .letter.hover .five {
+                    border-color: rgba(255,255,255,1) !important;
+                    //border: none;
+                } .letter.hover .two, .letter.hover .four {
+                    border-color: #777 !important;
+                    //border: none;
+                }
+            </style>
+        </div>   
+        <div id="js">
+            <script>
+                function textToGeometrix(elements) {
+                    $(elements).each(function(i, el){
+                        console.log($(el));
+                        var isDark = false;
+                        if ($(el).hasClass("dark")){isDark = true;}
+
+                        console.log($(el).text());
+                        var text = $(el).text();
+                        text = text.toString().toLowerCase();
+                        $(el).empty();
+                        for(var i = 0; i < text.length; i++) {
+                            var letter = text[i];
+                            var html = null;
+
+                            if (isDark) {
+                                if (letter == "i") {
+                                    html = "<div class='letter dark half " + letter + "'><div class='part one dark'></div><div class='part two dark'></div><div class='part three dark'></div><div class='part four dark'></div><div class='part five dark'></div></div>"
+                                } else if (letter == " ") {
+                                    html = "<div class='letter space'><div class='part one'></div><div class='part two'></div></div>"
+                                    //html = "";
+                                } else {
+                                    html = "<div class='letter dark " + letter + "'><div class='part one dark'></div><div class='part two dark'></div><div class='part three dark'></div><div class='part four dark'></div><div class='part five dark'></div></div>"
+                                }
+                            } else {
+                                if (letter == "i") {
+                                    html = "<div class='letter half " + letter + "'><div class='part one'></div><div class='part two'></div><div class='part three'></div><div class='part four'></div><div class='part five'></div></div>"
+                                } else if (letter == " ") {
+                                    html = "<div class='letter space'><div class='part one'></div><div class='part two'></div></div>"
+                                    //html = "";
+                                } else {
+                                    html = "<div class='letter " + letter + "'><div class='part one'></div><div class='part two'></div><div class='part three'></div><div class='part four'></div><div class='part five'></div></div>"
+                                }
+                            }
+                            $(el).append(html);
+                        }
+                    });
+                };
+                $(document).ready(function(){
+                    textToGeometrix(".geometrix"); 
+                });
+            </script>
+        </div>
+        <div class="info">
+            Refresh in: <span class="int"></span>
+        </div>
+        <div class="main">
+            <div class="text text1 geometrix">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth the master builder of human happiness</div>
+            <div class="text text2 geometrix hidden">No one rejects, dislikes, or avoids pleasure itself because it is pleasure but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain but because occasionally circumstances occur in which toil and pain can procure him some great pleasure</div>
+            <div class="text text3 geometrix hidden">To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</div>
+        </div>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background: #1d1f20;
+                min-height: 100%;
+                overflow: hidden;
+            }
+            .main {
+                width: 100%;
+                position: relative;
+                background: #1d1f20;
+                margin-bottom: 30%;
+            }
+            .main2 {
+                background: purple;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 1800px;
+            }
+            .text {
+                width: 200%;
+                position: absolute;
+                transform-origin: 15% 6%;
+                transform: scale(0.3);
+                z-index: 999;
+            }
+            .letter {
+                margin-right: 5px;
+                margin-bottom: 5px;
+            }
+            .info {
+                color: #fff;
+                background: red;
+                height: 40px;
+                font-family: 'Space Mono';
+                padding-top: 12px;
+                padding-right: 30px;
+                text-align: right;
+            }
+        </style>
+        <script>
+            var v = makeRandomInt()*1000;
+            
+            $(document).ready(function(){
+                $(".letter").addClass("hover");
+                $(".letter").hover(function(){
+                    $(this).addClass("hover");
+                }, function(){
+                    $(this).removeClass("hover");
+                });
+                
+                
+                $(".int").text(Math.round(v/1000));
+                countDown();
+                
+                setInterval(function(){
+                    $(".letter").toggleClass("hover");
+                }, v);
+            });
+            
+            function makeRandomInt() {
+                return Math.random() * 20 + 11;
+            }
+            
+            function countDown() {
+                var x = Math.round(v/1000);
+                setInterval(function(){
+                    var curTime = parseInt($(".int").text(), 10);
+                    curTime = Math.round(curTime);
+
+                    if (curTime > 0) {
+                        curTime--;
+                    } else {
+                        curTime = x;
+                    }
+
+                    $(".int").text(curTime);
+                }, 1 * 1000);
+            };
+            
+        </script>
+    </body>
+</html>
