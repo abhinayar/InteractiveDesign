@@ -733,7 +733,6 @@
                 padding: 0;
                 background: #1d1f20;
                 min-height: 100%;
-                //overflow: hidden;
             }
             .main {
                 width: 100%;
@@ -753,7 +752,7 @@
                 position: absolute;
                 transform-origin: 15% 5%;
                 transform: scale(0.3);
-                z-index: 999;
+                z-index: 998;
             }
             .letter {
                 margin-right: 5px;
@@ -767,6 +766,13 @@
                 padding-top: 12px;
                 padding-right: 30px;
                 text-align: right;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                right: 0;
+                z-index: 999;
+            } .info p {
+                padding-right: 30px;
             }
         </style>
         <script>
