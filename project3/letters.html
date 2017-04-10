@@ -1,0 +1,517 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<div class="letter-wrapper">
+			<div class="a"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="b b-top"></div>
+			<div class="b b-bottom"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="c"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="d"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="e e-top"></div>
+			<div class="e e-middle"></div>
+			<div class="e e-bottom"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="f f-top"></div>
+			<div class="f f-bottom"></div>
+			<div class="f-stand"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="g-left"></div>
+			<div class="g-right"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="h-col">
+				<div class="h-top h-top-left"></div>
+				<div class="h-bottom h-bottom-left"></div>
+			</div>
+			<div class="h-col">
+				<div class="h-top h-top-right"></div>
+				<div class="h-bottom h-bottom-right"></div>
+			</div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="i-col">
+				<div class="i-top"></div>
+				<div class="i-bottom"></div>
+			</div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="j-top"></div>
+			<div class="j-left"></div>
+			<div class="j-right"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="k-top"></div>
+			<div class="k-bottom"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="l-left"></div>
+			<div class="l-right"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="m-left"></div>
+			<div class="m-right"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="n-left"></div>
+			<div class="n-right"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="o-left"></div>
+			<div class="o-right"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="p-top"></div>
+			<div class="p-bottom"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="q-left o-left"></div>
+			<div class="q-left o-right"></div>
+			<div class="q-tail"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="r-left"></div>
+			<div class="r-right"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="s-top"></div>
+			<div class="s-bottom"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="t-top"></div>
+			<div class="t-bottom"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="u-left"></div>
+			<div class="u-right"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="v"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="w"></div>
+			<div class="w w-right"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="x-top"></div>
+			<div class="x-bottom"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="y"></div>
+			<div class="y-bar"></div>
+		</div>
+		<div class="letter-wrapper">
+			<div class="z"></div>
+			<div class="z-bar"></div>
+		</div>
+		<style>
+			.letter-wrapper div {
+				-webkit-transform:rotate(360deg);
+			}
+			
+			.letter-wrapper {
+				position: relative;
+				margin-right: 20px;
+				margin-bottom: 40px;
+				height: 100px;
+				width: 120px;
+				display: inline-block;
+				//background: red;
+			}
+			
+			.a {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 60px 100px 60px;
+				border-color: transparent transparent #007bff transparent;
+			}
+			
+			.b {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 25px 0 25px 120px;
+				border-color: transparent transparent transparent #007bff;
+			}
+			
+			.c {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 50px 120px 50px 0;
+				border-color: transparent #007bff transparent transparent;
+			}
+			
+			.d {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 50px 0 50px 120px;
+				border-color: transparent transparent transparent #007bff;
+			}
+			
+			.e {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 16px 0 16px 120px;
+				border-color: transparent transparent transparent #007bff;
+				margin-top: 2px;
+			}
+			
+			.f  {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 15px 0 15px 120px;
+				border-color: transparent transparent transparent #007bff;
+			} .f-stand {
+				height: 40px;
+				width: 5px;
+				background: #007bff;
+			}
+			
+			.g-left {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 50px 60px 50px 0;
+				border-color: transparent #007bff transparent transparent;
+				float: left;
+			} .g-right {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0px 0 45px 60px;
+				border-color: transparent transparent transparent #007bff;
+				float: left;
+				margin-top: 55px;
+			}
+			
+			.h-col {
+				float: left;
+			} .h-top {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 30px 50px 30px;
+				border-color: transparent transparent #007bff transparent;
+			} .h-bottom {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 50px 30px 0 30px;
+				border-color: #007bff transparent transparent transparent;
+			} .h-top-right {
+				
+			} .h-bottom-right {
+				float: left;
+			}
+			
+			.i-top {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 60px 50px 60px;
+				border-color: transparent transparent #007bff transparent;
+			} .i-bottom {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 50px 60px 0 60px;
+				border-color: #007bff transparent transparent transparent;
+			}
+			
+			.j-left {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0px 60px 50px 0;
+				border-color: transparent #007bff transparent transparent;
+				position: absolute;
+				top: 50px;
+			} .j-right {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0px 0 50px 60px;
+				border-color: transparent transparent transparent #007bff;
+				position: absolute;
+				top: 50px;
+				left: 60px;
+			} .j-top {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 20px 50px 20px;
+				border-color: transparent transparent #007bff transparent;	
+				position: absolute;
+				left: 80px;
+			}
+			
+			.k-top {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 50px 120px 0 0;
+				border-color: #007bff transparent transparent transparent;
+			} .k-bottom {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 50px 0 0 120px;
+				border-color: transparent transparent transparent #007bff;
+				position: absolute;
+				top: 50px;
+			}
+			
+			.l-left {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 15px 100px 15px;
+				border-color: transparent transparent #007bff transparent
+			} .l-right {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 15px 0 15px 90px;
+				border-color: transparent transparent transparent #007bff;
+				position: absolute;
+				top: 70px;
+				left: 30px;
+			}
+			
+			.m-left {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 30px 100px 30px;
+				border-color: transparent transparent #007bff transparent;
+			} .m-right {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 30px 100px 30px;
+				border-color: transparent transparent #007bff transparent;
+				float: left;
+				position: absolute;
+				left: 60px;
+				top: 0;
+			}
+			
+			.n-left {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 115px 100px 0px;
+				border-color: transparent transparent #007bff transparent;
+			} .n-right {
+				width: 5px;
+				height: 100px;
+				background: #007bff;
+				float: right;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			
+			.o-left {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 50px 60px 50px 0;
+				border-color: transparent #007bff transparent transparent;
+			} .o-right {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 50px 0 50px 60px;
+				border-color: transparent transparent transparent #007bff;
+				position: absolute;
+				left: 60px;
+				top: 0;
+			}
+			
+			.p-top {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 25px 0 25px 120px;
+				border-color: transparent transparent transparent #007bff;
+				position: absolute;
+				top: 0;
+				left: 0;
+			} .p-bottom {
+				width: 5px;
+				height: 50px;
+				background: #007bff;
+				position: absolute;
+				top: 50px;
+			}
+			
+			.q-tail {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 30px 0 0px 60px;
+				border-color: transparent transparent transparent #007bff;
+				position: absolute;
+				bottom: 0;
+				left: 60px;
+			}
+			
+			.r-left {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 100px 120px 0 0;
+				border-color: #007bff transparent transparent transparent;
+			} .r-right {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 50px 0 0 60px;
+				border-color: transparent transparent transparent #007bff;
+				position: absolute;
+				top: 50px;
+				left: 60px;
+			}
+			
+			.s-top {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 50px 0 0 60px;
+				border-color: transparent transparent transparent #007bff;
+				position: absolute;
+				top: 0;
+				left: 60px;
+			} .s-bottom {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 60px 50px 0;
+				border-color: transparent #007bff transparent transparent;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+			
+			.t-top {
+				height: 5px;
+				width: 120px;
+				position: absolute;
+				top: 0;
+				background: #007bff;
+			} .t-bottom {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 100px 30px 0 30px;
+				border-color: #007bff transparent transparent transparent;
+				line-height: 0px;
+				_border-color: #007bff #000000 #000000 #000000;
+				_filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+				position: absolute;
+				left: 30px;
+			}
+			
+			.u-left {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 100px 0 0 60px;
+				border-color: transparent transparent transparent #007bff;
+			} .u-right {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 0 100px 60px;
+				border-color: transparent transparent #007bff transparent;
+				position: absolute;
+				left: 60px;
+				top: 0;
+			}
+			
+			.v {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 100px 60px 0 60px;
+				border-color: #007bff transparent transparent transparent;
+			}
+			
+			.w {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 100px 30px 0 30px;
+				border-color: #007bff transparent transparent transparent;
+			} .w-right {
+				position: absolute;
+				left: 60px;
+				top: 0;
+			}
+			
+			.x-top {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 50px 60px 0 60px;
+				border-color: #007bff transparent transparent transparent;
+			} .x-bottom {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 60px 50px 60px;
+				border-color: transparent transparent #007bff transparent;
+				position: absolute;
+				top: 50px;
+				left: 0;
+			}
+			
+			.y {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 50px 60px 0 60px;
+				border-color: #007bff transparent transparent transparent;
+			} .y-bar {
+				width: 5px;
+				height: 50px;
+				background: #007bff;
+				position: absolute;
+				left: 57.5px;
+				top: 50px;
+			}
+			
+			.z {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 0 100px 120px;
+				border-color: transparent transparent #007bff transparent;
+			} .z-bar {
+				height: 5px;
+				width: 120px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: #007bff;
+			}
+		</style>
+	</body>
+</html>
