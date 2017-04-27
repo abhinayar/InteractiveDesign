@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Visual Translation, Abhi Nayar</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+          html, body {
+            height: 100%;
+          }
+
+          body {
+            background-color: rgba(0,0,0,0.9);
+            margin: 0;
+            font-family: Helvetica, sans-serif;;
+            overflow: hidden;
+          }
+          
+          .element {
+            width: 250px;
+            height: 250px;
+            box-shadow: 0px 0px 12px rgba(0,0,0, 0.2);
+            text-align: center;
+            cursor: default;
+            background-color: #000;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.9;
+          }
+
+          .element:hover {
+            box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
+            opacity: 0.7;
+            transition: opacity 200ms ease;
+            cursor: zoom-in;
+          }
+          
+          .plane {
+            width: 20%;
+            height: 600px;
+            background: #fff;
+            margin: 0 auto;
+            position: absolute;
+            z-index: -1;
+            left: 40%;
+            top: 13%;
+            background-size: auto 600px;
+            background-image: url(img/bernie.png);
+            background-repeat: no-repeat;
+            background-color: rgba(0,0,0,0);
+            transform: scale(1.2);
+            cursor: crosshair;
+          }
+          
+          .overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 9997;
+            text-align: center;
+          } .overlay .close {
+            width: 100%;
+            height: 100%;
+            z-index: 9998;
+            cursor: pointer;
+            background: rgba(0,0,0,0.4);
+            cursor: zoom-out;
+          } .overlay img {
+            height: 100%;
+            width: auto;
+            margin: 0 auto;
+            z-index: 9999;
+            cursor: zoom-out;
+            background: blue;
+          }
+          
+          .overlay.closed {
+            display: none;
+          }
+          
+          .overlay .info {
+            font-size: 28px;
+            color: #fff;
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-family: 
+          }
+		</style>
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.min.js"></script>
+		<script src="js/tween.js"></script>
+		<script src="js/trackball.js"></script>
+		<script src="js/css3drender.js"></script>
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <div class="overlay closed">
+		  <div class="close">
+		    <img src="" alt="P1 Post #">
+		    <div class="info">
+		      <span class="number"></span>
+		    </div>
+		  </div>
+		</div>
+		<div id="container">
+		  <div class="plane bernie"></div>
+		</div>
+		<script>
+          //Image data table
+          var table = [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60];
+          //Global Vars
+          var camera, scene, renderer;
+          var controls;
+          //Object array for 3JS
+          var objects = [];
+          var targets = { table: [], sphere: [], helix: [], grid: [] };
+ 
+          /****************************
+          //INIT
+          ****************************/
+          function init() {
+            //create camera and scene
+            camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 2000);
+            camera.position.z = 2800;
+            scene = new THREE.Scene();
+
+            //Populate object table with approp. attr.
+            for (var i = 0; i < table.length; i += 1) {
+              var element = document.createElement('div');
+              element.className = 'element';
+
+              var imgName = table[i].toString();
+              element.style.backgroundImage = 'url(./img/' + imgName + '.png)';
+              element.setAttribute('data-target', imgName);
+              
+              
+
+              var object = new THREE.CSS3DObject(element);
+              object.position.x = Math.random() * 4000 - 2000;
+              object.position.y = Math.random() * 4000 - 2000;
+              object.position.z = Math.random() * 4000 - 2000;
+              scene.add(object);
+
+              objects.push(object);
+              var object = new THREE.Object3D();
+              object.position.x = (table[ i + 3 ] * 140) - 1330;
+              object.position.y = - (table[ i + 4 ] * 180) + 990;
+
+              targets.table.push(object);
+
+            }
+
+            //Create Helix pattern, yay math
+            var vector = new THREE.Vector3();
+            var cylindrical = new THREE.Cylindrical();
+
+            for (var i = 0, l = objects.length; i < l; i ++) {
+              var theta = i * 0.35 + Math.PI;
+              var y = - (i * 16) + 450;
+
+              var object = new THREE.Object3D();
+              cylindrical.set(1400, theta, y);
+
+              object.position.setFromCylindrical(cylindrical);
+
+              vector.x = object.position.x * 2;
+              vector.y = object.position.y;
+              vector.z = object.position.z * 2;
+
+              object.lookAt(vector);
+              targets.helix.push(object);
+            } 
+            
+            //Make DOM listenable
+            //var domEvents	= new THREEx.DomEvents(camera, renderer.domElement);
+            //Click function
+            /*
+            domEvents.addEventListener(, 'click', function(){
+              alert("click");
+              var imgName = $(this).data("target");
+              $(".overlay img").attr("src", "./img/" + imgName + ".png");
+              $(".overlay img").attr("alt", $(".overlay img").attr("alt") + imgName);
+              
+              if ($(".overlay").hasClass("closed")) {
+                $(".overlay").fadeIn(1500).removeClass("closed").addClass("open");
+              }
+            });
+            */
+            
+            //3JS renderer
+            renderer = new THREE.CSS3DRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.domElement.style.position = 'absolute';
+
+            //Set Timeout to led bg's load
+            setTimeout(function(){
+              document.getElementById('container').appendChild(renderer.domElement);
+              controls = new THREE.TrackballControls(camera, renderer.domElement);
+              controls.rotateSpeed = 0.7;
+              controls.minDistance = 2800;
+              controls.maxDistance = 2800;
+              controls.addEventListener('change', render);
+
+              transform(targets.helix, 1500);
+            }, 250)
+            
+            window.addEventListener('resize', onWindowResize, false);
+
+          }
+          /****************************
+          //TRANSFORM
+          ****************************/
+          function transform(targets, duration) {
+            TWEEN.removeAll();
+            for (var i = 0; i < objects.length; i ++) {
+              var object = objects[ i ];
+              var target = targets[ i ];
+
+              new TWEEN.Tween(object.position)
+                .to({ x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration)
+                .easing(TWEEN.Easing.Exponential.InOut)
+                .start();
+
+              new TWEEN.Tween(object.rotation)
+                .to({ x: target.rotation.x, y: target.rotation.y, z: target.rotation.z }, Math.random() * duration + duration)
+                .easing(TWEEN.Easing.Exponential.InOut)
+                .start();
+            }
+
+            new TWEEN.Tween(this)
+              .to({}, duration * 2)
+              .onUpdate(render)
+              .start();
+          }
+          /****************************
+          //RESIZE
+          ****************************/
+          function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            render();
+          }
+          /****************************
+          //ANIMATE
+          ****************************/
+          function animate() {
+            requestAnimationFrame(animate);
+            TWEEN.update();
+            controls.update();
+          }
+          /****************************
+          //RENDER
+          ****************************/
+          function render() {
+            renderer.render(scene, camera);
+          }
+          
+          //jQuery 
+          $(document).ready(function(){
+            $("#container").hide().fadeIn(1500);
+            $(".bernie.plane").hide().fadeIn(3000);
+            
+            $(".overlay .close").on("click", function(){
+              if ($(".overlay").hasClass("open")) {
+                $(".overlay").fadeOut(400).removeClass("open").addClass("closed");
+              }
+            });
+            
+            //3JS init
+            init();
+            animate(); 
+          });
+          
+          setTimeout(function(){
+            $(".element").on('click', function(){
+              var imgName = $(this).data("target");
+              $(".overlay img").attr("src", "./img/" + imgName + ".png");
+              $(".overlay img").attr("alt", $(".overlay img").attr("alt") + imgName);
+              $(".overlay .number").text(imgName);
+
+              if ($(".overlay").hasClass("closed")) {
+                $(".overlay").fadeIn(400).removeClass("closed").addClass("open");
+              }
+            });
+          }, 500);
+		</script>
+	</body>
+</html>
