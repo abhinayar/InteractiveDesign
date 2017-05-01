@@ -1,0 +1,47 @@
+<!doctype html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<title>SketchUp - Add License</title> 
+  <style type='text/css'>
+  <!--
+  body {background-color:#d1cfcc; overflow: hidden; font-family:'Open Sans','Helvetica Neue', Arial, Helvetica, sans-serif; color:#666666;}
+  body,td,th {font-size:12px;}   
+  table td {display:table-cell; vertical-align:top;}
+  .headlineTop {font-size:18px; font-weight:200; line-height:20px; vertical-align:middle;}
+  .headline {font-size:15px; line-height:20px; vertical-align:middle;}
+  .guidance {font-size: 21px;}
+  .licenseTable {border:0px solid #d1cfcc; width:575px;}
+  a, a:link, a:visited { color: #666; }
+  .cta-button {background:#e72b2d;border:1px solid #acacac;color:white !important;display:inline-block;font-size:14px;font-size:1.2rem;font-weight:600;margin:0;padding:9px 15px;text-align:center;white-space:nowrap;text-decoration:none;}
+  #license-txt {text-align:left;}
+  #license-text-row {display:none;}
+  #add-license-row {display:none;}
+  #offline-text-row {display:table-row;}
+  -->
+  </style>
+</head>
+<body leftmargin='0' topmargin='0'>
+<table width='635' height='295' border='0' cellpadding='10' cellspacing='0'>
+  <tr>
+    <td align='center'>
+      <table class='licenseTable' cellpadding='5' cellspacing='0'>
+        <tr id='offline-text-row' align='left'><td>
+          <p class='headlineTop'>Bummer, It looks like you're offline.</p>
+          <p class='headline'><strong>You must be online to add or remove SketchUp licenses. Please try again next time you are online.</strong></p>
+          <p><a href="#" onclick='document.getElementById("license-text-row").style.display="table-row";document.getElementById("add-license-row").style.display="table-row";document.getElementById("offline-text-row").style.display="none";'>Advanced...</a></p></td>
+        </td></tr>
+        <tr id='license-text-row'><td align='center'>
+          <p class='guidance'>Copy and paste the full text of your SketchUp Pro license here, then click Add License to proceed.</p>
+          <textarea id="license-txt" name="license-text" cols="68" rows="7"></textarea>
+        </td></tr>
+        <tr id='add-license-row'><td align='right'>
+          <a class='cta-button' href="#" onclick='window.location="skp:addLicense@" + document.getElementById("license-txt").value.replace(/(?:\r\n|\r|\n)/g, "%0A")'>Add License</a>
+        </td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

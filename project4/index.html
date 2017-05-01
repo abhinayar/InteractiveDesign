@@ -97,6 +97,10 @@
     .hidden {
       display: none !important;
     }
+    
+    .last-page {
+      cursor: pointer;
+    }
   </style>
   <script>
     //set the scrolling functionality
@@ -105,7 +109,7 @@
       for (var i = 1; i <= 30; i++) {
         var page = $("<section></section>");
         page.addClass("p page" + (i + 1));
-        if (i == 31) {
+        if (i == 30) {
           page.addClass("last-page");
         }
         page.data("target", "url(img/trainLoader/" + i + ".jpg)");
@@ -147,6 +151,10 @@
             scrollTop: $(".p:nth-of-type(31)").offset().top - (window.innerHeight - 600)/2
         }, 20000);
       }, 6000);
+      
+      $(".last-page").on("click", function(){
+        window.location.href = 'https://abhinayar.github.io/InteractiveDesign/project4/home.html';
+      });
     });
   </script>
 </html>

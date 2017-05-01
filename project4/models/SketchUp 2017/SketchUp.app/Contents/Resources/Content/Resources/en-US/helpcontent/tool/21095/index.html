@@ -1,0 +1,32 @@
+<html>
+<script type="text/javascript" src="../../js/openURL.js"></script>
+<head>
+<title>Polygon Tool</title>
+<link href="../../HelpContent.css" rel="stylesheet" type="text/css">
+</head>
+<body class="body"> 
+<p><a href="index.html" id="DrawTool-Polygon"><span class="blackheader"><img src="images/animation-polygon.gif" border="0"></span></a><script>modifyAnchor("DrawTool-Polygon","3000084")</script></p>
+<p><a href="index.html" id="DrawTool-Polygon_"><span class="blackheader">Polygon Tool</span></a><script>modifyAnchor("DrawTool-Polygon_","3000084")</script></p>
+<ul> 
+  <li>Draw Polygon entities. </li> 
+</ul> 
+<p><span class="blacksubheader">Tool Operation</span></p>
+<ol> 
+  <li>Click to place center point.</li> 
+  <li>Move cursor away from center point to define radius.</li> 
+  <li>Click to finish polygon.</li> 
+  <li>Esc = Cancel operation. </li>
+</ol> 
+<p><span class="blacksubheader"> Modifier Keys</span></p>
+<ul id="elementToModify"> 
+  <li>Ctrl '+' or Ctrl '-' = Change the number of segments</li>
+  <li>Hold Shift = Lock inferences</li>
+  <li>Ctrl (before 2nd click) = Toggle between inscribed and circumscribed radii of polygon</li> 
+  <li>Arrow keys (before 1st click) = Lock Surface Normal (Up=Blue, Left=Green, Right=Red, Down=Parallel)</li>
+  <li>Arrow keys (after 1st click) = Lock drawing direction to specific inference direction (Up=Blue, Left=Green, Right=Red, Down=Parallel/Perpendicular) </li>
+  <script>replaceText("elementToModify", "Mac", 0, "Option '+' or Option '-' = Change the number of segments ");</script>
+  <script>replaceText("elementToModify", "Mac", 2, "Option (before 2nd click) = Toggle between inscribed and circumscribed radii of polygon");</script>
+</ul>
+<p><a href="index.html" id="DrawTool-Polygon__"><span class="blacksubheader">Click to learn about more advanced operations...</span></a><script>modifyAnchor("DrawTool-Polygon__","3000084")</script></p>
+</body>
+</html>

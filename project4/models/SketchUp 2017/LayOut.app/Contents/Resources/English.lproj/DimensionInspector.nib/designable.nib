@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="LODimensionInspector">
+            <connections>
+                <outlet property="mainView" destination="5" id="10"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="5" userLabel="View">
+            <rect key="frame" x="0.0" y="0.0" width="275" height="189"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" id="700">
+                    <rect key="frame" x="-2" y="22" width="69" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Angle:" id="701">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" id="699">
+                    <rect key="frame" x="64" y="17" width="115" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Degrees" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="706" id="702">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" title="OtherViews" id="703">
+                            <items>
+                                <menuItem title="Degrees" state="on" id="706"/>
+                                <menuItem title="Radians" id="705"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedIndex" keyPath="angleUnitsIndex" previousBinding="743" id="745"/>
+                        <binding destination="-2" name="contentValues" keyPath="angleUnitsStrings" id="743"/>
+                        <binding destination="-2" name="enabled2" keyPath="hasEnabledAngleOptions" previousBinding="725" id="727">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="725"/>
+                    </connections>
+                </popUpButton>
+                <popUpButton verticalHuggingPriority="750" id="698">
+                    <rect key="frame" x="176" y="17" width="95" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="0.0000" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="710" id="708">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" title="OtherViews" id="709">
+                            <items>
+                                <menuItem title="0.0000" state="on" id="710"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedIndex" keyPath="anglePrecisionIndex" previousBinding="732" id="734"/>
+                        <binding destination="-2" name="contentValues" keyPath="anglePrecisionStrings" id="732"/>
+                        <binding destination="-2" name="enabled2" keyPath="hasEnabledAngleOptions" previousBinding="729" id="742">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="729"/>
+                    </connections>
+                </popUpButton>
+                <button toolTip="Display units" verticalHuggingPriority="750" id="643">
+                    <rect key="frame" x="240" y="155" width="28" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="dimension_showunits" imagePosition="only" alignment="center" state="on" borderStyle="border" inset="2" id="668">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="enabled2" keyPath="hasEnabledUnitsDisplay" previousBinding="646" id="653">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="646"/>
+                        <binding destination="-2" name="value" keyPath="unitsDisplayed" id="757"/>
+                    </connections>
+                </button>
+                <button toolTip="Display dashes" verticalHuggingPriority="750" id="758">
+                    <rect key="frame" x="204" y="155" width="28" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="dimension_showdashes" imagePosition="only" alignment="center" state="on" borderStyle="border" inset="2" id="759">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="dashesDisplayed" id="764"/>
+                        <binding destination="-2" name="enabled2" keyPath="hasEnabledDashesDisplay" previousBinding="760" id="763">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="760"/>
+                    </connections>
+                </button>
+                <segmentedControl verticalHuggingPriority="750" id="397" userLabel="dimension_textabove, dimension_textcenter, dimension_textbelow">
+                    <rect key="frame" x="10" y="155" width="76" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <segmentedCell key="cell" state="on" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="667">
+                        <font key="font" metaFont="system"/>
+                        <segments>
+                            <segment toolTip="Above" image="dimension_textabove" imageScaling="none" width="24"/>
+                            <segment toolTip="Center" image="dimension_textcenter" imageScaling="none" width="24" tag="1"/>
+                            <segment toolTip="Below" image="dimension_textbelow" imageScaling="none" width="24" tag="2">
+                                <nil key="label"/>
+                            </segment>
+                        </segments>
+                    </segmentedCell>
+                    <connections>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="462"/>
+                        <binding destination="-2" name="selectedTag" keyPath="textVerticalAlignmentIndex" id="419"/>
+                    </connections>
+                </segmentedControl>
+                <segmentedControl verticalHuggingPriority="750" id="396">
+                    <rect key="frame" x="95" y="155" width="101" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="666">
+                        <font key="font" metaFont="system"/>
+                        <segments>
+                            <segment toolTip="Vertical" image="dimension_textvertical" imageScaling="none" width="24" selected="YES" tag="1"/>
+                            <segment toolTip="Horizontal" image="dimension_texthorizontal" imageScaling="none" width="24"/>
+                            <segment toolTip="Aligned" image="dimension_textalign" imageScaling="none" width="24" tag="2">
+                                <nil key="label"/>
+                            </segment>
+                            <segment toolTip="Perpendicular" image="dimension_textperpendicular" imageScaling="none" width="24" tag="3">
+                                <nil key="label"/>
+                            </segment>
+                        </segments>
+                    </segmentedCell>
+                    <connections>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="464"/>
+                        <binding destination="-2" name="selectedTag" keyPath="textRotationAlignmentIndex" id="421"/>
+                    </connections>
+                </segmentedControl>
+                <button toolTip="Use model view’s scale" verticalHuggingPriority="750" id="371">
+                    <rect key="frame" x="10" y="94" width="103" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="roundTextured" title="Auto Scale" bezelStyle="texturedRounded" alignment="center" controlSize="small" state="on" borderStyle="border" inset="2" id="665">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="enabled2" keyPath="hasEnabledScale" previousBinding="469" id="632">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="value" keyPath="isAutoScale" id="445"/>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="469"/>
+                    </connections>
+                </button>
+                <popUpButton toolTip="Select a fixed scale" verticalHuggingPriority="750" id="370">
+                    <rect key="frame" x="118" y="95" width="153" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="1/8&quot; = 1'-0&quot; (1:48)" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="376" id="664">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" title="OtherViews" id="374">
+                            <items>
+                                <menuItem title="1/8&quot; = 1'-0&quot; (1:48)" state="on" id="376"/>
+                                <menuItem title="Item2" id="377"/>
+                                <menuItem title="Item3" id="375"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="enabled" keyPath="hasEnabledScaleUnits" id="755"/>
+                        <binding destination="-2" name="enabled2" keyPath="isEnabled" previousBinding="755" id="756">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="selectedIndex" keyPath="scaleIndex" previousBinding="670" id="672"/>
+                        <binding destination="-2" name="contentValues" keyPath="scaleStrings" id="670"/>
+                    </connections>
+                </popUpButton>
+                <popUpButton toolTip="Select a fixed scale" verticalHuggingPriority="750" id="G7N-1u-NCh">
+                    <rect key="frame" x="118" y="130" width="153" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="9XH-Lc-Ghr" id="h1F-fO-6vA">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" title="OtherViews" id="vG5-Ho-9M9">
+                            <items>
+                                <menuItem state="on" id="9XH-Lc-Ghr"/>
+                                <menuItem title="Item2" id="21g-W5-jxB"/>
+                                <menuItem title="Item3" id="ppf-gx-tAS"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="ZdI-2d-x6v"/>
+                        <binding destination="-2" name="selectedIndex" keyPath="leaderStyleIndex" previousBinding="gwq-Ea-Ka7" id="UE0-RR-j4H"/>
+                        <binding destination="-2" name="contentValues" keyPath="leaderStyleStrings" id="gwq-Ea-Ka7"/>
+                    </connections>
+                </popUpButton>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="367">
+                    <rect key="frame" x="0.0" y="122" width="275" height="5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField verticalHuggingPriority="750" id="245">
+                    <rect key="frame" x="-2" y="48" width="181" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Precision:" id="663">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" id="244">
+                    <rect key="frame" x="176" y="43" width="95" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="0.0000" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="249" id="662">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" title="OtherViews" id="248">
+                            <items>
+                                <menuItem title="0.0000" state="on" id="249"/>
+                                <menuItem title="Item 2" id="250"/>
+                                <menuItem title="Item 3" id="251"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="enabled2" keyPath="hasEnabledLengthOptions" previousBinding="697" id="720">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="697"/>
+                        <binding destination="-2" name="selectedIndex" keyPath="lengthPrecisionIndex" previousBinding="746" id="748"/>
+                        <binding destination="-2" name="contentValues" keyPath="lengthPrecisionStrings" id="746"/>
+                    </connections>
+                </popUpButton>
+                <textField verticalHuggingPriority="750" id="237">
+                    <rect key="frame" x="-2" y="74" width="69" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Length:" id="661">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" id="236">
+                    <rect key="frame" x="64" y="69" width="115" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Architectural" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="243" id="660">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" title="OtherViews" id="240">
+                            <items>
+                                <menuItem title="Architectural" state="on" id="243"/>
+                                <menuItem title="Decimal" id="242"/>
+                                <menuItem title="Engineering" state="on" id="241"/>
+                                <menuItem title="Fractional" id="352"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="enabled2" keyPath="hasEnabledLengthOptions" previousBinding="693" id="716">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="693"/>
+                        <binding destination="-2" name="selectedIndex" keyPath="lengthFormatIndex" previousBinding="752" id="754"/>
+                        <binding destination="-2" name="contentValues" keyPath="lengthFormatStrings" id="752"/>
+                    </connections>
+                </popUpButton>
+                <popUpButton verticalHuggingPriority="750" id="228">
+                    <rect key="frame" x="176" y="69" width="95" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Centimeters" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="353" id="659">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" title="OtherViews" id="232">
+                            <items>
+                                <menuItem title="Inches" id="233"/>
+                                <menuItem title="Feet" id="234"/>
+                                <menuItem title="Millimeters" id="235"/>
+                                <menuItem title="Centimeters" state="on" id="353"/>
+                                <menuItem title="Meters" id="354"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="enabled2" keyPath="hasEnabledLengthOptions" previousBinding="695" id="718">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled3" keyPath="hasEnabledLengthUnits" previousBinding="718" id="722">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="695"/>
+                        <binding destination="-2" name="selectedIndex" keyPath="lengthUnitsIndex" previousBinding="749" id="751"/>
+                        <binding destination="-2" name="contentValues" keyPath="lengthUnitsStrings" id="749"/>
+                    </connections>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="gkn-4D-5s8">
+                    <rect key="frame" x="8" y="135" width="107" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Leader Style:" id="mUL-YW-02f">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
+    </objects>
+    <resources>
+        <image name="dimension_showdashes" width="24" height="24"/>
+        <image name="dimension_showunits" width="24" height="24"/>
+        <image name="dimension_textabove" width="24" height="24"/>
+        <image name="dimension_textalign" width="24" height="24"/>
+        <image name="dimension_textbelow" width="24" height="24"/>
+        <image name="dimension_textcenter" width="24" height="24"/>
+        <image name="dimension_texthorizontal" width="24" height="24"/>
+        <image name="dimension_textperpendicular" width="24" height="24"/>
+        <image name="dimension_textvertical" width="24" height="24"/>
+    </resources>
+</document>

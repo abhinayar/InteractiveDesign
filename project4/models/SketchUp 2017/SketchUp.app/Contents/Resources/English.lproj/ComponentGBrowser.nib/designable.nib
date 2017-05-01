@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ComponentGBrowserController">
+            <connections>
+                <outlet property="editView" destination="87" id="95"/>
+                <outlet property="externalCollectionMenu_" destination="311" id="341"/>
+                <outlet property="externalPrimaryMenu" destination="5" id="260"/>
+                <outlet property="externalSecondaryMenu" destination="18" id="261"/>
+                <outlet property="inModelCollectionMenu_" destination="318" id="342"/>
+                <outlet property="inModelPrimaryMenu" destination="26" id="259"/>
+                <outlet property="inModelSecondaryMenu" destination="43" id="262"/>
+                <outlet property="statsView" destination="88" id="96"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <menu title="Menu" id="5" userLabel="ExternalPrimary">
+            <items>
+                <menuItem title="Open an existing library..." id="7">
+                    <connections>
+                        <action selector="openExistingLibrary:" target="-2" id="102"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Create a new library..." id="99">
+                    <connections>
+                        <action selector="createNewLibrary:" target="-2" id="106"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Add library to favorites..." id="9">
+                    <connections>
+                        <action selector="addLibraryToFavorites:" target="-2" id="265"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Remove library from favorites..." id="10">
+                    <connections>
+                        <action selector="removeLibraryFromFavorites:" target="-2" id="266"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="12">
+                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                </menuItem>
+                <menuItem title="Small Thumbnails" tag="3" id="15">
+                    <connections>
+                        <action selector="updateTNDisplayState:" target="-2" id="250"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Large Thumbnails" tag="4" id="11">
+                    <connections>
+                        <action selector="updateTNDisplayState:" target="-2" id="252"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Details" tag="7" id="293">
+                    <connections>
+                        <action selector="updateTNDisplayState:" target="-2" id="295"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="List View" tag="5" id="6">
+                    <connections>
+                        <action selector="updateTNDisplayState:" target="-2" id="253"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Refresh" tag="6" id="16">
+                    <connections>
+                        <action selector="updateTNDisplayState:" target="-2" id="254"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="8">
+                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                </menuItem>
+                <menuItem title="Get More..." id="17">
+                    <connections>
+                        <action selector="getMoreLibraries:" target="-2" id="120"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+        <menu title="Menu" id="18" userLabel="ExternalSecondary">
+            <items>
+                <menuItem title="Open an existing library..." id="24">
+                    <connections>
+                        <action selector="openExistingLibrary:" target="-2" id="103"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Create a new library..." id="100">
+                    <connections>
+                        <action selector="createNewLibrary:" target="-2" id="107"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Add library to favorites..." id="25">
+                    <connections>
+                        <action selector="addLibraryToFavorites:" target="-2" id="267"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Remove library from favorites..." id="19">
+                    <connections>
+                        <action selector="removeLibraryFromFavorites:" target="-2" id="268"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="20">
+                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                </menuItem>
+                <menuItem title="Refresh" tag="6" id="22">
+                    <connections>
+                        <action selector="updateTNDisplayState:" target="-2" id="255"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="23">
+                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                </menuItem>
+                <menuItem title="Get More..." id="21">
+                    <connections>
+                        <action selector="getMoreLibraries:" target="-2" id="121"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+        <menu title="Menu" id="26" userLabel="InModelPrimary">
+            <items>
+                <menuItem title="Open an existing library..." id="38">
+                    <connections>
+                        <action selector="openExistingLibrary:" target="-2" id="104"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Create a new library..." id="101">
+                    <connections>
+                        <action selector="createNewLibrary:" target="-2" id="108"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Save library as..." id="28">
+                    <connections>
+                        <action selector="saveLibraryAs:" target="-2" id="114"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Add library to favorites..." id="30">
+                    <connections>
+                        <action selector="addLibraryToFavorites:" target="-2" id="269"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Remove library from favorites..." id="32">
+                    <connections>
+                        <action selector="removeLibraryFromFavorites:" target="-2" id="270"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="42">
+                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                </menuItem>
+                <menuItem title="Expand" id="35">
+                    <connections>
+                        <action selector="toggleExpandedLibraries:" target="-2" id="130"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Purge unused" id="37">
+                    <connections>
+                        <action selector="purgeUnusedLibraries:" target="-2" id="131"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="39">
+                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                </menuItem>
+                <menuItem title="Small Thumbnails" tag="3" id="40">
+                    <connections>
+                        <action selector="updateTNDisplayState:" target="-2" id="243"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Large Thumbnails" tag="4" id="27">
+                    <connections>
+                        <action selector="updateTNDisplayState:" target="-2" id="246"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Details" tag="7" id="294"/>
+                <menuItem title="List View" tag="5" id="31">
+                    <connections>
+                        <action selector="updateTNDisplayState:" target="-2" id="247"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Refresh" tag="6" id="33">
+                    <connections>
+                        <action selector="updateTNDisplayState:" target="-2" id="248"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="36">
+                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                </menuItem>
+                <menuItem title="Get More..." id="34">
+                    <connections>
+                        <action selector="getMoreLibraries:" target="-2" id="124"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+        <menu title="Menu" id="43" userLabel="InModelSecondary">
+            <items>
+                <menuItem title="Open an existing library..." id="53">
+                    <connections>
+                        <action selector="openExistingLibrary:" target="-2" id="105"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Create a new library..." id="98">
+                    <connections>
+                        <action selector="createNewLibrary:" target="-2" id="109"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Save library as..." id="54">
+                    <connections>
+                        <action selector="saveLibraryAs:" target="-2" id="115"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Add library to favorites..." id="44">
+                    <connections>
+                        <action selector="addLibraryToFavorites:" target="-2" id="264"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Remove library from favorites..." id="45">
+                    <connections>
+                        <action selector="removeLibraryFromFavorites:" target="-2" id="263"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="46">
+                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                </menuItem>
+                <menuItem title="Expand" id="47">
+                    <connections>
+                        <action selector="toggleExpandedLibraries:" target="-2" id="128"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Purge unused" id="51">
+                    <connections>
+                        <action selector="purgeUnusedLibraries:" target="-2" id="129"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="48">
+                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                </menuItem>
+                <menuItem title="Refresh" tag="6" id="49">
+                    <connections>
+                        <action selector="updateTNDisplayState:" target="-2" id="256"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="50">
+                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                </menuItem>
+                <menuItem title="Get More..." id="52">
+                    <connections>
+                        <action selector="getMoreLibraries:" target="-2" id="125"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+        <objectController id="70" userLabel="CGBObjectController">
+            <declaredKeys>
+                <string>entityDisplayState</string>
+                <string>statisticsState</string>
+                <string>expand</string>
+                <string>statistics.name</string>
+                <string>statistics</string>
+                <string>componentEditable</string>
+                <string>favoriteContainers</string>
+                <string>selectedFavorites</string>
+                <string>selectedFavoriteIndexes</string>
+                <string>addToFavorites</string>
+                <string>deleteFavoritesFromDisk</string>
+                <string>snapState</string>
+                <string>cutOpening</string>
+                <string>alwaysFaceCamera</string>
+                <string>shadowsFaceSun</string>
+                <string>glueToState</string>
+                <string>componentLoadLocation</string>
+                <string>enableComponentStatistics</string>
+                <string>hasActiveModel</string>
+                <string>_3DWarehouseSearchString</string>
+                <string>threeDWarehouseSearchString_</string>
+            </declaredKeys>
+            <connections>
+                <outlet property="content" destination="-2" id="71"/>
+            </connections>
+        </objectController>
+        <customView id="87" userLabel="EditView">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="188"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" id="178">
+                    <rect key="frame" x="6" y="39" width="188" height="14"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingMiddle" selectable="YES" sendsActionOnEndEditing="YES" title="/Library/Application Support/SketchUp 5/Components/Architecture_Sampler/Door_Glass Double_Sidelights.skp" id="387">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="70" name="value" keyPath="selection.componentLoadLocation" id="235"/>
+                    </connections>
+                </textField>
+                <button verticalHuggingPriority="750" id="177">
+                    <rect key="frame" x="4" y="7" width="89" height="28"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Open..." bezelStyle="rounded" alignment="center" controlSize="small" enabled="NO" borderStyle="border" inset="2" id="386">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="reloadDefinition:" target="-2" id="271"/>
+                        <binding destination="70" name="enabled" keyPath="selection.componentEditable" id="181"/>
+                        <binding destination="70" name="enabled2" keyPath="selection.hasActiveModel" previousBinding="181" id="276">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="175">
+                    <rect key="frame" x="9" y="56" width="181" height="5"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField verticalHuggingPriority="750" id="174">
+                    <rect key="frame" x="9" y="59" width="185" height="13"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Loaded from" id="385">
+                        <font key="font" metaFont="label"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button id="173">
+                    <rect key="frame" x="9" y="78" width="184" height="18"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Shadows face sun" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" enabled="NO" inset="2" id="384">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="70" name="enabled2" keyPath="selection.alwaysFaceCamera" previousBinding="182" id="227">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="70" name="enabled" keyPath="selection.componentEditable" id="182"/>
+                        <binding destination="70" name="enabled3" keyPath="selection.glueToState" previousBinding="227" id="239">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="70" name="enabled4" keyPath="selection.hasActiveModel" previousBinding="239" id="275">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="70" name="value" keyPath="selection.shadowsFaceSun" id="226"/>
+                    </connections>
+                </button>
+                <button id="172">
+                    <rect key="frame" x="9" y="98" width="184" height="18"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Always face camera" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" enabled="NO" inset="2" id="383">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="70" name="value" keyPath="selection.alwaysFaceCamera" id="225"/>
+                        <binding destination="70" name="enabled" keyPath="selection.componentEditable" id="183"/>
+                        <binding destination="70" name="enabled2" keyPath="selection.glueToState" previousBinding="183" id="238">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="70" name="enabled3" keyPath="selection.hasActiveModel" previousBinding="238" id="274">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <button id="171">
+                    <rect key="frame" x="9" y="118" width="184" height="18"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Cut Opening" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" enabled="NO" inset="2" id="382">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="70" name="enabled" keyPath="selection.componentEditable" id="184"/>
+                        <binding destination="70" name="value" keyPath="selection.cutOpening" id="224"/>
+                        <binding destination="70" name="enabled2" keyPath="selection.glueToState" previousBinding="184" id="232">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="70" name="enabled3" keyPath="selection.hasActiveModel" previousBinding="232" id="273">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <popUpButton verticalHuggingPriority="750" id="166">
+                    <rect key="frame" x="66" y="138" width="128" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Sloped" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="borderAndBezel" tag="4" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="180" id="381">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" title="OtherViews" id="167">
+                            <items>
+                                <menuItem title="None" id="168"/>
+                                <menuItem title="Any" tag="1" id="169"/>
+                                <menuItem title="Horizonal" tag="2" id="170"/>
+                                <menuItem title="Vertical" tag="3" id="179"/>
+                                <menuItem title="Sloped" state="on" tag="4" id="180"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="70" name="enabled" keyPath="selection.componentEditable" id="222"/>
+                        <binding destination="70" name="selectedTag" keyPath="selection.glueToState" id="231"/>
+                        <binding destination="70" name="enabled2" keyPath="selection.hasActiveModel" previousBinding="222" id="272">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </popUpButton>
+                <textField verticalHuggingPriority="750" id="165">
+                    <rect key="frame" x="9" y="143" width="55" height="13"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Glue to:" id="380">
+                        <font key="font" metaFont="label"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="163">
+                    <rect key="frame" x="9" y="162" width="182" height="5"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField verticalHuggingPriority="750" id="162">
+                    <rect key="frame" x="9" y="165" width="185" height="13"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Alignment" id="379">
+                        <font key="font" metaFont="label"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
+        <customView id="88" userLabel="StatsView">
+            <rect key="frame" x="0.0" y="0.0" width="179" height="192"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="140">
+                    <rect key="frame" x="9" y="9" width="161" height="142"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <clipView key="contentView" id="exS-Yg-Kiv">
+                        <rect key="frame" x="1" y="17" width="159" height="124"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" headerView="393" id="141">
+                                <rect key="frame" x="0.0" y="0.0" width="159" height="124"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <size key="intercellSpacing" width="3" height="2"/>
+                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                <tableColumns>
+                                    <tableColumn editable="NO" width="87" minWidth="80" maxWidth="1000" id="142">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Name">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
+                                        </tableHeaderCell>
+                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" id="390">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
+                                        <connections>
+                                            <binding destination="150" name="value" keyPath="arrangedObjects.name" id="155">
+                                                <dictionary key="options">
+                                                    <bool key="NSConditionallySetsEditable" value="YES"/>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
+                                    </tableColumn>
+                                    <tableColumn editable="NO" width="66" minWidth="66" maxWidth="66" id="143">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Count">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
+                                        </tableHeaderCell>
+                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="center" id="391">
+                                            <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0" negativeFormat="-0" hasThousandSeparators="NO" thousandSeparator="," id="145">
+                                                <attributedString key="attributedStringForZero">
+                                                    <fragment content="0"/>
+                                                </attributedString>
+                                                <decimal key="minimum" value="NaN"/>
+                                                <decimal key="maximum" value="NaN"/>
+                                            </numberFormatter>
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
+                                        <connections>
+                                            <binding destination="150" name="value" keyPath="arrangedObjects.count" id="156">
+                                                <dictionary key="options">
+                                                    <bool key="NSConditionallySetsEditable" value="YES"/>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
+                                    </tableColumn>
+                                </tableColumns>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" controlSize="small" horizontal="YES" id="392">
+                        <rect key="frame" x="-100" y="-100" width="150" height="11"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="394">
+                        <rect key="frame" x="139" y="17" width="11" height="120"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <tableHeaderView key="headerView" id="393">
+                        <rect key="frame" x="0.0" y="0.0" width="159" height="17"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tableHeaderView>
+                </scrollView>
+                <button id="139">
+                    <rect key="frame" x="89" y="158" width="82" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Expand" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" enabled="NO" inset="2" id="389">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="70" name="enabled" keyPath="selection.enableComponentStatistics" id="257"/>
+                        <binding destination="70" name="value" keyPath="selection.expand" id="147"/>
+                        <binding destination="70" name="enabled2" keyPath="selection.hasActiveModel" previousBinding="257" id="278">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <popUpButton verticalHuggingPriority="750" id="134">
+                    <rect key="frame" x="6" y="155" width="81" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="All Geometry" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="136" id="388">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" title="OtherViews" id="135">
+                            <items>
+                                <menuItem title="All Geometry" state="on" id="136"/>
+                                <menuItem title="Components" id="137"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="70" name="enabled" keyPath="selection.enableComponentStatistics" id="258"/>
+                        <binding destination="70" name="enabled2" keyPath="selection.hasActiveModel" previousBinding="258" id="277">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="70" name="selectedIndex" keyPath="selection.statisticsState" id="161"/>
+                    </connections>
+                </popUpButton>
+            </subviews>
+        </customView>
+        <arrayController id="150" userLabel="StatisticsController">
+            <declaredKeys>
+                <string>name</string>
+                <string>count</string>
+                <string>statisticsState</string>
+                <string>componentEditable</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="-2" name="contentArray" keyPath="statistics" id="159"/>
+            </connections>
+        </arrayController>
+        <menu title="Menu" id="311" userLabel="ExternalFavorites">
+            <items>
+                <menuItem title="Open a local collection..." tag="3" id="312">
+                    <connections>
+                        <action selector="openExistingLibrary:" target="-2" id="328"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Create a new collection..." tag="3" id="327">
+                    <connections>
+                        <action selector="createNewLibrary:" target="-2" id="329"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Save as a local collection" id="368">
+                    <connections>
+                        <action selector="saveWarehouseLibraryAs:" target="-2" id="369"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="375">
+                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                </menuItem>
+                <menuItem title="View in 3D Warehouse" id="366">
+                    <connections>
+                        <action selector="viewIn3DWarehouse:" target="-2" id="367"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="3D Warehouse Terms of Use" id="376">
+                    <connections>
+                        <action selector="displayWarehouseTermsOfService:" target="-2" id="377"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="315">
+                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                </menuItem>
+                <menuItem title="Add to favorites" tag="4" id="314">
+                    <connections>
+                        <action selector="addLibraryToFavorites:" target="-2" id="330"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Remove from favorites" tag="7" id="313">
+                    <connections>
+                        <action selector="removeLibraryFromFavorites:" target="-2" id="331"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+        <menu title="Menu" id="318" userLabel="InModelFavorites">
+            <items>
+                <menuItem title="Open a local collection..." id="319">
+                    <connections>
+                        <action selector="openExistingLibrary:" target="-2" id="339"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Create a new collection..." id="321">
+                    <connections>
+                        <action selector="createNewLibrary:" target="-2" id="340"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Save as a local collection" id="370">
+                    <connections>
+                        <action selector="saveLibraryAs:" target="-2" id="374"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="326">
+                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                </menuItem>
+                <menuItem title="Expand" id="335">
+                    <connections>
+                        <action selector="toggleExpandedLibraries:" target="-2" id="337"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Purge unused" id="336">
+                    <connections>
+                        <action selector="purgeUnusedLibraries:" target="-2" id="338"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+        <menu title="Menu" id="343" userLabel="DisplayListMenu">
+            <items>
+                <menuItem title="Item1" id="345"/>
+            </items>
+        </menu>
+    </objects>
+</document>

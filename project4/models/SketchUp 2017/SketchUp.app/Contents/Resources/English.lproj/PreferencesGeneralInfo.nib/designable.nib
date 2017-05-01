@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PreferencesGeneralController">
+            <connections>
+                <outlet property="alwaysFixErrorsCheck" destination="52" id="54"/>
+                <outlet property="autoCheckUpdatesCheck" destination="88" id="95"/>
+                <outlet property="autoCheckUpdatesCheck_" destination="88" id="140"/>
+                <outlet property="automaticallyDetectCheck" destination="51" id="53"/>
+                <outlet property="autosaveCheck" destination="14" id="18"/>
+                <outlet property="autosaveTimeStepper" destination="13" id="19"/>
+                <outlet property="autosaveTimeText" destination="6" id="20"/>
+                <outlet property="doBackupCheck" destination="10" id="21"/>
+                <outlet property="view" destination="5" id="17"/>
+                <outlet property="warnStyleSceneCheck" destination="60" id="64"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="5" userLabel="View">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="298"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <button id="88">
+                    <rect key="frame" x="3" y="3" width="378" height="34"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Allow checking for updates" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="155">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="toggleAutoCheckUpdates:" target="-2" id="119"/>
+                    </connections>
+                </button>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="87">
+                    <rect key="frame" x="0.0" y="41" width="382" height="5"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField verticalHuggingPriority="750" id="86">
+                    <rect key="frame" x="0.0" y="45" width="385" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Software Updates" id="154">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button id="60">
+                    <rect key="frame" x="3" y="61" width="381" height="48"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Warn of style change when creating scenes" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="153">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="toggleWarnStyleScene:" target="-2" id="63"/>
+                    </connections>
+                </button>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="58">
+                    <rect key="frame" x="0.0" y="110" width="382" height="5"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField verticalHuggingPriority="750" id="57">
+                    <rect key="frame" x="0.0" y="114" width="385" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Scenes and Styles" id="152">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button id="51">
+                    <rect key="frame" x="3" y="156" width="381" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Automatically check models for problems" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="150">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="automaticallyDetectChecked:" target="-2" id="55"/>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="50">
+                    <rect key="frame" x="0.0" y="182" width="385" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Check models for problems" id="149">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="49">
+                    <rect key="frame" x="0.0" y="178" width="382" height="5"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="40">
+                    <rect key="frame" x="0.0" y="277" width="382" height="5"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField verticalHuggingPriority="750" id="39">
+                    <rect key="frame" x="0.0" y="281" width="385" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Saving" id="148">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button id="14">
+                    <rect key="frame" x="3" y="235" width="353" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Auto-save" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="147">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="autosaveChecked:" target="-2" id="24"/>
+                    </connections>
+                </button>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="13">
+                    <rect key="frame" x="143" y="204" width="19" height="27"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="60" doubleValue="1" id="146"/>
+                    <connections>
+                        <action selector="autosaveTimeChanged:" target="-2" id="26"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" id="12">
+                    <rect key="frame" x="164" y="209" width="221" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="minutes" id="145">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="Create a backup when saving a document." id="10">
+                    <rect key="frame" x="3" y="255" width="366" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Create backup" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="144">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="createBackupChecked:" target="-2" id="23"/>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="8">
+                    <rect key="frame" x="-3" y="209" width="110" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Every" id="143">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="6">
+                    <rect key="frame" x="112" y="207" width="32" height="22"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="142">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="autosaveTimeChanged:" target="-2" id="25"/>
+                    </connections>
+                </textField>
+                <button id="52">
+                    <rect key="frame" x="3" y="136" width="378" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Automatically fix problems when they are found" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="151">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="alwaysFixErrorsChecked:" target="-2" id="56"/>
+                    </connections>
+                </button>
+            </subviews>
+        </customView>
+    </objects>
+</document>

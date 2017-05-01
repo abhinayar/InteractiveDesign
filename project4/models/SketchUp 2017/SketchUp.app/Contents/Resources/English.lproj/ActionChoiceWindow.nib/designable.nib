@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ActionWindowController">
+            <connections>
+                <outlet property="accept_button_" destination="cZU-Lj-UEt" id="4Eo-fn-i3u"/>
+                <outlet property="dismiss_button_" destination="f8d-pU-4JW" id="HTe-vH-PeN"/>
+                <outlet property="logo_view_" destination="vxO-3x-EtW" id="NFw-a8-0TS"/>
+                <outlet property="message_view_" destination="p9R-Yl-5rJ" id="NhJ-hH-JLi"/>
+                <outlet property="window" destination="x7r-Bt-LUV" id="d0L-Bf-tgr"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="`"/>
+        <window title="Window" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="x7r-Bt-LUV" userLabel="ActionChoiceWindow" customClass="NSPanel">
+            <windowStyleMask key="styleMask" nonactivatingPanel="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES"/>
+            <rect key="contentRect" x="1060" y="765" width="380" height="96"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="Uka-6e-01d">
+                <rect key="frame" x="0.0" y="0.0" width="380" height="96"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p9R-Yl-5rJ">
+                        <rect key="frame" x="72" y="40" width="284" height="48"/>
+                        <textFieldCell key="cell" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" alignment="left" placeholderString="This is some text to see the font" drawsBackground="YES" id="EPQ-Tf-smd">
+                            <font key="font" metaFont="system" size="14"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cZU-Lj-UEt">
+                        <rect key="frame" x="14" y="4" width="120" height="32"/>
+                        <buttonCell key="cell" type="push" title="Accept" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yV2-w3-gPT">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system" size="14"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="acceptAction:" target="-2" id="vt5-nW-gHh"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f8d-pU-4JW">
+                        <rect key="frame" x="246" y="2" width="120" height="32"/>
+                        <buttonCell key="cell" type="push" title="Dismiss" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pGB-gM-l23">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system" size="14"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="dismissAction:" target="-2" id="fK8-kH-tf0"/>
+                        </connections>
+                    </button>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vxO-3x-EtW">
+                        <rect key="frame" x="20" y="48" width="32" height="32"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="4et-w6-jpq"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="292" y="227"/>
+        </window>
+    </objects>
+</document>

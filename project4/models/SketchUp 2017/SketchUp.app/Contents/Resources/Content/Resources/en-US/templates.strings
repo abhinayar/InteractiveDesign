@@ -1,0 +1,29 @@
+/* Copyright 2014, Trimble Navigation Limited
+   Ruby Script String Translation File */
+
+"3D Printing - Inches"="3D Printing - Inches";
+"3D Printing - Millimeters"="3D Printing - Millimeters";
+"Architectural Design - Feet and Inches"="Architectural Design - Feet and Inches";
+"Architectural Design - Meters"="Architectural Design - Meters";
+"Architectural Design - Millimeters"="Architectural Design - Millimeters";
+"Construction Documentation - Feet and Inches"="Construction Documentation - Feet and Inches";
+"Construction Documentation - Meters"="Construction Documentation - Meters";
+"Construction Documentation - Millimeters"="Construction Documentation - Millimeters";
+"Interior and Production Design - Inches"="Interior and Production Design - Inches";
+"Interior and Production Design - Millimeters"="Interior and Production Design - Millimeters";
+"Landscape Architecture - Feet and Inches"="Landscape Architecture - Feet and Inches";
+"Landscape Architecture - Meters"="Landscape Architecture - Meters";
+"Simple Template - Feet and Inches"="Simple Template - Feet and Inches";
+"Simple Template - Meters"="Simple Template - Meters";
+"This is a general user modeling template with basic styling and simple colors."="This is a general user modeling template with basic styling and simple colors.";
+"This template is for Kitchen & Bath and Entertainment Industry professionals."="This template is for Kitchen & Bath and Entertainment Industry professionals.";
+"This template is for Makers"="This template is for Makers";
+"This template is for conceptual design development."="This template is for conceptual design development.";
+"This template is for design detailing and construction. Also use this template for training exercises that begin in plan view."="This template is for design detailing and construction. Also use this template for training exercises that begin in plan view.";
+"This template is for landscape architecture."="This template is for landscape architecture.";
+"This template is for urban planning, geo-modeling, and surveying."="This template is for urban planning, geo-modeling, and surveying.";
+"Urban Planning - Feet"="Urban Planning - Feet";
+"Urban Planning - Meters"="Urban Planning - Meters";
+"Use this template for smaller scale projects such as furniture design."="Use this template for smaller scale projects such as furniture design.";
+"Woodworking - Inches"="Woodworking - Inches";
+"Woodworking - Millimeters"="Woodworking - Millimeters";

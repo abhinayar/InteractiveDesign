@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string> </string>
+	<integer>0</integer>
+	<string>selectSelectionTool:</string>
+	<string>g</string>
+	<integer>0</integer>
+	<string>makeComponent:</string>
+	<string>l</string>
+	<integer>0</integer>
+	<string>selectLineTool:</string>
+	<string>t</string>
+	<integer>0</integer>
+	<string>selectMeasureTool:</string>
+	<string>b</string>
+	<integer>0</integer>
+	<string>selectPaintTool:</string>
+	<string>r</string>
+	<integer>0</integer>
+	<string>selectRectangleTool:</string>
+	<string>c</string>
+	<integer>0</integer>
+	<string>selectCircleTool:</string>
+	<string>a</string>
+	<integer>0</integer>
+	<string>selectArcTool:</string>
+	<string>p</string>
+	<integer>0</integer>
+	<string>selectPushPullTool:</string>
+	<string>m</string>
+	<integer>0</integer>
+	<string>selectMoveTool:</string>
+	<string>q</string>
+	<integer>0</integer>
+	<string>selectRotateTool:</string>
+	<string>s</string>
+	<integer>0</integer>
+	<string>selectScaleTool:</string>
+	<string>f</string>
+	<integer>0</integer>
+	<string>selectOffsetTool:</string>
+	<string>o</string>
+	<integer>0</integer>
+	<string>selectOrbitTool:</string>
+	<string>h</string>
+	<integer>0</integer>
+	<string>selectDollyTool:</string>
+	<string>z</string>
+	<integer>0</integer>
+	<string>selectZoomTool:</string>
+	<string>Z</string>
+	<integer>131072</integer>
+	<string>viewZoomExtents:</string>
+	<string>e</string>
+	<integer>0</integer>
+	<string>selectEraseTool:</string>
+	<string>k</string>
+	<integer>0</integer>
+	<string>toggleDisplayBackEdges:</string>
+</array>
+</plist>

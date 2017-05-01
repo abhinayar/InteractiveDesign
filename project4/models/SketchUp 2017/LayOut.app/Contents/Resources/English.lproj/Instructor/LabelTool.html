@@ -1,0 +1,90 @@
+<html>
+<script type="text/javascript" src="openURL.js"></script>
+<head>
+<title>Label Tool</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="HelpContent.css" rel="stylesheet" type="text/css">
+</head>
+<body class="body"> 
+<p>
+	<span class="blackheader"><img alt="Label" src="images/LabelTool.gif" width="230" height="180" border="0"></span>
+</p>
+<p>
+	<span class="blackheader">Label Tool</span><br>
+	Create label text with a leader line.
+</p>
+
+<p>
+	<span class="blacksubheader">Tool Operation</span>
+</p>
+<p>
+	Create a one-segment label:
+</p>
+<ol>
+	<li>Click to set start point of leader.
+	</li>
+	<li>Move mouse to define leader length.
+	</li>
+	<li>Double-click to create text box.
+	</li>
+	<li>Type text.
+	</li>
+	<li>Click outside text box to finish label.
+	</li>
+</ol>
+<p>
+	Create a two-segment label:
+</p>
+<ol>
+	<li>Click to set start point of leader.
+	</li>
+	<li>Move mouse to define first segment length.
+	</li>
+	<li>Click to create label elbow.
+	</li>
+	<li>Move mouse to define second segment length.
+	</li>
+	<li>Click to create text box.
+	</li>
+	<li>Type text.
+	</li>
+	<li>Click outside text box to finish label.
+	</li>
+</ol>
+<p>
+	Create curved leader:
+</p>
+<ol>
+	<li>Click and hold to establish start point.
+	</li>
+	<li>Move cursor away from start point.
+	</li>
+	<li>Release mouse button.
+	</li>
+	<li>Move cursor to end point.
+	</li>
+	<li>Click and hold to set end point.
+	</li>
+	<li>Move cursor away from end point.
+	</li>
+	<li>Move cursor clockwise/counter-clockwise to set bulge.
+	</li>
+	<li>Release mouse button to finish curved line.
+	</li>
+</ol>
+
+<p><span class="blacksubheader">Modifier Keys</span></p>
+<p>
+	<ul id="elementToModify">
+		<li>Esc = Cancel operation</li>
+		<li>Ctrl = Toggle label direction</li>
+		<li>Alt = Create second segment without horizontal constraint</li>
+		<script>replaceText("elementToModify", "Mac", 1, "Command = Toggle label direction");</script>
+		<script>replaceText("elementToModify", "Mac", 2, "Option = Create second segment without horizontal constraint");</script>
+	</ul>
+</p>
+
+<p><a href="index.html" id="Label"><span class="blacksubheader">Click to learn about more advanced operations...</span></a><script>modifyAnchor("Label","3000221")</script></p>
+	
+</body>
+</html>

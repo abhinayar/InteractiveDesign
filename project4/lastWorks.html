@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <title>Lumiere Brothers | Works 3/3</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        outline: 0;
+      }
+
+      body {
+        background-color: #000;
+      }
+
+      #tubular-container {
+        filter: blur(50px) brightness(.5);
+        -webkit-filter: blur(50px) brightness(.5);
+        z-index: 0;
+      }
+
+      .video {
+        width: 560px;
+        height: 315px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 100;
+      }
+      
+      .bottom-nav {
+        height: 120px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        display: inline-block;
+        color: #aaa;
+        background: #000;
+        font-size: 21px;
+        font-family: 'Playfair Display';
+        z-index: 9999;
+      } .bottom-nav ul {
+        display: inline-block;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        list-style: none;
+        position: absolute;
+        bottom: 36px;
+      } .bottom-nav li {
+        display: inline-block;
+        padding: 0 45px;
+      }.bottom-nav a {
+        color: inherit;
+        text-decoration: none;
+        text-transform: uppercase;
+      } .bottom-nav li.active {
+        color: #fff;
+        text-align: center;
+      } .bottom-nav li:before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background: none;
+        border: 1px solid #aaa;
+        border-radius: 50%;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        opacity: 0;
+      } .bottom-nav li.active:before {
+        border-color: #fff;
+        background: #fff;
+        opacity: 1;
+      } .bottom-nav li:hover {
+        color: #ddd;
+        transition: all 100ms ease;
+      } .bottom-nav li:hover:before {
+        opacity: 1;
+        transition: all 100ms ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='video'></div>
+    <div class="bottom-nav">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li class="active"><a href="works.html">Works</a></li>
+        <li style="display: none;"><a href="thebrothers.html">The Brothers</a></li>
+        <li class=""><a href="cinematographe.html">Cinematographe</a></li>
+      </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://www.seanmccambridge.com/tubular/js/jquery.tubular.1.0.js"></script>
+    <script>
+      (function() {
+          var ambilight;
+
+          $(document).ready(function() {
+            return ambilight.on("wovhikemM98", ".video");
+          });
+
+          ambilight = {
+            on: function(yt_id, container) {
+              $(container).append("<iframe width='560' height='315' src='//www.youtube.com/embed/" + yt_id + "?rel=0&controls=0&showinfo=0&autoplay=1' frameborder='0' allowfullscreen></iframe>");
+              return $("body").tubular({
+                videoId: yt_id
+              });
+            }
+          };
+
+        }).call(this);
+    </script>
+  </body>
+</html>

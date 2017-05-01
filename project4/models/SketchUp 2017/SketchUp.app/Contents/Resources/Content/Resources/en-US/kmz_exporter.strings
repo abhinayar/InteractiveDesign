@@ -1,0 +1,10 @@
+"%s uses characters which might lead to problems in certain applications.\nIt will be replaced by %s, which already exists.\nWould you like to continue and overwrite it?"="%s uses characters which might lead to problems in certain applications.\nIt will be replaced by %s, which already exists.\nWould you like to continue and overwrite it?";
+"%s uses characters which might lead to problems in certain applications.\nIt will be replaced by %s.\nWould you like to continue?"="%s uses characters which might lead to problems in certain applications.\nIt will be replaced by %s.\nWould you like to continue?";
+"Copyright 2000-2012, Trimble Navigation Limited"="Copyright 2000-2012, Trimble Navigation Limited";
+"Google Earth File (*.kmz)"="Google Earth File (*.kmz)";
+"It uses characters which might lead to problems in certain applications. It will be replaced by %s which already exists. Would you like to continue and overwrite it?"="It uses characters which might lead to problems in certain applications. It will be replaced by %s which already exists. Would you like to continue and overwrite it?";
+"It uses characters which might lead to problems in certain applications. It will be replaced by %s. Would you like to continue?"="It uses characters which might lead to problems in certain applications. It will be replaced by %s. Would you like to continue?";
+"Kmz Export"="Kmz Export";
+"Kmz Exporter\nKmz Exporter\nCopyright 2000-2012, Trimble Navigation Limited\nVersion 8.0\n"="Kmz Exporter\nKmz Exporter\nCopyright 2000-2012, Trimble Navigation Limited\nVersion 8.0\n";
+"The file %s contains unusual characters."="The file %s contains unusual characters.";
+"Writing Entities"="Writing Entities";

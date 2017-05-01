@@ -1,0 +1,5 @@
+"Google Earth Files (*.kmz)"="Google Earth Files (*.kmz)";
+"Missing Textures-"="Missing Textures-";
+"Parsing file..."="Parsing file...";
+"The .kmz file you are attempting to import cannot be validated. Your file may import just fine, but there is a possibility SketchUp could import it incorrectly or could even crash.\n\nIf you have not recently saved your file we recommend that you first save your work before continuing. Do you want to continue?"="The .kmz file you are attempting to import cannot be validated. Your file may import just fine, but there is a possibility SketchUp could import it incorrectly or could even crash.\n\nIf you have not recently saved your file we recommend that you first save your work before continuing. Do you want to continue?";
+"Unknown Texture"="Unknown Texture";

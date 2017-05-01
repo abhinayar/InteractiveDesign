@@ -1,0 +1,13 @@
+// FF|renderer|version
+// FF- YES|NO
+// renderer- partial string matching
+// version- partial string matching
+// Tiger introduced a FF problem for NVidia machines.
+// Mac OSX 10.4.3 introduced a FF problem for ATI machines.
+// Tested/problem drivers were 1.4.0 (10.4), 1.4.6 (10.4.2), 1.4.16 (10.4.3)
+// See TT 2807 for driver issues.  
+// Using 1.4. will catch the Tiger drivers.
+NO|NVIDIA|1.4.0
+NO|NVIDIA|1.4.6
+NO|NVIDIA|1.4.16
+NO|ATI|1.4.16

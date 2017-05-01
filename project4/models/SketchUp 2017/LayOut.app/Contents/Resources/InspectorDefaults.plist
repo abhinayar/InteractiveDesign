@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>OpenInspectors</key>
+	<array>
+		<string>PUShapeInspector</string>
+		<string>PUPatternInspector</string>
+		<string>PUSkpModelInspector</string>
+		<string>LODimensionInspector</string>
+		<string>PUPageInspector</string>
+		<string>PULayerInspector</string>
+		<string>PUShapePalette</string>
+		<string>PUInstructor</string>
+	</array>
+	<key>ShapeInspector_state</key>
+	<integer>2</integer>
+	<key>ShapeInspector_viewsize</key>
+	<string>275, 186</string>
+	<key>ShapeInspector_frame</key>
+	<string></string>
+	<key>SkpModelInspector_state</key>
+	<integer>1</integer>
+	<key>SkpModelInspector_frame</key>
+	<string></string>
+	<key>SkpModelInspector_viewsize</key>
+	<string>275, 237</string>
+	<key>DimensionInspector_state</key>
+	<integer>1</integer>
+	<key>DimensionInspector_frame</key>
+	<string></string>
+	<key>DimensionInspector_viewsize</key>
+	<string>275, 175</string>
+	<key>PageInspector_state</key>
+	<integer>2</integer>
+	<key>PageInspector_frame</key>
+	<string></string>
+	<key>PageInspector_viewsize</key>
+	<string>275, 150</string>
+	<key>PatternInspector_state</key>
+	<string>1</string>
+	<key>PatternInspector_frame</key>
+	<string></string>
+	<key>PatternInspector_viewsize</key>
+	<string>275, 165</string>
+	<key>LayerInspector_state</key>
+	<integer>2</integer>
+	<key>LayerInspector_frame</key>
+	<string></string>
+	<key>LayerInspector_viewsize</key>
+	<string>275, 150</string>
+	<key>ShapePalette_state</key>
+	<integer>1</integer>
+	<key>ShapePalette_frame</key>
+	<string></string>
+	<key>ShapePalette_viewsize</key>
+	<string>275, 275</string>
+	<key>Instructor_state</key>
+	<integer>2</integer>
+	<key>Instructor_frame</key>
+	<string></string>
+	<key>Instructor_viewsize</key>
+	<string>275, 400</string>
+</dict>
+</plist>

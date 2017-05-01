@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CopyrightAboutString</key>
+	<string>Copyright</string>
+
+	<key>ExportAboutString</key>
+	<string>Export</string>
+
+	<key>ExportOK</key>
+	<string>AutoCAD export audit : OK</string>
+
+ 	<key>IncompatibleTransform</key>
+	<string>This model contains one or more Groups or Component Instances that contain non-orthogonal transformations. Such transformations cannot be precisely mapped into AutoCAD and have been approximated.</string>
+
+ 	<key>UnknownError</key>
+	<string>Unknown error</string>
+</dict>
+</plist>

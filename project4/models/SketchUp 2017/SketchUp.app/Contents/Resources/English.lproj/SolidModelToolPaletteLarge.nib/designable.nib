@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SolidModelToolPaletteController">
+            <connections>
+                <outlet property="toolButtons" destination="5" id="102"/>
+                <outlet property="window" destination="2" id="101"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="SolidModelToolPalette" animationBehavior="default" id="2" userLabel="ToolPalette" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
+            <rect key="contentRect" x="0.0" y="918" width="67" height="104"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <view key="contentView" id="3">
+                <rect key="frame" x="0.0" y="0.0" width="67" height="104"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="5">
+                        <rect key="frame" x="0.0" y="2" width="67" height="100"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <size key="cellSize" width="34" height="34"/>
+                        <size key="intercellSpacing" width="-1" height="-1"/>
+                        <buttonCell key="prototype" type="square" title="Button" bezelStyle="shadowlessSquare" imagePosition="above" alignment="center" borderStyle="border" tag="-1" inset="2" id="38">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <cells>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_outershell" imagePosition="only" alignment="center" borderStyle="border" toolTip="Outer Shell" tag="24198" imageScaling="proportionallyUpOrDown" inset="2" id="42">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="selectOuterShellTool:" target="-1" id="112"/>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_union" imagePosition="only" alignment="center" borderStyle="border" toolTip="Union" tag="24201" imageScaling="proportionallyUpOrDown" inset="2" id="40">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="selectUnionTool:" target="-1" id="108"/>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_trim" imagePosition="only" alignment="center" borderStyle="border" toolTip="Trim" tag="24203" imageScaling="proportionallyUpOrDown" inset="2" id="94">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="selectDifferenceNDTool:" target="-1" id="110"/>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_intersect" imagePosition="only" alignment="center" borderStyle="border" toolTip="Intersect" tag="24200" imageScaling="proportionallyUpOrDown" inset="2" id="41">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="selectIntersectTool:" target="-1" id="107"/>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_subtract" imagePosition="only" alignment="center" borderStyle="border" toolTip="Subtract" tag="24202" imageScaling="proportionallyUpOrDown" inset="2" id="39">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="selectDifferenceTool:" target="-1" id="109"/>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_split" imagePosition="only" alignment="center" borderStyle="border" toolTip="Split" tag="24204" imageScaling="proportionallyUpOrDown" inset="2" id="95">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="selectBooleanSplitTool:" target="-1" id="111"/>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                        </cells>
+                    </matrix>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="105"/>
+            </connections>
+        </window>
+    </objects>
+    <resources>
+        <image name="tb_intersect" width="24" height="24"/>
+        <image name="tb_outershell" width="24" height="24"/>
+        <image name="tb_split" width="24" height="24"/>
+        <image name="tb_subtract" width="24" height="24"/>
+        <image name="tb_trim" width="24" height="24"/>
+        <image name="tb_union" width="24" height="24"/>
+    </resources>
+</document>

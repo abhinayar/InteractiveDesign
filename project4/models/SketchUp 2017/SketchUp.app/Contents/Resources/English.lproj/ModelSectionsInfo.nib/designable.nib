@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SectionPropertiesController">
+            <connections>
+                <outlet property="activeSectionColor" destination="34" id="49"/>
+                <outlet property="cutLineWidthField" destination="7" id="26"/>
+                <outlet property="cutLineWidthStepper" destination="10" id="27"/>
+                <outlet property="inactiveSectionColor" destination="38" id="50"/>
+                <outlet property="sectionCutColor" destination="36" id="48"/>
+                <outlet property="view" destination="5" id="22"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="5" userLabel="View">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="44">
+                    <rect key="frame" x="0.0" y="222" width="350" height="5"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField verticalHuggingPriority="750" id="42">
+                    <rect key="frame" x="0.0" y="226" width="353" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Colors" id="59">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <colorWell toolTip="Color for back side of faces that don't have an explicit color." id="38">
+                    <rect key="frame" x="88" y="125" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="color" red="0.50406497719999999" green="0.50406497719999999" blue="0.50406497719999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="inactiveSectionColorChanged:" target="-2" id="47"/>
+                    </connections>
+                </colorWell>
+                <textField verticalHuggingPriority="750" id="37">
+                    <rect key="frame" x="118" y="162" width="235" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Active section plane" id="58">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <colorWell toolTip="Set color used for edges when edge color is &quot;All Same&quot;." id="36">
+                    <rect key="frame" x="88" y="191" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="color" red="1" green="0.01176469959" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="sectionCutColorChanged:" target="-2" id="45"/>
+                    </connections>
+                </colorWell>
+                <textField verticalHuggingPriority="750" id="35">
+                    <rect key="frame" x="118" y="129" width="235" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Inactive section plane" id="57">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <colorWell toolTip="Color for front side of faces that do not have an explicit color." id="34">
+                    <rect key="frame" x="88" y="158" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="color" red="0.35199999809999999" green="0.35199999809999999" blue="0.35199999809999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="activeSectionColorChanged:" target="-2" id="46"/>
+                    </connections>
+                </colorWell>
+                <textField verticalHuggingPriority="750" id="33">
+                    <rect key="frame" x="118" y="195" width="235" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Section cut line" id="56">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="18">
+                    <rect key="frame" x="147" y="254" width="206" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Cut line width" id="55">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="15">
+                    <rect key="frame" x="0.0" y="283" width="353" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Lines" id="54">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="14">
+                    <rect key="frame" x="0.0" y="279" width="350" height="5"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="10">
+                    <rect key="frame" x="126" y="248" width="19" height="27"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="10" doubleValue="4" id="53"/>
+                    <connections>
+                        <action selector="onCutWidthChanged:" target="-2" id="32"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" id="7">
+                    <rect key="frame" x="88" y="251" width="39" height="22"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="52">
+                        <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0" negativeFormat="-0" localizesFormat="NO" hasThousandSeparators="NO" thousandSeparator="," id="8">
+                            <attributedString key="attributedStringForZero">
+                                <fragment content="0"/>
+                            </attributedString>
+                            <decimal key="minimum" value="1"/>
+                            <decimal key="maximum" value="10"/>
+                        </numberFormatter>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="onCutWidthChanged:" target="-2" id="31"/>
+                    </connections>
+                </textField>
+            </subviews>
+        </customView>
+    </objects>
+</document>

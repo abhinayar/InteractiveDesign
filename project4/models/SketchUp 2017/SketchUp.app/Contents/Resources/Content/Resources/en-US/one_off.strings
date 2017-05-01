@@ -1,0 +1,22 @@
+# This file contains "One-off" strings for file types that we do not currently have extractors/injectors for.  The returned translations will be added by hand editing.
+
+ "Copyright © Trimble Navigation Limited. All Rights Reserved."="Copyright © Trimble Navigation Limited. All Rights Reserved.";
+
+ "SketchUp is an application that anyone can use to draw 3D models. Such models can be used for design, visualization, validation, and communication in projects from architecture to woodworking. Model buildings, furniture, construction details, vehicles and anything else you can imagine. SketchUp is designed to be fast and intuitive. You can get up and running in just a couple of hours."="SketchUp is an application that anyone can use to draw 3D models. Such models can be used for design, visualization, validation, and communication in projects from architecture to woodworking. Model buildings, furniture, construction details, vehicles and anything else you can imagine. SketchUp is designed to be fast and intuitive. You can get up and running in just a couple of hours.";
+
+ "LayOut is an application for creating 2D drawings based on 3D models made with SketchUp Pro. LayOut is the fastest and easiest way to turn your SketchUp models into detailed documents and presentations. Combine SketchUp model views, dimensions, notes, photographs, graphics, title blocks and other elements into multi-page documents which you can print, export to PDF or present full-screen."="LayOut is an application for creating 2D drawings based on 3D models made with SketchUp Pro. LayOut is the fastest and easiest way to turn your SketchUp models into detailed documents and presentations. Combine SketchUp model views, dimensions, notes, photographs, graphics, title blocks and other elements into multi-page documents which you can print, export to PDF or present full-screen.";
+
+ "Style Builder is an application for authoring custom visual styles that can be applied to models in SketchUp Pro. Turn scanned, hand-drawn strokes into convincing sketchy-edged styles which you can save or distribute to whomever you like. Create styles based on pen, pencil, marker, brush, crayon, charcoal or any other physical drawing medium."="Style Builder is an application for authoring custom visual styles that can be applied to models in SketchUp Pro. Turn scanned, hand-drawn strokes into convincing sketchy-edged styles which you can save or distribute to whomever you like. Create styles based on pen, pencil, marker, brush, crayon, charcoal or any other physical drawing medium.";
+
+ "[SketchUpPro] must be installed prior to installation of this product."="[SketchUpPro] must be installed prior to installation of this product.";
+
+ "You will need to uninstall the [OTHERARCH] version of SketchUp before proceeding with this installation."="You will need to uninstall the [OTHERARCH] version of SketchUp before proceeding with this installation.";
+
+ "You will need to uninstall the [OTHERARCH] version of SketchUp Viewer before proceeding with this installation."="You will need to uninstall the [OTHERARCH] version of SketchUp Viewer before proceeding with this installation.";
+
+ "You're trying to install the 64-bit version of SketchUp on a version of Windows that only supports 32-bit applications. Please download and install the 32-bit version of SketchUp instead."="You're trying to install the 64-bit version of SketchUp on a version of Windows that only supports 32-bit applications. Please download and install the 32-bit version of SketchUp instead.";
+
+ "Internet Request Failed:"="Internet Request Failed";
+
+ "The path is invalid. Please select a valid path."="The path is invalid. Please select a valid path.";
+ 

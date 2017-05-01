@@ -1,0 +1,34 @@
+<html>
+<script type="text/javascript" src="../../js/openURL.js"></script>
+<head>
+<title>Arc Tool</title>
+<link href="../../HelpContent.css" rel="stylesheet" type="text/css">
+</head>
+<body class="body"> 
+<p><a href="index.html" id="DrawTool-Arc"><span class="blackheader"><img src="images/Animation-arc.gif" border="0"></span></a><script>modifyAnchor("DrawTool-Arc","3000087")</script></p>
+<p><a href="index.html" id="DrawTool-Arc_"><span class="blackheader">Arc Tool</span></a><script>modifyAnchor("DrawTool-Arc_","3000087")</script></p>
+<ul> 
+  <li>Draw Arc entities.</li> 
+</ul> 
+<p><span class="blacksubheader">Tool Operation</span></p> 
+<ol> 
+    <li>Click to define arc's center. Optionally, click and drag first point to set drawing plane.</li> 
+    <li>Move cursor to define first arc point or enter radius.</li> 
+    <li>Click to set first arc point.</li> 
+    <li>Move cursor around the protractor guide or enter angle.</li> 
+    <li>Click to set second arc point.</li> 
+    <li>Esc = Cancel operation.</li>
+	<br>
+	<li style="list-style: none;">Tip: Click <strong>Window</strong> > <strong>Model Info</strong> > <strong>Units</strong> > <strong>Angle Units</strong> to change snapping angle.</li>
+</ol> 
+<p><span class="blacksubheader">Modifier Keys</span></p> 
+<ul id="elementToModify"> 
+  <li>Ctrl '+' or Ctrl '-' = Change the number of segments</li>
+  <li>Hold Shift = Lock inferences</li>
+  <li>Arrow keys (before 1st click) = Lock Protractor Rotation Axis direction (Up=Blue, Left=Green, Right=Red, Down=Parallel)</li>
+  <li>Arrow keys (after 1st click) = Lock drawing direction to specific inference direction (Up=Blue, Left=Green, Right=Red, Down=Parallel/Perpendicular)</li>
+  <script>replaceText("elementToModify", "Mac", 0, "Option '+' or Option '-' = Change the number of segments ");</script>
+</ul> 
+<p><a href="index.html" id="DrawTool-Arc__"><span class="blacksubheader">Click to learn about more advanced operations...</span></a><script>modifyAnchor("DrawTool-Arc__","3000087")</script></p>
+</body>
+</html>

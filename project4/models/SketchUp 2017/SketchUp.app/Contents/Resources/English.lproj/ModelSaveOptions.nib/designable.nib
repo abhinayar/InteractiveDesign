@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SketchUpDocument">
+            <connections>
+                <outlet property="saveAsTypeCombo" destination="17" id="20"/>
+                <outlet property="savePanelAccessoryView" destination="5" id="7"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="5" userLabel="savePanelAccessoryView">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="25"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+            <subviews>
+                <popUpButton verticalHuggingPriority="750" id="17">
+                    <rect key="frame" x="143" y="0.0" width="218" height="26"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <popUpButtonCell key="cell" type="push" title="SketchUp Version 2015 (*.skp)" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="e8i-or-s8f" id="37">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" id="16">
+                            <items>
+                                <menuItem title="SketchUp Models (*.skp)" id="15"/>
+                                <menuItem title="SketchUp Version 2016 (*.skp)" id="ZyF-1V-EQ7">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="SketchUp Version 2015 (*.skp)" state="on" id="e8i-or-s8f">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="SketchUp Version 2014 (*.skp)" id="40"/>
+                                <menuItem title="SketchUp Version 2013 (*.skp)" id="39"/>
+                                <menuItem title="SketchUp Version 8 (*.skp)" id="18"/>
+                                <menuItem title="SketchUp Version 7 (*.skp)" id="38"/>
+                                <menuItem title="SketchUp Version 6 (*.skp)" id="30"/>
+                                <menuItem title="SketchUp Version 5 (*.skp)" id="22"/>
+                                <menuItem title="SketchUp Version 4 (*.skp)" id="21"/>
+                                <menuItem title="SketchUp Version 3 (*.skp)" id="19"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <button verticalHuggingPriority="750" id="14">
+                    <rect key="frame" x="700" y="-649" width="78" height="32"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="36">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <comboBox verticalHuggingPriority="750" id="12">
+                    <rect key="frame" x="572" y="-672" width="203" height="26"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="left" title="SketchUp Models (*.skp)" drawsBackground="YES" completes="NO" numberOfVisibleItems="3" id="35">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <objectValues>
+                            <string>SketchUp Models (*.skp)</string>
+                            <string>SketchUp Version 4 (*.skp)</string>
+                            <string>SketchUp Version 3 (*.skp)</string>
+                        </objectValues>
+                    </comboBoxCell>
+                </comboBox>
+                <textField verticalHuggingPriority="750" id="11">
+                    <rect key="frame" x="-3" y="6" width="143" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="right" title="Save As Type:" id="34">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="10">
+                    <rect key="frame" x="433" y="-651" width="129" height="14"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Small System Font Text" id="33">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
+    </objects>
+</document>

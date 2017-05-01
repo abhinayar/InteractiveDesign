@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PreferencesDirectoriesController">
+            <connections>
+                <outlet property="classificationsPath" destination="sjz-Q3-xDf" id="SJt-8e-g2Y"/>
+                <outlet property="componentsPath" destination="Sck-Nf-WCg" id="XE3-Gf-WMn"/>
+                <outlet property="exportModelsPath" destination="Q6e-fE-tIu" id="tDh-6u-Y5t"/>
+                <outlet property="materialsPath" destination="6vk-Km-mvE" id="k1m-4c-wrh"/>
+                <outlet property="modelsPath" destination="emw-CR-6wN" id="St1-WA-u7U"/>
+                <outlet property="stylesPath" destination="5q9-h2-71Y" id="GG5-O7-aCu"/>
+                <outlet property="templatesPath" destination="gMa-AU-gQN" id="L14-i2-Tta"/>
+                <outlet property="texturesPath" destination="DQ5-cH-tu0" id="fdR-og-teI"/>
+                <outlet property="view" destination="c22-O7-iKe" id="1ca-1v-KGR"/>
+                <outlet property="watermarksPath" destination="xGw-IC-Ma5" id="Pg1-y3-bLw"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="317"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Gmj-em-IqW">
+                    <rect key="frame" x="-2" y="300" width="444" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="File Locations" id="pfq-pv-F6Q">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="dBk-2w-18n">
+                    <rect key="frame" x="0.0" y="297" width="480" height="5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <button toolTip="Change File Location preference" verticalHuggingPriority="750" id="qaA-RJ-bKg">
+                    <rect key="frame" x="409" y="262" width="36" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_edit_field" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="0h8-1P-sYn">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onEditPathClicked:" target="-2" id="WFA-9r-KUQ"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="4QJ-7g-x8v">
+                    <rect key="frame" x="6" y="242" width="143" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Components:" id="Ejo-FY-k4X">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="Change File Location preference" verticalHuggingPriority="750" tag="1" id="hFL-fE-RRL">
+                    <rect key="frame" x="409" y="234" width="36" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_edit_field" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="4Kk-Hp-cSg">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onEditPathClicked:" target="-2" id="Bi0-ga-CPV"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="bji-sp-lnu">
+                    <rect key="frame" x="6" y="186" width="143" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Styles:" id="WnF-Lu-ycM">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="Change File Location preference" verticalHuggingPriority="750" tag="3" id="va7-4B-sKp">
+                    <rect key="frame" x="409" y="178" width="36" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_edit_field" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="cAj-dJ-SNI">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onEditPathClicked:" target="-2" id="6AO-QT-gE0"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="MOU-kM-TM8">
+                    <rect key="frame" x="6" y="158" width="143" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Texture images:" id="6hD-sU-Caz">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="Change File Location preference" verticalHuggingPriority="750" tag="4" id="rQT-Au-aYK">
+                    <rect key="frame" x="409" y="150" width="36" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_edit_field" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="qAq-Ta-95x">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onEditPathClicked:" target="-2" id="htE-v7-5Ai"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="WCQ-9P-1xn">
+                    <rect key="frame" x="18" y="130" width="131" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Watermark images:" id="Fez-Pf-NWz">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="Change File Location preference" verticalHuggingPriority="750" tag="5" id="18R-q1-IRq">
+                    <rect key="frame" x="409" y="122" width="36" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_edit_field" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="7WU-9B-c8L">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onEditPathClicked:" target="-2" id="0wK-yi-6C3"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="5C2-Fr-Ta3">
+                    <rect key="frame" x="6" y="102" width="143" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Export:" id="pcT-LL-RjT">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="Change File Location preference" verticalHuggingPriority="750" tag="6" id="eYO-uJ-YO6">
+                    <rect key="frame" x="409" y="94" width="36" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_edit_field" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="Dit-U6-W4J">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onEditPathClicked:" target="-2" id="xf7-Rh-cK1"/>
+                    </connections>
+                </button>
+                <button toolTip="Change File Location preference" verticalHuggingPriority="750" tag="7" id="dua-Ks-7tZ">
+                    <rect key="frame" x="409" y="66" width="36" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_edit_field" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="wpb-0j-Wjl">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onEditPathClicked:" target="-2" id="AoL-Az-FAO"/>
+                    </connections>
+                </button>
+                <button toolTip="Open this folder in Finder" verticalHuggingPriority="750" id="0BV-Du-Qaf">
+                    <rect key="frame" x="444" y="268" width="36" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_folder_open" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="1Wr-fC-GGH">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onViewPathClicked:" target="-2" id="O3K-oJ-6rT"/>
+                    </connections>
+                </button>
+                <button toolTip="Open this folder in Finder" verticalHuggingPriority="750" tag="1" id="hK1-cE-4AB">
+                    <rect key="frame" x="444" y="240" width="36" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_folder_open" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="8bD-GC-5C3">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onViewPathClicked:" target="-2" id="qut-1s-Qa4"/>
+                    </connections>
+                </button>
+                <button toolTip="Open this folder in Finder" verticalHuggingPriority="750" tag="3" id="DI4-Z9-reG">
+                    <rect key="frame" x="444" y="184" width="36" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_folder_open" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="DRO-pV-4VS">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onViewPathClicked:" target="-2" id="875-sh-2hB"/>
+                    </connections>
+                </button>
+                <button toolTip="Open this folder in Finder" verticalHuggingPriority="750" tag="4" id="oF9-PS-cZa">
+                    <rect key="frame" x="444" y="156" width="36" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_folder_open" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="pIQ-u2-IPM">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onViewPathClicked:" target="-2" id="Zcj-JQ-l1t"/>
+                    </connections>
+                </button>
+                <button toolTip="Open this folder in Finder" verticalHuggingPriority="750" tag="5" id="O2s-gT-rd9">
+                    <rect key="frame" x="444" y="128" width="36" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_folder_open" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="bXp-MT-5ch">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onViewPathClicked:" target="-2" id="wON-yk-a4p"/>
+                    </connections>
+                </button>
+                <button toolTip="Open this folder in Finder" verticalHuggingPriority="750" tag="6" id="IiZ-Wz-rwO">
+                    <rect key="frame" x="444" y="100" width="36" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_folder_open" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="Muh-be-puV">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onViewPathClicked:" target="-2" id="eIs-6U-bNe"/>
+                    </connections>
+                </button>
+                <button toolTip="Open this folder in Finder" verticalHuggingPriority="750" tag="7" id="cUu-7a-jia">
+                    <rect key="frame" x="444" y="72" width="36" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_folder_open" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="dsV-J6-A8j">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onViewPathClicked:" target="-2" id="KZe-1x-VrS"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="r63-Te-52Y">
+                    <rect key="frame" x="6" y="270" width="143" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Models:" id="7r7-MT-VGa">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ERa-P9-TBa">
+                    <rect key="frame" x="6" y="74" width="143" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Classifications:" id="2zK-zC-Rw4">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" tag="8" id="kS6-Fh-kHo">
+                    <rect key="frame" x="409" y="38" width="36" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_edit_field" imagePosition="only" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="j4n-iF-UqE">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onEditPathClicked:" target="-2" id="fHw-iA-FE4"/>
+                    </connections>
+                </button>
+                <button toolTip="Open this folder in Finder" verticalHuggingPriority="750" tag="8" id="SfY-By-ILe">
+                    <rect key="frame" x="444" y="44" width="36" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_folder_open" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="vqc-ai-XaY">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onViewPathClicked:" target="-2" id="MRV-v6-b6f"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Mgr-bM-5bp">
+                    <rect key="frame" x="6" y="46" width="143" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Templates:" id="U4s-NR-v9R">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="eeJ-kc-vWp">
+                    <rect key="frame" x="6" y="214" width="143" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Materials:" id="Vfo-CN-1MP">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="Change File Location preference" verticalHuggingPriority="750" tag="2" id="lgV-57-hj8">
+                    <rect key="frame" x="409" y="206" width="36" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_edit_field" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="XYQ-eq-ANz">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onEditPathClicked:" target="-2" id="ngd-tm-UEm"/>
+                    </connections>
+                </button>
+                <button toolTip="Open this folder in Finder" verticalHuggingPriority="750" tag="2" id="swD-2q-dO9">
+                    <rect key="frame" x="444" y="212" width="36" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="dlg_folder_open" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="pyB-Jx-6Bj">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onViewPathClicked:" target="-2" id="dSe-rQ-Nl9"/>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="emw-CR-6wN">
+                    <rect key="frame" x="155" y="267" width="246" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="VM0-wi-4Sm">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="Sck-Nf-WCg">
+                    <rect key="frame" x="155" y="239" width="246" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="XmY-ej-SG0">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="6vk-Km-mvE">
+                    <rect key="frame" x="155" y="211" width="246" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="4L6-Rh-HOl">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="5q9-h2-71Y">
+                    <rect key="frame" x="155" y="183" width="246" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="at8-dF-TLV">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="DQ5-cH-tu0">
+                    <rect key="frame" x="155" y="155" width="246" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="1h2-xh-kzh">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="xGw-IC-Ma5">
+                    <rect key="frame" x="155" y="127" width="246" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="857-EF-jWN">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="Q6e-fE-tIu">
+                    <rect key="frame" x="155" y="99" width="246" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="VsB-AN-dFg">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="gMa-AU-gQN">
+                    <rect key="frame" x="155" y="43" width="246" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="sN5-Sx-lk4">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="sjz-Q3-xDf">
+                    <rect key="frame" x="155" y="71" width="246" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="agq-YH-im5">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <point key="canvasLocation" x="542" y="335.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="dlg_edit_field" width="24" height="24"/>
+        <image name="dlg_folder_open" width="24" height="24"/>
+    </resources>
+</document>

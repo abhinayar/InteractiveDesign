@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Shortcuts xmlns="http://sketchup.google.com/schemas/layout/1.0/shortcuts">
+
+  <Shortcut action="PickStyle" key="115" modifier="0"/>
+
+  <Shortcut action="selectCircleTool:" key="99" modifier="0"/>
+
+  <Shortcut action="selectEraserTool:" key="101" modifier="0"/>
+
+  <Shortcut action="selectBezierTool:" key="108" modifier="0"/>
+
+  <Shortcut action="selectArcTool:" key="97" modifier="0"/>
+
+  <Shortcut action="selectRectTool:" key="114" modifier="0"/>
+
+  <Shortcut action="selectArrowTool:" key="32" modifier="0"/>
+
+  <Shortcut action="selectOffsetTool:" key="102" modifier="0"/>
+
+  <Shortcut action="selectSelectStyleTool:" key="98" modifier="0"/>
+
+  <Shortcut action="selectTextTool:" key="116" modifier="0"/>
+
+  <Shortcut action="selectScrollTool:" key="104" modifier="0"/>
+
+  <Shortcut action="selectLinearDimensionTool:" key="100" modifier="0"/>"
+
+  <Shortcut action="performZoom:" key="122" modifier="0"/>
+
+  <Shortcut action="zoomToFit:" key="90" modifier="131072"/>
+
+  <Shortcut action="previousPage:" key="63276" modifier="0"/>
+
+  <Shortcut action="nextPage:" key="63277" modifier="0"/>
+
+</Shortcuts>

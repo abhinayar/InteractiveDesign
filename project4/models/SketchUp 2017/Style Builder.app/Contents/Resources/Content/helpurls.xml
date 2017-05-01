@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<!--
+    There are three sections in this xml file.
+    - There's a cross-platform section for URLs that work on both Mac and Windows.
+    - There's a Windows section for URLs that work only on Windows.
+    - And a Mac section for URLs that work only on the Mac.
+
+    Keyword replacement:
+    {GWS_CULTURE} will be replaced by en | es | jp ....
+    {ALL_USERS} will be replaced by
+                C:\Documents and Settings\All Users\Application Data\Google\Google SketchUp 6\LayOut
+                on Windows
+                And
+                /Library/Application Support/SketchUp 2013/LayOut
+                on the Mac
+    {INSTALL_DIR} The directory that LayOut is installed in.
+    {PLATFORM} Either mac|win
+    {VERSION} SU version, i.e. 8
+
+    These links are documented here-
+    http://trix.corp.google.com/ccc?key=puyEI8EGw5Dg9VhvZhK0WPQ
+
+    <t:dicItem key="HELP_CONTENTS">
+        <t:variant type="8">http://www.sketchup.com/gsu6/help/lo{PLATFORM}</t:variant>
+    </t:dicItem>
+-->
+
+<preferences xmlns="http://www.sketchup.com/schemas/1.0/preferences" xmlns:t="http://www.sketchup.com/schemas/1.0/types">
+    <t:dicItem key="HELP_CENTER">
+        <t:variant type="8">http://help.sketchup.com/{GWS_CULTURE}/article/22499</t:variant>
+    </t:dicItem>
+    <t:dicItem key="FEEDBACK">
+        <t:variant type="8">http://help.sketchup.com/{GWS_CULTURE}/contact</t:variant>
+    </t:dicItem>
+    <t:dicItem key="WEB_BUY">
+      <t:variant type="8">http://sketchup.com/{GWS_CULTURE}/store</t:variant>
+    </t:dicItem>
+    <t:dicItem key="WEB_UPGRADE">
+        <t:variant type="8">http://client.sketchup.com/20{VERSION}/{GWS_CULTURE}/updates/sty{PLATFORM}.html</t:variant>
+    </t:dicItem>
+    <t:dicItem key="WEB_UPGRADE_PRO">
+        <t:variant type="8">http://client.sketchup.com/20{VERSION}/{GWS_CULTURE}/updates/styp{PLATFORM}.html</t:variant>
+    </t:dicItem>
+    <t:dicItem key="WEB_DOWNLOAD">
+      <t:variant type="8">http://sketchup.com/{GWS_CULTURE}/download/all</t:variant>
+    </t:dicItem>
+    <t:dicItem key="WEB_INFO">
+      <t:variant type="8">http://sketchup.com/{GWS_CULTURE}/products/stylebuilder</t:variant>
+    </t:dicItem>
+    <t:dicItem key="WEB_SUPPORT">
+      <t:variant type="8">http://help.sketchup.com/{GWS_CULTURE}/article/22499</t:variant>
+    </t:dicItem>
+    <t:dicItem key="WEB_LICENSE">
+      <t:variant type="8">http://sketchup.com/{GWS_CULTURE}/license/d/sketchup</t:variant>
+    </t:dicItem>
+    <t:dicItem key="WAREHOUSE_ACTIVATE">
+      <t:variant type="8">http://dashboard.sketchup.com</t:variant>
+    </t:dicItem>
+</preferences>

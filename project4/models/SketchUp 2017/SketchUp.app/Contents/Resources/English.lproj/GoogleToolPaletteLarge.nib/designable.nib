@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="GoogleToolPaletteController">
+            <connections>
+                <outlet property="toolButtons" destination="392" id="1050"/>
+                <outlet property="window" destination="5" id="40"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="ToolPalette" animationBehavior="default" id="5" userLabel="ToolPalette" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
+            <rect key="contentRect" x="0.0" y="915" width="100" height="34"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <matrix verticalHuggingPriority="750" mode="highlight" selectionByRect="NO" autosizesCells="NO" id="392">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.67307693000000002" alpha="1" colorSpace="calibratedWhite"/>
+                        <size key="cellSize" width="34" height="34"/>
+                        <size key="intercellSpacing" width="-1" height="-1"/>
+                        <buttonCell key="prototype" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" enabled="NO" borderStyle="border" inset="2" id="1049">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <font key="font" metaFont="system" size="10"/>
+                        </buttonCell>
+                        <cells>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_addlocation" imagePosition="only" alignment="center" enabled="NO" borderStyle="border" toolTip="Add Location..." imageScaling="proportionallyUpOrDown" inset="2" id="955">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="importFromGoogleEarth:" target="-1" id="962"/>
+                                        <binding destination="972" name="enabled" keyPath="selection.photoMatch" id="976">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_terraintoggle" imagePosition="only" alignment="center" enabled="NO" borderStyle="border" toolTip="Toggle Terrain" imageScaling="proportionallyUpOrDown" inset="2" id="957">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="toggleTerrain:" target="-1" id="Jmk-Me-QIV"/>
+                                        <binding destination="972" name="enabled" keyPath="selection.photoMatch" id="980">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_phototextures" imagePosition="only" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="956">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="showGoogleStreetSketch:" target="-1" id="B3f-je-OKe"/>
+                                        <binding destination="972" name="enabled" keyPath="selection.photoMatch" id="1001">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                        </cells>
+                    </matrix>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="168"/>
+            </connections>
+        </window>
+        <objectController id="972" userLabel="Object Controller">
+            <declaredKeys>
+                <string>photo</string>
+                <string>photoMatch</string>
+                <string>enableUploadComponent_</string>
+            </declaredKeys>
+            <connections>
+                <outlet property="content" destination="-2" id="973"/>
+            </connections>
+        </objectController>
+    </objects>
+    <resources>
+        <image name="tb_addlocation" width="24" height="24"/>
+        <image name="tb_phototextures" width="24" height="24"/>
+        <image name="tb_terraintoggle" width="25" height="24"/>
+    </resources>
+</document>

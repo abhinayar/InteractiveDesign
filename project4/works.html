@@ -1,0 +1,164 @@
+<html>
+  <head>
+    <title>Lumiere Brothers | Works 1/3</title>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <style>
+      body {
+        height: 32000px;
+        position: relative;
+        background-color: #eee;
+        font-family: 'Playfair Display'
+      }
+      .video-section{
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .bg-video {
+        display: none;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top: 0;
+        left: 0;
+      }
+      h1 {
+        text-align: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 2;
+      }
+      .ending {
+        position: absolute;
+        bottom: 0;
+      }
+
+      .tooltip {
+        width: 100%;
+        height: 100%;
+        padding:50px;
+        text-align: left;
+        color:white;  
+      }
+
+
+      /* Scrolling anchors */
+      .anchor-destination-wrap{
+        height:100%;
+        position: relative;
+      }
+      /* Skrollr styles */
+
+      .skrollable {
+        /*
+           * First-level skrollables are positioned relative to window
+           */
+        position: fixed;
+        /*
+           * Skrollables by default have a z-index of 100 in order to make it easy to position elements in front/back without changing each skrollable
+           */
+        z-index: 100;
+      }
+      .skrollr-mobile .skrollable {
+        /*
+              May cause issues on Android default browser (see #331 on GitHub).
+          */
+        position: absolute;
+      }
+      .skrollable .skrollable {
+        /*
+           * Second-level skrollables are positioned relative their parent skrollable
+           */
+        position: absolute;
+      }
+      .skrollable .skrollable .skrollable {
+        /*
+           * Third-level (and below) skrollables are positioned static
+           */
+        position: static;
+      }
+      
+      .bottom-nav {
+        height: 120px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        display: inline-block;
+        color: #aaa;
+        background: #000;
+        font-size: 21px;
+        font-family: 'Playfair Display';
+        z-index: 9999;
+      } .bottom-nav ul {
+        display: inline-block;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        list-style: none;
+        position: absolute;
+        bottom: 36px;
+      } .bottom-nav li {
+        display: inline-block;
+        padding: 0 45px;
+      }.bottom-nav a {
+        color: inherit;
+        text-decoration: none;
+        text-transform: uppercase;
+      } .bottom-nav li.active {
+        color: #fff;
+        text-align: center;
+      } .bottom-nav li:before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background: none;
+        border: 1px solid #aaa;
+        border-radius: 50%;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        opacity: 0;
+      } .bottom-nav li.active:before {
+        border-color: #fff;
+        background: #fff;
+        opacity: 1;
+      } .bottom-nav li:hover {
+        color: #ddd;
+        transition: all 100ms ease;
+      } .bottom-nav li:hover:before {
+        opacity: 1;
+        transition: all 100ms ease;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="begin"><a href="#scroll1">Play</a></h1>
+
+    <section class="video-section">
+      <video class="bg-video" preload data-start="@data-time: 0" data-end="@data-time: 1">
+        <source src="./video/01.mp4" type="video/mp4">
+      </video>
+    </section>
+    <div class="anchor-destination-wrap">
+      <span id="scroll1" style="position:absolute;top:16000px;"></span>
+    </div>
+    <div class="next-video" style="color: #fff; position: fixed; bottom: 160px; font-size: 42px; z-index: 9999; right: 100px;">
+      <a href="video02.html">Next ></a>
+    </div>
+    <div class="bottom-nav">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li class="active"><a href="works.html">Works</a></li>
+        <li style="display: none;"><a href="thebrothers.html">The Brothers</a></li>
+        <li class=""><a href="cinematographe.html">Cinematographe</a></li>
+      </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dl.dropboxusercontent.com/u/2964526/mogul/Gemco/skrollr.min.js"></script>
+    <script src="js/works.js"></script>
+  </body>
+</html>

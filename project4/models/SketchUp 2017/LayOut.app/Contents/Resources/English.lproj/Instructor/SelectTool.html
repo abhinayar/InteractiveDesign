@@ -1,0 +1,123 @@
+<html>
+<script type="text/javascript" src="openURL.js"></script>
+<head>
+<title>Select Tool</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="HelpContent.css" rel="stylesheet" type="text/css">
+</head>
+<body class="body"> 
+<p>
+	<span class="blackheader"><img alt="Select Tool" src="images/SelectTool.gif" width="230" height="180" border="0"></span>
+</p>
+<p>
+	<span class="blackheader">Select Tool</span><br>
+	Select entities to modify when using other tools or commands.
+</p>
+<p>
+	<span class="blacksubheader">Tool Operation</span>
+<p>
+	Select Entity:
+</p>
+	<ol>
+		<li>Click on entity.
+		</li>
+	</ol>
+</p>
+<p>
+	Move entity:
+</p>
+<ol>
+	<li>Click on entity.
+	</li>
+	<li>Move cursor over entity.
+	</li>
+	<li>Click and hold mouse button.
+	</li>
+	<li>Move cursor.
+	</li>
+	<li>Release mouse button to finish move.
+	</li>
+</ol>
+<p>
+	Rotate entity:
+</p>
+<ol>
+	<li>Click on entity.
+	</li>
+	<li>Move cursor over blue rotation grip.
+	</li>
+	<li>Click and hold mouse button.
+	</li>
+	<li>Move cursor around the blue center grip.
+	</li>
+	<li>Release mouse button to finish rotate.
+	</li>
+</ol>
+<p>
+	Scale entity:
+</p>
+<ol>
+	<li>Click on entity.
+	</li>
+	<li>Move cursor over edge or corner.
+	</li>
+	<li>Click and hold mouse button.
+	</li>
+	<li>Move cursor to scale.
+	</li>
+	<li>Release mouse button to finish scale.
+	</li>
+</ol>
+<p>
+	Copy entity:
+</p>
+<ol>
+	<li>Click on entity.
+	</li>
+	<li>Press and hold the Alt key.
+	</li>
+	<li>Click and hold mouse button.
+	</li>
+	<li>Move cursor to copy.
+	</li>
+	<li>Release mouse button to finish copy.
+	</li>
+</ol>
+<p>
+	Array entity:
+</p>
+<ol>
+	<li>Copy entity (see above).
+	</li>
+	<li>Type a multiplier value (eg. typing 2x will create two total copies).
+	</li>
+	<li>Or, type a divisor value. (eg. typing in 2/ will create two total copies that are equidistant apart).
+	</li>
+</ol>
+
+<p><span class="blacksubheader">Modifier Keys</span></p>
+<p>
+	<ul>
+		<li> Select entities:
+			<ul id="elementToModify" style="padding-left:1em">
+				<li>Shift = Add or remove entities from selection</li>
+				<li>Alt + Click-drag = Select without moving</li>
+				<script>replaceText("elementToModify", "Mac", 1, "Command + Click-drag = Select without moving");</script>
+			</ul>
+		</li>
+		<li><br />Scale entities:
+			<ul id="elementToModify2" style="padding-left:1em">
+			<li>Shift = Scale proportionally</li>
+			<li>Control = Scale about center</li>
+			<li>Alt = Copy and array</li>
+			<script>replaceText("elementToModify2", "Mac", 1, "Command = Scale about center");</script>
+			<script>replaceText("elementToModify2", "Mac", 2, "Option = Copy and array");</script>
+			</ul>
+		</li>
+	</ul>
+</p>
+
+<p><a href="index.html" id="Select"><span class="blacksubheader">Click to learn about more advanced operations...</span></a><script>modifyAnchor("Select","3000195")</script></p>
+
+</body>
+</html>

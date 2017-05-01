@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PagePanelController">
+            <connections>
+                <outlet property="collectionView_" destination="1320" id="1322"/>
+                <outlet property="deletePanel" destination="561" id="570"/>
+                <outlet property="deletePanelTextField" destination="563" id="581"/>
+                <outlet property="detailCollectionViewItem_" destination="1273" id="1426"/>
+                <outlet property="detailPrototypeView_" destination="1275" id="1432"/>
+                <outlet property="detailView" destination="412" id="472"/>
+                <outlet property="displayInSlideshow" destination="440" id="475"/>
+                <outlet property="dontGenerateThumbnailsForThisModelSwitch_" destination="1534" id="1537"/>
+                <outlet property="largeImageCollectionViewItem_" destination="1485" id="1496"/>
+                <outlet property="largeImagePrototypeView_" destination="1484" id="1494"/>
+                <outlet property="listCollectionViewItem_" destination="1272" id="1339"/>
+                <outlet property="listPrototypeView_" destination="1269" id="1328"/>
+                <outlet property="pageDescription" destination="445" id="474"/>
+                <outlet property="pageName" destination="436" id="476"/>
+                <outlet property="progressCancelButton_" destination="1503" id="1510"/>
+                <outlet property="progressIndicator_" destination="1502" id="1506"/>
+                <outlet property="progressPanel_" destination="1500" id="1505"/>
+                <outlet property="propertiesToUpdateSheet" destination="517" id="535"/>
+                <outlet property="saveActiveSection" destination="443" id="478"/>
+                <outlet property="saveCameraOrientation" destination="448" id="479"/>
+                <outlet property="saveDisplayOptions" destination="438" id="480"/>
+                <outlet property="saveHidden" destination="444" id="481"/>
+                <outlet property="saveLayers" destination="439" id="482"/>
+                <outlet property="saveShadowInfo" destination="446" id="483"/>
+                <outlet property="saveSketchAxesDisplay" destination="441" id="484"/>
+                <outlet property="sceneViewTypeMenu_" destination="635" id="643"/>
+                <outlet property="sceneWrapperArrayController_" destination="1276" id="1413"/>
+                <outlet property="smallImageCollectionViewItem_" destination="1270" id="1467"/>
+                <outlet property="smallImagePrototypeView_" destination="1474" id="1519"/>
+                <outlet property="switchSceneButton_" destination="626" id="947"/>
+                <outlet property="toggleDetailButton_" destination="579" id="1425"/>
+                <outlet property="updateAxesCheck" destination="523" id="543"/>
+                <outlet property="updateButton" destination="628" id="1029"/>
+                <outlet property="updateCameraCheck" destination="519" id="538"/>
+                <outlet property="updateDisplayCheck" destination="522" id="542"/>
+                <outlet property="updateHiddenCheck" destination="524" id="540"/>
+                <outlet property="updateLayersCheck" destination="520" id="544"/>
+                <outlet property="updateSectionsCheck" destination="525" id="541"/>
+                <outlet property="updateShadowsCheck" destination="521" id="539"/>
+                <outlet property="window" destination="5" id="373"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Scenes" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="Panel" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES" utility="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
+            <rect key="contentRect" x="66" y="199" width="248" height="272"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <value key="minSize" type="size" width="248" height="272"/>
+            <value key="maxSize" type="size" width="250" height="800"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="248" height="272"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button toolTip="Update scene(s)" id="628">
+                        <rect key="frame" x="5" y="245" width="24" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" title="Update" bezelStyle="texturedSquare" image="dlg_update" imagePosition="only" alignment="center" enabled="NO" inset="2" id="1372">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="updatePage:" target="-2" id="1025"/>
+                            <binding destination="1276" name="enabled" keyPath="selectionIndexes.hasIndexes" id="1418"/>
+                        </connections>
+                    </button>
+                    <button toolTip="Add scene" id="467">
+                        <rect key="frame" x="31" y="245" width="24" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="dlg_add" imagePosition="only" alignment="center" inset="2" id="1366">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="addPage:" target="-2" id="488"/>
+                        </connections>
+                    </button>
+                    <button toolTip="Remove scene(s)" id="551">
+                        <rect key="frame" x="54" y="245" width="25" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="dlg_delete" imagePosition="only" alignment="center" enabled="NO" inset="2" id="1367">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="removePage:" target="-2" id="552"/>
+                            <binding destination="1276" name="enabled" keyPath="selectionIndexes.hasIndexes" id="1415"/>
+                        </connections>
+                    </button>
+                    <button toolTip="Move scene down" id="554">
+                        <rect key="frame" x="116" y="245" width="24" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="dlg_move_item_down" imagePosition="only" alignment="center" enabled="NO" inset="2" id="1369">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="miniSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="moveDown:" target="-2" id="556"/>
+                            <binding destination="1271" name="enabled2" keyPath="selection.isLastIndexSelected" previousBinding="1330" id="1338">
+                                <dictionary key="options">
+                                    <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                    <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                    <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                    <integer key="NSNullPlaceholder" value="-1"/>
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="1276" name="enabled" keyPath="selectionIndexes.hasSingleIndex" id="1330"/>
+                        </connections>
+                    </button>
+                    <button toolTip="Move scene up" id="553">
+                        <rect key="frame" x="140" y="245" width="24" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="dlg_move_item_up" imagePosition="only" alignment="center" enabled="NO" inset="2" id="1368">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="miniSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="moveUp:" target="-2" id="555"/>
+                            <binding destination="1271" name="enabled2" keyPath="selection.isFirstIndexSelected" previousBinding="1333" id="1337">
+                                <dictionary key="options">
+                                    <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                    <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                    <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                    <integer key="NSNullPlaceholder" value="-1"/>
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="1276" name="enabled" keyPath="selectionIndexes.hasSingleIndex" id="1333"/>
+                        </connections>
+                    </button>
+                    <button toolTip="View options" id="626">
+                        <rect key="frame" x="172" y="245" width="24" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="dlg_view_style_detail" imagePosition="only" alignment="center" inset="2" id="1371">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="switchSceneViewType:" target="-2" id="642"/>
+                            <binding destination="1271" name="image" keyPath="selection.sceneStyleImage" id="1431"/>
+                        </connections>
+                    </button>
+                    <button toolTip="Scene details" id="579">
+                        <rect key="frame" x="201" y="245" width="24" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="dlg_show_secondary_view" imagePosition="only" alignment="center" alternateImage="dlg_hide_secondary_view" inset="2" id="1370">
+                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="label"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="toggleDetail:" target="-2" id="580"/>
+                            <binding destination="1271" name="toolTip" keyPath="selection.toggleDetailToolTip" id="1529"/>
+                        </connections>
+                    </button>
+                    <button toolTip="Details" id="1103">
+                        <rect key="frame" x="224" y="245" width="24" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="dlg_flyout_menu" imagePosition="only" alignment="center" inset="2" id="1373">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="label"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="popupTheMenu:" target="-2" id="1198"/>
+                        </connections>
+                    </button>
+                    <scrollView wantsLayer="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="1317">
+                        <rect key="frame" x="8" y="6" width="235" height="234"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Zg6-sg-0AX">
+                            <rect key="frame" x="1" y="1" width="218" height="232"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <collectionView autoresizesSubviews="NO" wantsLayer="YES" selectable="YES" allowsMultipleSelection="YES" maxNumberOfColumns="1" id="1320">
+                                    <rect key="frame" x="0.0" y="0.0" width="218" height="232"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="primaryBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="secondaryBackgroundColor" red="0.90196085000000004" green="0.92549026000000001" blue="0.96862751000000002" alpha="1" colorSpace="deviceRGB"/>
+                                    <connections>
+                                        <binding destination="1276" name="content" keyPath="arrangedObjects" id="1325"/>
+                                        <binding destination="1276" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="1325" id="1327"/>
+                                        <outlet property="itemPrototype" destination="1273" id="1433"/>
+                                    </connections>
+                                </collectionView>
+                            </subviews>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.62844029999999995" horizontal="YES" id="1412">
+                            <rect key="frame" x="-100" y="-100" width="218" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="0.51666670000000003" horizontal="NO" id="1411">
+                            <rect key="frame" x="219" y="1" width="15" height="232"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="130"/>
+            </connections>
+        </window>
+        <customView id="412" userLabel="detailView">
+            <rect key="frame" x="0.0" y="0.0" width="242" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+            <subviews>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="499">
+                    <rect key="frame" x="0.0" y="196" width="250" height="5"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <button toolTip="Save the camera orientation with the page" id="448">
+                    <rect key="frame" x="83" y="105" width="168" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="check" title="Camera Location" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1386">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="saveCameraOrientationClicked:" target="-2" id="500"/>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="447">
+                    <rect key="frame" x="0.0" y="128" width="89" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="right" title="Description:" id="1385">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="Save the shadow information with the page" id="446">
+                    <rect key="frame" x="83" y="25" width="168" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="check" title="Shadow Settings" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1384">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="saveShadowInfoClicked:" target="-2" id="501"/>
+                    </connections>
+                </button>
+                <textField toolTip="A description of the page" verticalHuggingPriority="750" id="445">
+                    <rect key="frame" x="89" y="126" width="148" height="19"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="1383">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="pageDescriptionChanged:" target="-2" id="493"/>
+                        <binding destination="1276" name="enabled" keyPath="selectionIndexes" id="1575">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSIndexesHasIndex</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <button toolTip="Save the state of the hidden entities" id="444">
+                    <rect key="frame" x="83" y="89" width="168" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="check" title="Hidden Geometry" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1382">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="saveHiddenClicked:" target="-2" id="502"/>
+                    </connections>
+                </button>
+                <button toolTip="Save which section planes are active." id="443">
+                    <rect key="frame" x="83" y="57" width="168" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="check" title="Active Section Planes" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1381">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="saveActiveSectionClicked:" target="-2" id="503"/>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="442">
+                    <rect key="frame" x="0.0" y="153" width="87" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="right" title="Name:" id="1380">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="Save whether the sketch axes are displayed" id="441">
+                    <rect key="frame" x="83" y="9" width="164" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="check" title="Axes Location" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1379">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="saveSketchAxesDisplayClicked:" target="-2" id="505"/>
+                    </connections>
+                </button>
+                <button toolTip="Include this page in slideshows" id="440">
+                    <rect key="frame" x="76" y="174" width="164" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="check" title="Include in animation" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1378">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="displayInSlideshowClicked:" target="-2" id="491"/>
+                    </connections>
+                </button>
+                <button toolTip="Save which layers are hidden" id="439">
+                    <rect key="frame" x="83" y="73" width="169" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="check" title="Visible Layers" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1377">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="saveLayersClicked:" target="-2" id="506"/>
+                    </connections>
+                </button>
+                <button toolTip="Save the display settings with the page" id="438">
+                    <rect key="frame" x="83" y="41" width="168" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="check" title="Style and Fog" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1376">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="saveDisplayOptionsClicked:" target="-2" id="504"/>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="437">
+                    <rect key="frame" x="0.0" y="77" width="85" height="43"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="right" title="Properties to Save:" id="1375">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField toolTip="The name of the page" verticalHuggingPriority="750" id="436">
+                    <rect key="frame" x="89" y="152" width="149" height="19"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="1374">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="pageNameChanged:" target="-2" id="492"/>
+                        <binding destination="1276" name="enabled" keyPath="selectionIndexes" id="1572">
+                            <dictionary key="options">
+                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                <string key="NSValueTransformerName">NSIndexesHasIndex</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+            </subviews>
+        </customView>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="517" userLabel="propertiesToUpdate">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="39" y="284" width="211" height="206"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <value key="minSize" type="size" width="211" height="107"/>
+            <view key="contentView" id="516">
+                <rect key="frame" x="0.0" y="0.0" width="211" height="206"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" id="518">
+                        <rect key="frame" x="17" y="176" width="188" height="17"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Properties to update" id="1387">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button toolTip="Save the camera orientation with the page" id="519">
+                        <rect key="frame" x="29" y="153" width="175" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="check" title="Camera Location" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1388">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                    </button>
+                    <button toolTip="Save which layers are hidden" id="520">
+                        <rect key="frame" x="29" y="117" width="175" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="check" title="Visible Layers" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1389">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                    </button>
+                    <button toolTip="Save the shadow information with the page" id="521">
+                        <rect key="frame" x="29" y="63" width="175" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="check" title="Shadow Settings" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1390">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                    </button>
+                    <button toolTip="Save the display settings with the page" id="522">
+                        <rect key="frame" x="29" y="81" width="175" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="check" title="Style and Fog" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1391">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                    </button>
+                    <button toolTip="Save whether the sketch axes are displayed" id="523">
+                        <rect key="frame" x="29" y="45" width="175" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="check" title="Axes Location" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1392">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                    </button>
+                    <button toolTip="Save the state of the hidden entities" id="524">
+                        <rect key="frame" x="29" y="135" width="175" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="check" title="Hidden Geometry" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1393">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                    </button>
+                    <button toolTip="Save which section planes are active." id="525">
+                        <rect key="frame" x="29" y="99" width="175" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="check" title="Active Section Planes" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1394">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                    </button>
+                    <button verticalHuggingPriority="750" tag="1" id="533">
+                        <rect key="frame" x="113" y="3" width="83" height="28"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="push" title="Update" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" tag="1" inset="2" id="1395">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="closeSheet:" target="-2" id="536"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="534">
+                        <rect key="frame" x="33" y="3" width="80" height="28"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="1396">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="closeSheet:" target="-2" id="537"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+        </window>
+        <window title="Delete Scene" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="561" userLabel="DeletePanel" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="313" y="514" width="241" height="107"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <value key="minSize" type="size" width="213" height="107"/>
+            <view key="contentView" id="562">
+                <rect key="frame" x="0.0" y="0.0" width="241" height="107"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" id="563">
+                        <rect key="frame" x="22" y="43" width="197" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Do you want to delete the selected Scenes?" id="1397">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" id="564">
+                        <rect key="frame" x="14" y="4" width="106" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="1398">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cancelDelete:" target="-2" id="572"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="565">
+                        <rect key="frame" x="119" y="4" width="106" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="1399">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="continueDelete:" target="-2" id="571"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+        </window>
+        <menu id="635" userLabel="ViewSizePopupMenu">
+            <items>
+                <menuItem title="Small Thumbnails" enabled="NO" id="636">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="switchSceneViewType:" target="-2" id="1465"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Large Thumbnails" tag="1" enabled="NO" id="637">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="switchSceneViewType:" target="-2" id="1466"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Details" tag="2" id="638">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="switchSceneViewType:" target="-2" id="646"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="List" tag="3" id="639">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="switchSceneViewType:" target="-2" id="647"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+        <customView wantsLayer="YES" id="1269" userLabel="ListPrototype" customClass="PrototypeView">
+            <rect key="frame" x="0.0" y="0.0" width="163" height="17"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+            <subviews>
+                <textField wantsLayer="YES" verticalHuggingPriority="750" id="1300" customClass="PPTextField">
+                    <rect key="frame" x="19" y="0.0" width="125" height="17"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="1403">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="1272" name="value" keyPath="representedObject.sceneTitle" id="1311"/>
+                    </connections>
+                </textField>
+                <button wantsLayer="YES" id="1301" customClass="PPButton">
+                    <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="1404">
+                        <behavior key="behavior" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="1272" name="target" keyPath="representedObject" id="1312">
+                            <dictionary key="options">
+                                <string key="NSSelectorName">activateScene:</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="1272" name="toolTip" keyPath="representedObject.activateControlToolTip" previousBinding="1316" id="1521"/>
+                        <binding destination="1272" name="image" keyPath="representedObject.sceneActiveImage" id="1316"/>
+                    </connections>
+                </button>
+            </subviews>
+        </customView>
+        <collectionViewItem id="1272" userLabel="ListCollectionViewItem" customClass="PPCollectionViewItem">
+            <connections>
+                <outlet property="view" destination="1269" id="1314"/>
+            </connections>
+        </collectionViewItem>
+        <customView id="1275" userLabel="DetailPrototype" customClass="PrototypeView">
+            <rect key="frame" x="0.0" y="0.0" width="173" height="74"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView autoresizesSubviews="NO" id="1279" customClass="PPImageView">
+                    <rect key="frame" x="5" y="5" width="64" height="64"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" enabled="NO" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="1407"/>
+                    <connections>
+                        <binding destination="1273" name="value" keyPath="representedObject.sceneThumbnail" id="1438"/>
+                    </connections>
+                </imageView>
+                <button id="1280" customClass="PPButton">
+                    <rect key="frame" x="52" y="5" width="17" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="1408">
+                        <behavior key="behavior" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="1273" name="target" keyPath="representedObject" id="1435">
+                            <dictionary key="options">
+                                <string key="NSSelectorName">activateScene:</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="1273" name="toolTip" keyPath="representedObject.activateControlToolTip" previousBinding="1429" id="1523"/>
+                        <binding destination="1273" name="image" keyPath="representedObject.sceneActiveImage" id="1429"/>
+                    </connections>
+                </button>
+                <customView id="1533" customClass="WhiteBackgroundView">
+                    <rect key="frame" x="69" y="5" width="99" height="64"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <textField verticalHuggingPriority="750" id="1442" customClass="PPTextField">
+                            <rect key="frame" x="1" y="11" width="96" height="17"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" truncatesLastVisibleLine="YES" enabled="NO" sendsActionOnEndEditing="YES" title="No Description" id="1443">
+                                <font key="font" metaFont="system" size="10"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <binding destination="1273" name="hidden" keyPath="representedObject.hasSceneDesciption" id="1452"/>
+                            </connections>
+                        </textField>
+                        <textField verticalHuggingPriority="750" id="1277" customClass="PPTextField">
+                            <rect key="frame" x="1" y="-3" width="96" height="31"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" title="Description" id="1405">
+                                <font key="font" metaFont="system" size="10"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <binding destination="1273" name="hidden" keyPath="representedObject.hasSceneDesciption" id="1451">
+                                    <dictionary key="options">
+                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                    </dictionary>
+                                </binding>
+                                <binding destination="1273" name="value" keyPath="representedObject.sceneDescription" id="1441"/>
+                            </connections>
+                        </textField>
+                        <textField verticalHuggingPriority="750" id="1278" customClass="PPTextField">
+                            <rect key="frame" x="1" y="29" width="96" height="17"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Photo:" id="1406">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <binding destination="1273" name="value" keyPath="representedObject.scenePhotoName" id="1456"/>
+                            </connections>
+                        </textField>
+                        <textField verticalHuggingPriority="750" id="1281" customClass="PPTextField">
+                            <rect key="frame" x="1" y="44" width="96" height="17"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Title" id="1409">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <binding destination="1273" name="value" keyPath="representedObject.sceneTitle" id="1430"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                </customView>
+            </subviews>
+            <connections>
+                <binding destination="1273" name="toolTip" keyPath="representedObject.sceneTitle" id="1497"/>
+            </connections>
+        </customView>
+        <collectionViewItem id="1273" userLabel="DetailCollectionViewItem" customClass="PPCollectionViewItem">
+            <connections>
+                <outlet property="view" destination="1275" id="1310"/>
+            </connections>
+        </collectionViewItem>
+        <customView autoresizesSubviews="NO" id="1474" userLabel="SmallIconPrototype" customClass="PrototypeView">
+            <rect key="frame" x="0.0" y="0.0" width="58" height="58"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView autoresizesSubviews="NO" id="1477" customClass="PPImageView">
+                    <rect key="frame" x="5" y="5" width="48" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" enabled="NO" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="1478"/>
+                    <connections>
+                        <binding destination="1270" name="value" keyPath="representedObject.sceneThumbnail" id="1516"/>
+                    </connections>
+                </imageView>
+                <button id="1476">
+                    <rect key="frame" x="36" y="5" width="17" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="1479">
+                        <behavior key="behavior" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="1270" name="target" keyPath="representedObject" id="1514">
+                            <dictionary key="options">
+                                <string key="NSSelectorName">activateScene:</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="1270" name="toolTip" keyPath="representedObject.activateControlToolTip" previousBinding="1515" id="1525"/>
+                        <binding destination="1270" name="image" keyPath="representedObject.sceneActiveImage" id="1515"/>
+                    </connections>
+                </button>
+            </subviews>
+            <connections>
+                <binding destination="1270" name="toolTip" keyPath="representedObject.sceneTitle" id="1517"/>
+            </connections>
+        </customView>
+        <collectionViewItem id="1270" userLabel="SmallIconCollectionViewItem" customClass="PPCollectionViewItem">
+            <connections>
+                <outlet property="view" destination="1474" id="1518"/>
+            </connections>
+        </collectionViewItem>
+        <customView autoresizesSubviews="NO" id="1484" userLabel="LargeIconPrototype" customClass="PrototypeView">
+            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView autoresizesSubviews="NO" id="1487" customClass="PPImageView">
+                    <rect key="frame" x="5" y="5" width="100" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" enabled="NO" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="1488"/>
+                    <connections>
+                        <binding destination="1485" name="value" keyPath="representedObject.sceneThumbnail" id="1492"/>
+                    </connections>
+                </imageView>
+                <button id="1486" customClass="PPButton">
+                    <rect key="frame" x="88" y="5" width="17" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="1489">
+                        <behavior key="behavior" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="1485" name="target" keyPath="representedObject" id="1491">
+                            <dictionary key="options">
+                                <string key="NSSelectorName">activateScene:</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="1485" name="toolTip" keyPath="representedObject.activateControlToolTip" previousBinding="1493" id="1527"/>
+                        <binding destination="1485" name="image" keyPath="representedObject.sceneActiveImage" id="1493"/>
+                    </connections>
+                </button>
+            </subviews>
+            <connections>
+                <binding destination="1485" name="toolTip" keyPath="representedObject.sceneTitle" id="1499"/>
+            </connections>
+        </customView>
+        <collectionViewItem id="1485" userLabel="LargeconCollectionViewItem" customClass="PPCollectionViewItem">
+            <connections>
+                <outlet property="view" destination="1484" id="1490"/>
+            </connections>
+        </collectionViewItem>
+        <objectController id="1271" userLabel="PagePanelObjectController">
+            <declaredKeys>
+                <string>isLastIndexSelected</string>
+                <string>isFirstIndexSelected</string>
+                <string>sceneStyleImage</string>
+                <string>tooltip</string>
+                <string>toggleDetailToolTip</string>
+                <string>lastObject</string>
+            </declaredKeys>
+            <connections>
+                <outlet property="content" destination="-2" id="1416"/>
+            </connections>
+        </objectController>
+        <arrayController objectClassName="SceneWrapper" selectsInsertedObjects="NO" avoidsEmptySelection="NO" id="1276" userLabel="SceneWrapperArrayController">
+            <declaredKeys>
+                <string>selectedObjects</string>
+                <string>hasObjects</string>
+                <string>firstIndex</string>
+                <string>count</string>
+                <string>hasIndexes</string>
+                <string>hasSingleIndex</string>
+                <string>isFirstIndexSelected</string>
+                <string>lastObject</string>
+            </declaredKeys>
+        </arrayController>
+        <window title="Generating Scene Thumbnails..." allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" visibleAtLaunch="NO" animationBehavior="default" id="1500">
+            <windowStyleMask key="styleMask" titled="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="399" width="440" height="112"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <view key="contentView" id="1501">
+                <rect key="frame" x="0.0" y="0.0" width="440" height="112"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <progressIndicator verticalHuggingPriority="750" maxValue="100" bezeled="NO" style="bar" id="1502">
+                        <rect key="frame" x="18" y="38" width="404" height="20"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    </progressIndicator>
+                    <button verticalHuggingPriority="750" id="1503">
+                        <rect key="frame" x="330" y="4" width="96" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1504">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cancelThumbnailUpdate:" target="-2" id="1509"/>
+                        </connections>
+                    </button>
+                    <textField verticalHuggingPriority="750" id="1511">
+                        <rect key="frame" x="17" y="60" width="406" height="39"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Thumbnails make it easy to identify Scenes, but they may take a long time to generate for some models." id="1512">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button id="1534">
+                        <rect key="frame" x="18" y="13" width="318" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Don't generate thumbnails for this model." bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1535">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                </subviews>
+            </view>
+        </window>
+        <view id="498">
+            <rect key="frame" x="0.0" y="0.0" width="125" height="1"/>
+            <autoresizingMask key="autoresizingMask"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dlg_add" width="25" height="24"/>
+        <image name="dlg_delete" width="24" height="24"/>
+        <image name="dlg_flyout_menu" width="24" height="24"/>
+        <image name="dlg_hide_secondary_view" width="24" height="24"/>
+        <image name="dlg_move_item_down" width="24" height="24"/>
+        <image name="dlg_move_item_up" width="24" height="24"/>
+        <image name="dlg_show_secondary_view" width="24" height="24"/>
+        <image name="dlg_update" width="24" height="24"/>
+        <image name="dlg_view_style_detail" width="25" height="24"/>
+    </resources>
+</document>

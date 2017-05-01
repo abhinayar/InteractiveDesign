@@ -1,0 +1,5 @@
+CFBundleDisplayName = "Google Chrome";
+CFBundleGetInfoString = "Google Chrome 58.0.3029.81, Hakimiliki 2017 Google Inc. Haki zote zimehifadhiwa.";
+CFBundleName = "Chrome";
+NSContactsUsageDescription = "Maelezo kutoka kwa anwani zako yanaweza kukusaidia kujaza fomu kwa haraka zaidi katika Chrome.";
+NSHumanReadableCopyright = "Hakimiliki 2017 Google Inc. Haki zote zimehifadhiwa.";

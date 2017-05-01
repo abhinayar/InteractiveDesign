@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ModelDisplayController">
+            <connections>
+                <outlet property="edgeDsiplayPopup" destination="118" id="222"/>
+                <outlet property="extanesionValue" destination="136" id="227"/>
+                <outlet property="extensionCheck" destination="146" id="224"/>
+                <outlet property="faceDisplayPopup" destination="206" id="229"/>
+                <outlet property="jitterCheck" destination="145" id="225"/>
+                <outlet property="profileCheck" destination="123" id="223"/>
+                <outlet property="profileValue" destination="107" id="226"/>
+                <outlet property="solarShadingCheck" destination="122" id="217"/>
+                <outlet property="sortQualityPopup" destination="121" id="228"/>
+                <outlet property="transparencyCheck" destination="180" id="220"/>
+                <outlet property="view" destination="5" id="24"/>
+                <outlet property="xrayCheck" destination="179" id="219"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="5" userLabel="View">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" id="216">
+                    <rect key="frame" x="30" y="98" width="135" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Edge color" id="272">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="214">
+                    <rect key="frame" x="0.0" y="213" width="353" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Transparency" id="271">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="212">
+                    <rect key="frame" x="0.0" y="209" width="350" height="5"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField verticalHuggingPriority="750" id="211">
+                    <rect key="frame" x="30" y="237" width="135" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Face Display" id="270">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" id="206">
+                    <rect key="frame" x="168" y="231" width="169" height="26"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <popUpButtonCell key="cell" type="push" title="Textured" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" tag="4" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="210" id="269">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" id="207">
+                            <items>
+                                <menuItem title="Wireframe" id="204">
+                                    <connections>
+                                        <action selector="renderWireframe:" target="-1" id="242"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Hidden Line" tag="1" id="208">
+                                    <connections>
+                                        <action selector="renderHiddenLine:" target="-1" id="243"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Monochrome" tag="2" id="205">
+                                    <connections>
+                                        <action selector="renderMonochrome:" target="-1" id="244"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Shaded" tag="3" id="209">
+                                    <connections>
+                                        <action selector="renderShaded:" target="-1" id="245"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Textured" state="on" tag="4" id="210">
+                                    <connections>
+                                        <action selector="renderTextures:" target="-1" id="247"/>
+                                    </connections>
+                                </menuItem>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <button id="180">
+                    <rect key="frame" x="62" y="168" width="290" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Enable transparency" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="268">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="setMaterialTransparency:" target="-1" id="249"/>
+                    </connections>
+                </button>
+                <button id="179">
+                    <rect key="frame" x="62" y="188" width="290" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="X-ray mode" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="267">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="setGlobalTransparency:" target="-1" id="248"/>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="178">
+                    <rect key="frame" x="30" y="148" width="135" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Quality" id="266">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="175">
+                    <rect key="frame" x="0.0" y="120" width="350" height="5"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField verticalHuggingPriority="750" id="174">
+                    <rect key="frame" x="0.0" y="124" width="353" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Edge Display" id="265">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="Extend edges past their intersections" id="146">
+                    <rect key="frame" x="62" y="22" width="102" height="19"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Extension" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="264">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="setExtensions:" target="-1" id="251"/>
+                    </connections>
+                </button>
+                <button toolTip="&quot;Jitter&quot; edges for a sketchier look." id="145">
+                    <rect key="frame" x="62" y="-1" width="142" height="19"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Jitter" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="263">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="setJitter:" target="-1" id="252"/>
+                    </connections>
+                </button>
+                <textField toolTip="The amount to extend edges" verticalHuggingPriority="750" id="136">
+                    <rect key="frame" x="170" y="20" width="32" height="22"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="99" drawsBackground="YES" id="262">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="extensionValueChanged:" target="-2" id="237"/>
+                    </connections>
+                </textField>
+                <button toolTip="Display profile edges thicker" id="123">
+                    <rect key="frame" x="62" y="45" width="102" height="19"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Profiles" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="261">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="setProfiles:" target="-1" id="250"/>
+                    </connections>
+                </button>
+                <button id="122">
+                    <rect key="frame" x="62" y="257" width="290" height="20"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Use sun for shading" bezelStyle="regularSquare" imagePosition="left" alignment="left" id="260">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="setUseSolarOrientation:" target="-1" id="253"/>
+                    </connections>
+                </button>
+                <popUpButton verticalHuggingPriority="750" id="121">
+                    <rect key="frame" x="168" y="142" width="169" height="26"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <popUpButtonCell key="cell" type="push" title="Faster" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="108" id="259">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" id="117">
+                            <items>
+                                <menuItem title="Nicer" tag="2" id="115"/>
+                                <menuItem title="Medium" tag="1" id="140"/>
+                                <menuItem title="Faster" state="on" id="108"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="sortQualityChanged:" target="-2" id="240"/>
+                    </connections>
+                </popUpButton>
+                <popUpButton verticalHuggingPriority="750" id="118">
+                    <rect key="frame" x="168" y="93" width="169" height="26"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <popUpButtonCell key="cell" type="push" title="All Same" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="134" id="258">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" id="132">
+                            <items>
+                                <menuItem title="All Same" state="on" id="134"/>
+                                <menuItem title="By Material" tag="1" id="126"/>
+                                <menuItem title="By Axis" tag="2" id="149"/>
+                                <menuItem title="None" tag="-1" id="215"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="edgeDisplayChanged:" target="-2" id="241"/>
+                    </connections>
+                </popUpButton>
+                <textField toolTip="The width of profile edges" verticalHuggingPriority="750" id="107">
+                    <rect key="frame" x="170" y="43" width="32" height="22"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="99" drawsBackground="YES" id="257">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="profileValueChanged:" target="-2" id="238"/>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" id="100">
+                    <rect key="frame" x="0.0" y="74" width="353" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Edge Style" id="256">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="98">
+                    <rect key="frame" x="0.0" y="70" width="350" height="5"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="76">
+                    <rect key="frame" x="0.0" y="279" width="350" height="5"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField verticalHuggingPriority="750" id="75">
+                    <rect key="frame" x="0.0" y="283" width="353" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Face Display" id="255">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
+    </objects>
+</document>

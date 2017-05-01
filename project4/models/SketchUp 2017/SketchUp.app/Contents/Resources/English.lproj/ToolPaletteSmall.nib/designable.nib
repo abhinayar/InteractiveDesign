@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ToolPaletteController">
+            <connections>
+                <outlet property="toolButtons" destination="447" id="512"/>
+                <outlet property="window" destination="5" id="44"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="SmallToolPalette" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
+            <rect key="contentRect" x="0.0" y="632" width="47" height="418"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <value key="minSize" type="size" width="47" height="418"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="47" height="418"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="8">
+                        <rect key="frame" x="0.0" y="213" width="47" height="70"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <size key="cellSize" width="24" height="24"/>
+                        <size key="intercellSpacing" width="-1" height="-1"/>
+                        <buttonCell key="prototype" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" tag="-1" inset="2" id="636">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system" size="10"/>
+                        </buttonCell>
+                        <cells>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_move" imagePosition="overlaps" alignment="center" borderStyle="border" toolTip="Move/Copy" tag="21048" inset="2" id="318">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectMoveTool:" target="-1" id="333"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="559">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_rotate" imagePosition="overlaps" alignment="center" borderStyle="border" toolTip="Rotate" tag="21129" inset="2" id="320">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectRotateTool:" target="-1" id="464"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="563">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_scale" imagePosition="overlaps" alignment="center" borderStyle="border" toolTip="Scale" tag="21236" inset="2" id="322">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectScaleTool:" target="-1" id="466"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="567">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_pushpull" imagePosition="only" alignment="center" borderStyle="border" toolTip="Push/Pull" tag="21041" inset="2" id="319">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectPushPullTool:" target="-1" id="465"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="561">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_followme" imagePosition="only" alignment="center" borderStyle="border" toolTip="Follow Me" tag="21429" inset="2" id="321">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectExtrudeTool:" target="-1" id="513"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="565">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_offset" imagePosition="only" alignment="center" borderStyle="border" toolTip="Offset" tag="21100" inset="2" id="323">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectOffsetTool:" target="-1" id="463"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="569">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                        </cells>
+                    </matrix>
+                    <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="220">
+                        <rect key="frame" x="0.0" y="135" width="47" height="70"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <size key="cellSize" width="24" height="24"/>
+                        <size key="intercellSpacing" width="-1" height="-1"/>
+                        <buttonCell key="prototype" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" tag="-1" inset="2" id="637">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system" size="10"/>
+                        </buttonCell>
+                        <cells>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_measure" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" toolTip="Tape Measure" tag="21024" inset="2" id="472">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectMeasureTool:" target="-1" id="479"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="572">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_protractor" imagePosition="overlaps" alignment="center" borderStyle="border" toolTip="Protractor" tag="21057" inset="2" id="474">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectProtractorTool:" target="-1" id="483"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="576">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_axes" imagePosition="overlaps" alignment="center" borderStyle="border" toolTip="Axes" tag="21126" inset="2" id="476">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectAxisTool:" target="-1" id="487"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="580">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_dimension" imagePosition="only" alignment="center" borderStyle="border" toolTip="Dimension" tag="21410" inset="2" id="473">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectDimensionTool:" target="-1" id="481"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="574">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_label" imagePosition="only" alignment="center" borderStyle="border" toolTip="Text" tag="21405" inset="2" id="475">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectTextTool:" target="-1" id="511"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="578">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_3dtext" imagePosition="only" alignment="center" borderStyle="border" toolTip="3d Text" inset="2" id="477">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="select3dTextTool:" target="-1" id="634"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="582">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                        </cells>
+                    </matrix>
+                    <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="246">
+                        <rect key="frame" x="0.0" y="57" width="47" height="70"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <size key="cellSize" width="24" height="24"/>
+                        <size key="intercellSpacing" width="-1" height="-1"/>
+                        <buttonCell key="prototype" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" tag="-1" inset="2" id="638">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system" size="10"/>
+                        </buttonCell>
+                        <cells>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_orbit" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" toolTip="Orbit" tag="10508" inset="2" id="492">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectOrbitTool:" target="-1" id="499"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="584">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_zoom" imagePosition="overlaps" alignment="center" borderStyle="border" toolTip="Zoom" tag="10509" inset="2" id="494">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectZoomTool:" target="-1" id="503"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="588">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_zoomextents" imagePosition="overlaps" alignment="center" borderStyle="border" toolTip="Zoom Extents" tag="10527" inset="2" id="496">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="viewZoomExtents:" target="-1" id="510"/>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_pan" imagePosition="only" alignment="center" borderStyle="border" toolTip="Pan" tag="10523" inset="2" id="493">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectDollyTool:" target="-1" id="501"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="586">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_zoomwindow" imagePosition="only" alignment="center" borderStyle="border" toolTip="Zoom Window" tag="10526" inset="2" id="495">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectZoomWindowTool:" target="-1" id="505"/>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_previousview" imagePosition="only" alignment="center" borderStyle="border" toolTip="Previous" tag="10529" inset="2" id="497">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="viewUndo:" target="-1" id="509"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="590">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                        </cells>
+                    </matrix>
+                    <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="277">
+                        <rect key="frame" x="0.0" y="291" width="47" height="70"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <size key="cellSize" width="24" height="24"/>
+                        <size key="intercellSpacing" width="-1" height="-1"/>
+                        <buttonCell key="prototype" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" tag="-1" inset="2" id="639">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system" size="10"/>
+                        </buttonCell>
+                        <cells>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_rectangle" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" toolTip="Rectangle" tag="21094" inset="2" id="428">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectRectangleTool:" target="-1" id="435"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="592">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_circle" imagePosition="overlaps" alignment="center" borderStyle="border" toolTip="Circle" tag="21096" inset="2" id="430">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectCircleTool:" target="-1" id="439"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="596">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_polygon" imagePosition="overlaps" alignment="center" borderStyle="border" toolTip="Polygon" tag="21095" inset="2" id="432">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectPolygonTool:" target="-1" id="443"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="600">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_line" imagePosition="only" alignment="center" borderStyle="border" toolTip="Line" tag="21020" inset="2" id="429">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectLineTool:" target="-1" id="437"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="594">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_arc" imagePosition="only" alignment="center" borderStyle="border" toolTip="Arc" tag="21065" inset="2" id="431">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectArcTool:" target="-1" id="441"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="598">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" bezelStyle="shadowlessSquare" image="tb_freehand" imagePosition="only" alignment="center" borderStyle="border" toolTip="Freehand" tag="21031" inset="2" id="433">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <connections>
+                                        <action selector="selectFreehandTool:" target="-1" id="445"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="602">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                        </cells>
+                    </matrix>
+                    <matrix verticalHuggingPriority="750" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" id="447">
+                        <rect key="frame" x="0.0" y="369" width="47" height="47"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <size key="cellSize" width="24" height="24"/>
+                        <size key="intercellSpacing" width="-1" height="-1"/>
+                        <buttonCell key="prototype" type="square" title="Button" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" tag="-1" inset="2" id="640">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <cells>
+                            <column>
+                                <buttonCell type="square" title="Button" bezelStyle="shadowlessSquare" image="tb_select" imagePosition="only" alignment="center" state="on" borderStyle="border" toolTip="Select" tag="21022" inset="2" id="446">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="selectSelectionTool:" target="-1" id="458"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="604">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" title="Button" bezelStyle="shadowlessSquare" image="tb_paint" imagePosition="only" alignment="center" borderStyle="border" toolTip="Paint Bucket" tag="21074" inset="2" id="449">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="selectPaintTool:" target="-1" id="459"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="606">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" title="Button" bezelStyle="shadowlessSquare" image="tb_createcomponent" imagePosition="only" alignment="center" enabled="NO" borderStyle="border" toolTip="Component Maker" tag="21083" inset="2" id="448">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="selectMakeComponentTool:" target="-1" id="632"/>
+                                        <binding destination="557" name="enabled2" keyPath="selectedObjects" previousBinding="618" id="633">
+                                            <dictionary key="options">
+                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
+                                                <string key="NSValueTransformerName">NSIsNotNil</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="618">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" title="Button" bezelStyle="shadowlessSquare" image="tb_erase" imagePosition="only" alignment="center" borderStyle="border" toolTip="Eraser" tag="21019" inset="2" id="450">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="selectEraseTool:" target="-1" id="457"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="610">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                        </cells>
+                    </matrix>
+                    <matrix verticalHuggingPriority="750" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" id="453">
+                        <rect key="frame" x="0.0" y="2" width="47" height="47"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <size key="cellSize" width="24" height="24"/>
+                        <size key="intercellSpacing" width="-1" height="-1"/>
+                        <buttonCell key="prototype" type="square" title="Button" bezelStyle="shadowlessSquare" image="14337022-8B2F-499A-8F18-CC28AEE26D8E" imagePosition="only" alignment="center" borderStyle="border" tag="-1" inset="2" id="641">
+                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <cells>
+                            <column>
+                                <buttonCell type="square" title="Button" bezelStyle="shadowlessSquare" image="tb_positioncamera" imagePosition="only" alignment="center" state="on" borderStyle="border" toolTip="Position Camera" tag="21169" inset="2" id="452">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="selectPositionCameraTool:" target="-1" id="460"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="612">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" title="Button" bezelStyle="shadowlessSquare" image="tb_lookaround" imagePosition="only" alignment="center" borderStyle="border" toolTip="Look Around" tag="10525" inset="2" id="455">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="selectTurnTool:" target="-1" id="462"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="616">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="square" title="Button" bezelStyle="shadowlessSquare" image="tb_walk" imagePosition="only" alignment="center" borderStyle="border" toolTip="Walk" tag="10520" inset="2" id="454">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="selectWalkTool:" target="-1" id="461"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="614">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                                <buttonCell type="square" title="Button" bezelStyle="shadowlessSquare" image="tb_section" imagePosition="only" alignment="center" borderStyle="border" toolTip="Section Plane" tag="21337" inset="2" id="456">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="selectSectionPlaneTool:" target="-1" id="630"/>
+                                        <binding destination="557" name="enabled" keyPath="selection.photoMatch" id="626">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </buttonCell>
+                            </column>
+                        </cells>
+                    </matrix>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="45"/>
+            </connections>
+        </window>
+        <objectController id="557">
+            <declaredKeys>
+                <string>photoMatch</string>
+                <string>h</string>
+                <string>PH</string>
+            </declaredKeys>
+            <connections>
+                <outlet property="content" destination="-2" id="570"/>
+            </connections>
+        </objectController>
+    </objects>
+    <resources>
+        <image name="14337022-8B2F-499A-8F18-CC28AEE26D8E" width="1" height="1">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
+GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
+c1dOU0NvbG9ygAKADRIgwAAAgAOAC1Z7MSwgMX3SFQoWGFpOUy5vYmplY3RzoReABIAK0hUKGh2iGxyA
+BYAGgAkQANIgCiEiXxAUTlNUSUZGUmVwcmVzZW50YXRpb26AB4AITxENgE1NACoAAAAOgAAgQAgIAA8B
+AAADAAAAAQABAAABAQADAAAAAQABAAABAgADAAAABAAAAMgBAwADAAAAAQAFAAABBgADAAAAAQACAAAB
+EQAEAAAAAQAAAAgBEgADAAAAAQABAAABFQADAAAAAQAEAAABFgADAAAAAQABAAABFwAEAAAAAQAAAAYB
+HAADAAAAAQABAAABPQADAAAAAQACAAABUgADAAAAAQABAAABUwADAAAABAAAANCHcwAHAAAMqAAAANgA
+AAAAAAgACAAIAAgAAQABAAEAAQAADKhhcHBsAhAAAG1udHJSR0IgWFlaIAfcAAoAHwANABQAG2Fjc3BB
+UFBMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD21gABAAAAANMtYXBwbAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEWRlc2MAAAFQAAAAYmRzY20AAAG0AAABjmNwcnQA
+AANEAAAAJHd0cHQAAANoAAAAFHJYWVoAAAN8AAAAFGdYWVoAAAOQAAAAFGJYWVoAAAOkAAAAFHJUUkMA
+AAO4AAAIDGFhcmcAAAvEAAAAIHZjZ3QAAAvkAAAAMG5kaW4AAAwUAAAAPmNoYWQAAAxUAAAALG1tb2QA
+AAyAAAAAKGJUUkMAAAO4AAAIDGdUUkMAAAO4AAAIDGFhYmcAAAvEAAAAIGFhZ2cAAAvEAAAAIGRlc2MA
+AAAAAAAACERpc3BsYXkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABtbHVjAAAAAAAAAB4AAAAMc2tTSwAAABYA
+AAF4Y2FFUwAAABYAAAF4aGVJTAAAABYAAAF4cHRCUgAAABYAAAF4aXRJVAAAABYAAAF4aHVIVQAAABYA
+AAF4dWtVQQAAABYAAAF4a29LUgAAABYAAAF4bmJOTwAAABYAAAF4Y3NDWgAAABYAAAF4emhUVwAAABYA
+AAF4ZGVERQAAABYAAAF4cm9STwAAABYAAAF4c3ZTRQAAABYAAAF4emhDTgAAABYAAAF4amFKUAAAABYA
+AAF4YXIAAAAAABYAAAF4ZWxHUgAAABYAAAF4cHRQVAAAABYAAAF4bmxOTAAAABYAAAF4ZnJGUgAAABYA
+AAF4ZXNFUwAAABYAAAF4dGhUSAAAABYAAAF4dHJUUgAAABYAAAF4ZmlGSQAAABYAAAF4aHJIUgAAABYA
+AAF4cGxQTAAAABYAAAF4cnVSVQAAABYAAAF4ZW5VUwAAABYAAAF4ZGFESwAAABYAAAF4AEQARQBMAEwA
+IABFADIAMwAxADEASAAAdGV4dAAAAABDb3B5cmlnaHQgQXBwbGUsIEluYy4sIDIwMTIAWFlaIAAAAAAA
+APPYAAEAAAABFghYWVogAAAAAAAAX90AADSxAAAC0FhZWiAAAAAAAABunAAAvVUAAAqRWFlaIAAAAAAA
+AChdAAAN+QAAxcxjdXJ2AAAAAAAABAAAAAAFAAoADwAUABkAHgAjACgALQAyADYAOwBAAEUASgBPAFQA
+WQBeAGMAaABtAHIAdwB8AIEAhgCLAJAAlQCaAJ8AowCoAK0AsgC3ALwAwQDGAMsA0ADVANsA4ADlAOsA
+8AD2APsBAQEHAQ0BEwEZAR8BJQErATIBOAE+AUUBTAFSAVkBYAFnAW4BdQF8AYMBiwGSAZoBoQGpAbEB
+uQHBAckB0QHZAeEB6QHyAfoCAwIMAhQCHQImAi8COAJBAksCVAJdAmcCcQJ6AoQCjgKYAqICrAK2AsEC
+ywLVAuAC6wL1AwADCwMWAyEDLQM4A0MDTwNaA2YDcgN+A4oDlgOiA64DugPHA9MD4APsA/kEBgQTBCAE
+LQQ7BEgEVQRjBHEEfgSMBJoEqAS2BMQE0wThBPAE/gUNBRwFKwU6BUkFWAVnBXcFhgWWBaYFtQXFBdUF
+5QX2BgYGFgYnBjcGSAZZBmoGewaMBp0GrwbABtEG4wb1BwcHGQcrBz0HTwdhB3QHhgeZB6wHvwfSB+UH
++AgLCB8IMghGCFoIbgiCCJYIqgi+CNII5wj7CRAJJQk6CU8JZAl5CY8JpAm6Cc8J5Qn7ChEKJwo9ClQK
+agqBCpgKrgrFCtwK8wsLCyILOQtRC2kLgAuYC7ALyAvhC/kMEgwqDEMMXAx1DI4MpwzADNkM8w0NDSYN
+QA1aDXQNjg2pDcMN3g34DhMOLg5JDmQOfw6bDrYO0g7uDwkPJQ9BD14Peg+WD7MPzw/sEAkQJhBDEGEQ
+fhCbELkQ1xD1ERMRMRFPEW0RjBGqEckR6BIHEiYSRRJkEoQSoxLDEuMTAxMjE0MTYxODE6QTxRPlFAYU
+JxRJFGoUixStFM4U8BUSFTQVVhV4FZsVvRXgFgMWJhZJFmwWjxayFtYW+hcdF0EXZReJF64X0hf3GBsY
+QBhlGIoYrxjVGPoZIBlFGWsZkRm3Gd0aBBoqGlEadxqeGsUa7BsUGzsbYxuKG7Ib2hwCHCocUhx7HKMc
+zBz1HR4dRx1wHZkdwx3sHhYeQB5qHpQevh7pHxMfPh9pH5Qfvx/qIBUgQSBsIJggxCDwIRwhSCF1IaEh
+ziH7IiciVSKCIq8i3SMKIzgjZiOUI8Ij8CQfJE0kfCSrJNolCSU4JWgllyXHJfcmJyZXJocmtyboJxgn
+SSd6J6sn3CgNKD8ocSiiKNQpBik4KWspnSnQKgIqNSpoKpsqzysCKzYraSudK9EsBSw5LG4soizXLQwt
+QS12Last4S4WLkwugi63Lu4vJC9aL5Evxy/+MDUwbDCkMNsxEjFKMYIxujHyMioyYzKbMtQzDTNGM38z
+uDPxNCs0ZTSeNNg1EzVNNYc1wjX9Njc2cjauNuk3JDdgN5w31zgUOFA4jDjIOQU5Qjl/Obw5+To2OnQ6
+sjrvOy07azuqO+g8JzxlPKQ84z0iPWE9oT3gPiA+YD6gPuA/IT9hP6I/4kAjQGRApkDnQSlBakGsQe5C
+MEJyQrVC90M6Q31DwEQDREdEikTORRJFVUWaRd5GIkZnRqtG8Ec1R3tHwEgFSEtIkUjXSR1JY0mpSfBK
+N0p9SsRLDEtTS5pL4kwqTHJMuk0CTUpNk03cTiVObk63TwBPSU+TT91QJ1BxULtRBlFQUZtR5lIxUnxS
+x1MTU19TqlP2VEJUj1TbVShVdVXCVg9WXFapVvdXRFeSV+BYL1h9WMtZGllpWbhaB1pWWqZa9VtFW5Vb
+5Vw1XIZc1l0nXXhdyV4aXmxevV8PX2Ffs2AFYFdgqmD8YU9homH1YklinGLwY0Njl2PrZEBklGTpZT1l
+kmXnZj1mkmboZz1nk2fpaD9olmjsaUNpmmnxakhqn2r3a09rp2v/bFdsr20IbWBtuW4SbmtuxG8eb3hv
+0XArcIZw4HE6cZVx8HJLcqZzAXNdc7h0FHRwdMx1KHWFdeF2Pnabdvh3VnezeBF4bnjMeSp5iXnnekZ6
+pXsEe2N7wnwhfIF84X1BfaF+AX5ifsJ/I3+Ef+WAR4CogQqBa4HNgjCCkoL0g1eDuoQdhICE44VHhauG
+DoZyhteHO4efiASIaYjOiTOJmYn+imSKyoswi5aL/IxjjMqNMY2Yjf+OZo7OjzaPnpAGkG6Q1pE/kaiS
+EZJ6kuOTTZO2lCCUipT0lV+VyZY0lp+XCpd1l+CYTJi4mSSZkJn8mmia1ZtCm6+cHJyJnPedZJ3SnkCe
+rp8dn4uf+qBpoNihR6G2oiailqMGo3aj5qRWpMelOKWpphqmi6b9p26n4KhSqMSpN6mpqhyqj6sCq3Wr
+6axcrNCtRK24ri2uoa8Wr4uwALB1sOqxYLHWskuywrM4s660JbSctRO1irYBtnm28Ldot+C4WbjRuUq5
+wro7urW7LrunvCG8m70VvY++Cr6Evv+/er/1wHDA7MFnwePCX8Lbw1jD1MRRxM7FS8XIxkbGw8dBx7/I
+Pci8yTrJuco4yrfLNsu2zDXMtc01zbXONs62zzfPuNA50LrRPNG+0j/SwdNE08bUSdTL1U7V0dZV1tjX
+XNfg2GTY6Nls2fHadtr724DcBdyK3RDdlt4c3qLfKd+v4DbgveFE4cziU+Lb42Pj6+Rz5PzlhOYN5pbn
+H+ep6DLovOlG6dDqW+rl63Dr++yG7RHtnO4o7rTvQO/M8Fjw5fFy8f/yjPMZ86f0NPTC9VD13vZt9vv3
+ivgZ+Kj5OPnH+lf65/t3/Af8mP0p/br+S/7c/23//3BhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AA
+AAoOdmNndAAAAAAAAAABAAEAAAAAAAAAAQAAAAEAAAAAAAAAAQAAAAEAAAAAAAAAAQAAbmRpbgAAAAAA
+AAA2AACgAAAAWUAAAFbAAACfgAAAJ0AAAA1AAABQQAAAVEAAAjMzAAIzMwACMzMAAAAAAAAAAHNmMzIA
+AAAAAAELtwAABZb///NXAAAHKQAA/df///u3///9pgAAA9oAAMD2bW1vZAAAAAAAABCsAADwNTE1R0zL
+r8AAAAAAAAAAAAAAAAAAAAAAANIlJicoWiRjbGFzc25hbWVYJGNsYXNzZXNfEBBOU0JpdG1hcEltYWdl
+UmVwoycpKlpOU0ltYWdlUmVwWE5TT2JqZWN00iUmLC1XTlNBcnJheaIsKtIlJi8wXk5TTXV0YWJsZUFy
+cmF5oy8sKtMyMwo0NTZXTlNXaGl0ZVxOU0NvbG9yU3BhY2VEMCAwABADgAzSJSY4OVdOU0NvbG9yojgq
+0iUmOzxXTlNJbWFnZaI7Kl8QD05TS2V5ZWRBcmNoaXZlctE/QFRyb290gAEACAARABoAIwAtADIANwBG
+AEwAVwBeAGUAcgB5AIEAgwCFAIoAjACOAJUAmgClAKcAqQCrALAAswC1ALcAuQC7AMAA1wDZANsOXw5k
+Dm8OeA6LDo8Omg6jDqgOsA6zDrgOxw7LDtIO2g7nDuwO7g7wDvUO/Q8ADwUPDQ8QDyIPJQ8qAAAAAAAA
+AgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAADyw
+</mutableData>
+        </image>
+        <image name="tb_3dtext" width="24" height="24"/>
+        <image name="tb_arc" width="24" height="24"/>
+        <image name="tb_axes" width="24" height="24"/>
+        <image name="tb_circle" width="24" height="24"/>
+        <image name="tb_createcomponent" width="24" height="24"/>
+        <image name="tb_dimension" width="24" height="24"/>
+        <image name="tb_erase" width="25" height="24"/>
+        <image name="tb_followme" width="24" height="24"/>
+        <image name="tb_freehand" width="24" height="24"/>
+        <image name="tb_label" width="25" height="24"/>
+        <image name="tb_line" width="24" height="24"/>
+        <image name="tb_lookaround" width="24" height="24"/>
+        <image name="tb_measure" width="24" height="24"/>
+        <image name="tb_move" width="24" height="24"/>
+        <image name="tb_offset" width="24" height="24"/>
+        <image name="tb_orbit" width="24" height="24"/>
+        <image name="tb_paint" width="24" height="24"/>
+        <image name="tb_pan" width="25" height="24"/>
+        <image name="tb_polygon" width="24" height="24"/>
+        <image name="tb_positioncamera" width="24" height="24"/>
+        <image name="tb_previousview" width="24" height="24"/>
+        <image name="tb_protractor" width="24" height="24"/>
+        <image name="tb_pushpull" width="24" height="24"/>
+        <image name="tb_rectangle" width="31" height="31"/>
+        <image name="tb_rotate" width="24" height="24"/>
+        <image name="tb_scale" width="25" height="24"/>
+        <image name="tb_section" width="24" height="24"/>
+        <image name="tb_select" width="24" height="24"/>
+        <image name="tb_walk" width="25" height="24"/>
+        <image name="tb_zoom" width="25" height="24"/>
+        <image name="tb_zoomextents" width="24" height="24"/>
+        <image name="tb_zoomwindow" width="24" height="24"/>
+    </resources>
+</document>

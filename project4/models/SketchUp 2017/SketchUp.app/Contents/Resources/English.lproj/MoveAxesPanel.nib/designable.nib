@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MoveAxesController">
+            <connections>
+                <outlet property="moveXField" destination="161" id="230"/>
+                <outlet property="moveYField" destination="184" id="231"/>
+                <outlet property="moveZField" destination="192" id="232"/>
+                <outlet property="rotateXField" destination="233" id="250"/>
+                <outlet property="rotateYField" destination="234" id="251"/>
+                <outlet property="rotateZField" destination="235" id="252"/>
+                <outlet property="window" destination="5" id="24"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Move Axes" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="MoveAxesPanel" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="362" y="291" width="250" height="246"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <value key="minSize" type="size" width="150" height="113"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="250" height="246"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="234" translatesAutoresizingMaskIntoConstraints="NO" id="7">
+                        <rect key="frame" x="6" y="228" width="238" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="234" id="44"/>
+                        </constraints>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Move" id="39">
+                            <font key="font" metaFont="smallSystemBold"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="14">
+                        <rect key="frame" x="8" y="224" width="234" height="5"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="66" userLabel="Static Text - MoveX">
+                        <rect key="frame" x="6" y="203" width="98" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="76"/>
+                            <constraint firstAttribute="width" constant="94" id="277"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="X (red)" id="67">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="161">
+                        <rect key="frame" x="110" y="201" width="96" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="96" id="278"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="MoveXField" drawsBackground="YES" id="162">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="83" userLabel="Static Text - MoveY">
+                        <rect key="frame" x="6" y="176" width="98" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="85"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Y (green)" id="86">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="184">
+                        <rect key="frame" x="110" y="174" width="96" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="310"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="MoveYField" drawsBackground="YES" id="187">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="93" userLabel="Static Text - MoveZ">
+                        <rect key="frame" x="6" y="149" width="98" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="95"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Z (blue)" id="94">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="192">
+                        <rect key="frame" x="110" y="147" width="96" height="20"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="MoveZField" drawsBackground="YES" id="195">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="234" translatesAutoresizingMaskIntoConstraints="NO" id="16">
+                        <rect key="frame" x="6" y="125" width="238" height="14"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Rotate" id="40">
+                            <font key="font" metaFont="smallSystemBold"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="17">
+                        <rect key="frame" x="8" y="121" width="234" height="5"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="110" userLabel="Static Text - RotateX">
+                        <rect key="frame" x="6" y="98" width="98" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="111"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="X (red)" id="112">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="233">
+                        <rect key="frame" x="110" y="96" width="96" height="20"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="RotateXField" drawsBackground="YES" id="239">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="109" userLabel="Static Text - RotateY">
+                        <rect key="frame" x="6" y="71" width="98" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="153"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Y (green)" id="113">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="234">
+                        <rect key="frame" x="110" y="69" width="96" height="20"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="RotateYField" drawsBackground="YES" id="237">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="108" userLabel="Static Text - RotateZ">
+                        <rect key="frame" x="6" y="44" width="98" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="138"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Z (blue)" id="117">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="235">
+                        <rect key="frame" x="110" y="42" width="96" height="20"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="RotateZField" drawsBackground="YES" id="236">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="23">
+                        <rect key="frame" x="151" y="2" width="96" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="86" id="65"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="41">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onMoveAxes:" target="-2" id="26"/>
+                        </connections>
+                    </button>
+                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="37">
+                        <rect key="frame" x="8" y="32" width="234" height="5"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="37" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" id="45"/>
+                    <constraint firstItem="16" firstAttribute="leading" secondItem="17" secondAttribute="leading" id="46"/>
+                    <constraint firstItem="23" firstAttribute="top" secondItem="37" secondAttribute="bottom" constant="8" symbolic="YES" id="51"/>
+                    <constraint firstItem="17" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" id="57"/>
+                    <constraint firstItem="7" firstAttribute="top" secondItem="6" secondAttribute="top" constant="4" id="58"/>
+                    <constraint firstItem="16" firstAttribute="trailing" secondItem="14" secondAttribute="trailing" id="60"/>
+                    <constraint firstItem="37" firstAttribute="trailing" secondItem="23" secondAttribute="trailing" id="61"/>
+                    <constraint firstItem="14" firstAttribute="leading" secondItem="7" secondAttribute="leading" id="62"/>
+                    <constraint firstItem="14" firstAttribute="trailing" secondItem="7" secondAttribute="trailing" id="63"/>
+                    <constraint firstItem="14" firstAttribute="leading" secondItem="66" secondAttribute="leading" id="79"/>
+                    <constraint firstItem="83" firstAttribute="leading" secondItem="66" secondAttribute="leading" id="89"/>
+                    <constraint firstItem="16" firstAttribute="leading" secondItem="93" secondAttribute="leading" id="103"/>
+                    <constraint firstItem="93" firstAttribute="leading" secondItem="83" secondAttribute="leading" id="106"/>
+                    <constraint firstItem="37" firstAttribute="leading" secondItem="108" secondAttribute="leading" id="131"/>
+                    <constraint firstItem="109" firstAttribute="leading" secondItem="108" secondAttribute="leading" id="151"/>
+                    <constraint firstItem="110" firstAttribute="leading" secondItem="109" secondAttribute="leading" id="157"/>
+                    <constraint firstItem="17" firstAttribute="leading" secondItem="110" secondAttribute="leading" id="159"/>
+                    <constraint firstItem="110" firstAttribute="top" secondItem="17" secondAttribute="bottom" constant="8" symbolic="YES" id="160"/>
+                    <constraint firstItem="161" firstAttribute="leading" secondItem="66" secondAttribute="trailing" constant="8" symbolic="YES" id="177"/>
+                    <constraint firstItem="16" firstAttribute="top" secondItem="192" secondAttribute="bottom" constant="8" symbolic="YES" id="202"/>
+                    <constraint firstItem="192" firstAttribute="leading" secondItem="93" secondAttribute="trailing" constant="8" symbolic="YES" id="204"/>
+                    <constraint firstItem="184" firstAttribute="trailing" secondItem="192" secondAttribute="trailing" id="206"/>
+                    <constraint firstItem="184" firstAttribute="leading" secondItem="83" secondAttribute="trailing" constant="8" symbolic="YES" id="207"/>
+                    <constraint firstItem="184" firstAttribute="trailing" secondItem="161" secondAttribute="trailing" id="208"/>
+                    <constraint firstItem="17" firstAttribute="centerY" secondItem="6" secondAttribute="centerY" id="209"/>
+                    <constraint firstItem="184" firstAttribute="leading" secondItem="192" secondAttribute="leading" id="211"/>
+                    <constraint firstItem="184" firstAttribute="leading" secondItem="161" secondAttribute="leading" id="212"/>
+                    <constraint firstItem="184" firstAttribute="centerY" secondItem="83" secondAttribute="centerY" id="228"/>
+                    <constraint firstItem="235" firstAttribute="leading" secondItem="108" secondAttribute="trailing" constant="8" symbolic="YES" id="257"/>
+                    <constraint firstItem="234" firstAttribute="trailing" secondItem="235" secondAttribute="trailing" id="260"/>
+                    <constraint firstItem="234" firstAttribute="leading" secondItem="109" secondAttribute="trailing" constant="8" symbolic="YES" id="261"/>
+                    <constraint firstItem="234" firstAttribute="leading" secondItem="235" secondAttribute="leading" id="266"/>
+                    <constraint firstItem="233" firstAttribute="leading" secondItem="192" secondAttribute="leading" id="268"/>
+                    <constraint firstItem="233" firstAttribute="trailing" secondItem="192" secondAttribute="trailing" id="270"/>
+                    <constraint firstItem="233" firstAttribute="leading" secondItem="110" secondAttribute="trailing" constant="8" symbolic="YES" id="272"/>
+                    <constraint firstItem="233" firstAttribute="leading" secondItem="234" secondAttribute="leading" id="273"/>
+                    <constraint firstItem="233" firstAttribute="trailing" secondItem="234" secondAttribute="trailing" id="274"/>
+                    <constraint firstItem="184" firstAttribute="top" secondItem="6" secondAttribute="top" constant="52" id="309"/>
+                    <constraint firstItem="192" firstAttribute="top" secondItem="6" secondAttribute="top" constant="79" id="314"/>
+                    <constraint firstItem="234" firstAttribute="baseline" secondItem="109" secondAttribute="baseline" id="323"/>
+                    <constraint firstItem="233" firstAttribute="centerY" secondItem="110" secondAttribute="centerY" id="328"/>
+                    <constraint firstItem="233" firstAttribute="baseline" secondItem="110" secondAttribute="baseline" id="329"/>
+                    <constraint firstAttribute="bottom" secondItem="234" secondAttribute="bottom" constant="69" id="331"/>
+                    <constraint firstItem="109" firstAttribute="centerY" secondItem="234" secondAttribute="centerY" id="332"/>
+                    <constraint firstAttribute="bottom" secondItem="23" secondAttribute="bottom" constant="8" id="333"/>
+                    <constraint firstItem="108" firstAttribute="centerY" secondItem="235" secondAttribute="centerY" id="334"/>
+                    <constraint firstAttribute="bottom" secondItem="108" secondAttribute="bottom" constant="44" id="335"/>
+                    <constraint firstItem="108" firstAttribute="baseline" secondItem="235" secondAttribute="baseline" id="336"/>
+                    <constraint firstItem="66" firstAttribute="baseline" secondItem="161" secondAttribute="baseline" id="337"/>
+                    <constraint firstItem="14" firstAttribute="top" secondItem="6" secondAttribute="top" constant="19" id="338"/>
+                    <constraint firstItem="66" firstAttribute="centerY" secondItem="161" secondAttribute="centerY" id="339"/>
+                    <constraint firstItem="66" firstAttribute="top" secondItem="7" secondAttribute="bottom" constant="8" symbolic="YES" id="340"/>
+                    <constraint firstItem="14" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="341"/>
+                    <constraint firstItem="93" firstAttribute="centerY" secondItem="192" secondAttribute="centerY" id="342"/>
+                    <constraint firstItem="93" firstAttribute="baseline" secondItem="192" secondAttribute="baseline" id="343"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="25"/>
+            </connections>
+        </window>
+    </objects>
+</document>

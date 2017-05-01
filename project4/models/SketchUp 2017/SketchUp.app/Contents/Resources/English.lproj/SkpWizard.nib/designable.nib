@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SkpWizard">
+            <connections>
+                <outlet property="backingView" destination="18" id="19"/>
+                <outlet property="wizardWindow" destination="5" id="20"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="WizardWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="675" y="109" width="330" height="160"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <value key="minSize" type="size" width="330" height="160"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="330" height="160"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" id="7">
+                        <rect key="frame" x="10" y="8" width="91" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" controlSize="small" enabled="NO" borderStyle="border" inset="2" id="31">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cancel:" target="-2" id="10"/>
+                            <binding destination="13" name="enabled" keyPath="selection.allowCancel" id="15"/>
+                            <binding destination="13" name="title" keyPath="selection.cancelTitle" id="24">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">Cancel</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="8">
+                        <rect key="frame" x="136" y="8" width="91" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Previous" bezelStyle="rounded" alignment="center" controlSize="small" enabled="NO" borderStyle="border" inset="2" id="32">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="previous:" target="-2" id="12"/>
+                            <binding destination="13" name="enabled" keyPath="selection.allowPrevious" id="16"/>
+                            <binding destination="13" name="title" keyPath="selection.previousTitle" id="25">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">&lt;&lt; Previous</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="9">
+                        <rect key="frame" x="229" y="8" width="91" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Next" bezelStyle="rounded" alignment="center" controlSize="small" enabled="NO" borderStyle="border" inset="2" id="33">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="next:" target="-2" id="11"/>
+                            <binding destination="13" name="enabled" keyPath="selection.allowNext" id="17"/>
+                            <binding destination="13" name="title" keyPath="selection.nextTitle" id="26">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">Next &gt;&gt;</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <customView id="18">
+                        <rect key="frame" x="0.0" y="50" width="330" height="110"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </customView>
+                </subviews>
+            </view>
+            <connections>
+                <binding destination="13" name="title" keyPath="selection.skpWizardTitle" id="28">
+                    <dictionary key="options">
+                        <string key="NSNullPlaceholder">SketchUp Wizard</string>
+                    </dictionary>
+                </binding>
+                <outlet property="delegate" destination="-2" id="29"/>
+            </connections>
+        </window>
+        <objectController id="13" userLabel="SkpWizardController">
+            <declaredKeys>
+                <string>allowCancel</string>
+                <string>allowPrevious</string>
+                <string>allowNext</string>
+                <string>nextTitle</string>
+                <string>previousTitle</string>
+                <string>cancelTitle</string>
+                <string>skpWizardTitle</string>
+            </declaredKeys>
+            <connections>
+                <outlet property="content" destination="-2" id="14"/>
+            </connections>
+        </objectController>
+    </objects>
+</document>

@@ -1,0 +1,280 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <title>Lumiere Brothers | Home</title>
+    <style>
+      * {
+        text-rendering: optimizeLegibility;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-family: 'Playfair Display';
+      }
+      .app {
+        width: 100%;
+        height: 100%;
+      }
+      .bottom-nav {
+        height: 120px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        display: inline-block;
+        color: #aaa;
+        background: #000;
+        font-size: 21px;
+        font-family: 'Playfair Display';
+        z-index: 9999;
+      } .bottom-nav ul {
+        display: inline-block;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        list-style: none;
+        position: absolute;
+        bottom: 36px;
+      } .bottom-nav li {
+        display: inline-block;
+        padding: 0 45px;
+      }.bottom-nav a {
+        color: inherit;
+        text-decoration: none;
+        text-transform: uppercase;
+      } .bottom-nav li.active {
+        color: #fff;
+        text-align: center;
+      } .bottom-nav li:before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background: none;
+        border: 1px solid #aaa;
+        border-radius: 50%;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        opacity: 0;
+      } .bottom-nav li.active:before {
+        border-color: #fff;
+        background: #fff;
+        opacity: 1;
+      } .bottom-nav li:hover {
+        color: #ddd;
+        transition: all 100ms ease;
+      } .bottom-nav li:hover:before {
+        opacity: 1;
+        transition: all 100ms ease;
+      }
+      
+      .pe-thumbs{
+          width: 116%;
+          height: 100%;
+          margin: 20px auto;
+          position: relative;
+          background: transparent url(img/homeBG.jpg) -100px center;
+          background-repeat: no-repeat;
+        background-size: cover;
+          border: 5px solid #fff;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+          list-style: none;
+          margin-top: -20px;
+          margin-left: -3%;
+          max-height: 100%;
+          overflow: hidden;
+    
+      }
+      .pe-thumbs:before {
+          content: "";
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 100%;
+          //background: rgba(53,125,176, 0.2);
+      }
+      .pe-thumbs li{
+          float:left;
+          position: relative;
+      }
+      .pe-thumbs li a,
+      .pe-thumbs li a img{
+          display: block;
+          position: relative;
+      }
+      .pe-thumbs li a img{
+          height: 200px;
+          width: auto;
+          opacity: 0.3;
+          cursor: default;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/proximity.js"></script>
+  </head>
+  <body>
+    <section class="pe-container">
+        <ul id="pe-thumbs" class="pe-thumbs">
+            <li><a href="#"><img src="http://cdn.history.com/sites/2/2015/04/hith-lumiere-brotehrs-E.jpeg" /></a></li>
+            <li><a href="#"><img src="http://setinparis.com/wp-content/uploads/2015/06/Screen-Shot-2015-06-08-at-12.13.111.png" /></a></li>
+            <li><a href="#"><img src="https://ichef.bbci.co.uk/images/ic/640x360/p02zmt7r.jpg" /></a></li>
+            <li><a href="#"><img src="http://home.bt.com/images/lumieres-136395144083602601" /></a></li>
+            <li><a href="#"><img src="https://ydrmzluvfilms.files.wordpress.com/2015/03/the-lumiere-cinematographe-invented-everett.jpg" /></a></li>
+            <li><a href="#"><img src="http://www.marvellous-provence.com/images/stories/culture/cinema/train%20la%20ciotat.jpg" /></a></li>
+            <li><a href="#"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTpUrcYkRB_rdxPHUOKrkUc_GSnguvHHxxOsS5lrMLpftq24LhcMw" /></a></li>
+            <li><a href="#"><img src="https://media1.britannica.com/eb-media/66/133166-004-60B978C8.jpg" /></a></li>
+            <li><a href="#"><img src="https://i.ytimg.com/vi/7LA6P_ge4Hk/hqdefault.jpg" /></a></li>
+            <li><a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Cinematograph_Lumiere_advertisement_1895.jpg" /></a></li>
+            <li><a href="#"><img src="https://centuryfilmproject.files.wordpress.com/2016/01/playing-cards.jpg" /></a></li>
+            <li><a href="#"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQbZJ7Lnsk9T6UrjFjMbHWolh45VznfRweGzmXgUKFTZdQIUlx1" /></a></li>
+            <li><a href="#"><img src="http://i1.trekearth.com/photos/61023/frere_lumiere.jpg" /></a></li>
+            <li><a href="#"><img src="http://blogs.mcgill.ca/gradlife/files/2012/07/lumiereposter.jpg" /></a></li>
+            <li><a href="#"><img src="http://vignette2.wikia.nocookie.net/disney/images/5/58/Lumiere_Brothers_Phineas_and_Ferb.jpg/revision/latest?cb=20141126021758" /></a></li>
+            <li><a href="#"><img src="https://moma.org/wp/inside_out/wp-content/uploads/2009/09/CRI_113131.jpg" /></a></li>
+            <li><a href="#"><img src="https://famousfrenchfilms.files.wordpress.com/2010/01/lumiere1.jpg" /></a></li>
+            <li><a href="#"><img src="https://emilyvallen.files.wordpress.com/2016/09/lumiere.jpg?w=820" /></a></li>
+            <li><a href="#"><img src="http://4.bp.blogspot.com/_hb6jWA1D5A4/S99w7KVy23I/AAAAAAAAABU/WGSbk5G5zWo/s1600/Lumiere+Brothers+-+Ozu-esque+shot.jpg" /></a></li>
+            <li><a href="#"><img src="https://media1.giphy.com/media/ToMjGpJTOkk9xpZcVxe/200_s.gif" /></a></li>
+            <li><a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq7yc0jr3-OEIIQ3IQDAlKKf4fMvQ-OU9_YeJQ9ZjsjwYMGJHS2w" /></a></li>
+            <li><a href="#"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR-ekF2BoaotsJTBCnTho5BMyUYKW5ZqLGMaNllOyOJJ-hiA7hg_g" /></a></li>
+            <li><a href="#"><img src="https://s-media-cache-ak0.pinimg.com/236x/26/75/65/2675654a4ef3010df3949822cd1da2b2.jpg" /></a></li>
+            <li><a href="#"><img src="http://1.bp.blogspot.com/_hb6jWA1D5A4/S99wShYtu9I/AAAAAAAAAA8/SJ4xxdF8JXU/s1600/Lumiere+Brothers+-+Still+of+1st+ever+film+-+shot+on+the+19th+March+1895.png" /></a></li>
+            <li><a href="#"><img src="https://i.ytimg.com/vi/wovhikemM98/0.jpg" /></a></li>
+            <li><a href="#"><img src="https://lumieredance.files.wordpress.com/2012/09/lumiere25-august1935.jpeg?w=217&h=300" /></a></li>
+            <li><a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/51ZGJKEWYYL._AC_UL320_SR224,320_.jpg" /></a></li>
+            <li><a href="#"><img src="https://i.ytimg.com/vi/WH5NZo8Mm0M/hqdefault.jpg" /></a></li>
+            <li><a href="#"><img src="http://cdn.history.com/sites/2/2015/04/hith-lumiere-brotehrs-E.jpeg" /></a></li>
+            <li><a href="#"><img src="http://setinparis.com/wp-content/uploads/2015/06/Screen-Shot-2015-06-08-at-12.13.111.png" /></a></li>
+            <li><a href="#"><img src="https://ichef.bbci.co.uk/images/ic/640x360/p02zmt7r.jpg" /></a></li>
+            <li><a href="#"><img src="http://home.bt.com/images/lumieres-136395144083602601" /></a></li>
+            <li><a href="#"><img src="https://ydrmzluvfilms.files.wordpress.com/2015/03/the-lumiere-cinematographe-invented-everett.jpg" /></a></li>
+            <li><a href="#"><img src="http://www.marvellous-provence.com/images/stories/culture/cinema/train%20la%20ciotat.jpg" /></a></li>
+            <li><a href="#"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTpUrcYkRB_rdxPHUOKrkUc_GSnguvHHxxOsS5lrMLpftq24LhcMw" /></a></li>
+            <li><a href="#"><img src="https://media1.britannica.com/eb-media/66/133166-004-60B978C8.jpg" /></a></li>
+            <li><a href="#"><img src="https://i.ytimg.com/vi/7LA6P_ge4Hk/hqdefault.jpg" /></a></li>
+            <li><a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Cinematograph_Lumiere_advertisement_1895.jpg" /></a></li>
+            <li><a href="#"><img src="https://centuryfilmproject.files.wordpress.com/2016/01/playing-cards.jpg" /></a></li>
+            <li><a href="#"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQbZJ7Lnsk9T6UrjFjMbHWolh45VznfRweGzmXgUKFTZdQIUlx1" /></a></li>
+            <li><a href="#"><img src="http://i1.trekearth.com/photos/61023/frere_lumiere.jpg" /></a></li>
+            <li><a href="#"><img src="http://blogs.mcgill.ca/gradlife/files/2012/07/lumiereposter.jpg" /></a></li>
+            <li><a href="#"><img src="http://vignette2.wikia.nocookie.net/disney/images/5/58/Lumiere_Brothers_Phineas_and_Ferb.jpg/revision/latest?cb=20141126021758" /></a></li>
+            <li><a href="#"><img src="https://moma.org/wp/inside_out/wp-content/uploads/2009/09/CRI_113131.jpg" /></a></li>
+            <li><a href="#"><img src="https://famousfrenchfilms.files.wordpress.com/2010/01/lumiere1.jpg" /></a></li>
+            <li><a href="#"><img src="https://emilyvallen.files.wordpress.com/2016/09/lumiere.jpg?w=820" /></a></li>
+            <li><a href="#"><img src="http://4.bp.blogspot.com/_hb6jWA1D5A4/S99w7KVy23I/AAAAAAAAABU/WGSbk5G5zWo/s1600/Lumiere+Brothers+-+Ozu-esque+shot.jpg" /></a></li>
+            <li><a href="#"><img src="https://media1.giphy.com/media/ToMjGpJTOkk9xpZcVxe/200_s.gif" /></a></li>
+            <li><a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq7yc0jr3-OEIIQ3IQDAlKKf4fMvQ-OU9_YeJQ9ZjsjwYMGJHS2w" /></a></li>
+            <li><a href="#"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR-ekF2BoaotsJTBCnTho5BMyUYKW5ZqLGMaNllOyOJJ-hiA7hg_g" /></a></li>
+            <li><a href="#"><img src="https://s-media-cache-ak0.pinimg.com/236x/26/75/65/2675654a4ef3010df3949822cd1da2b2.jpg" /></a></li>
+            <li><a href="#"><img src="http://1.bp.blogspot.com/_hb6jWA1D5A4/S99wShYtu9I/AAAAAAAAAA8/SJ4xxdF8JXU/s1600/Lumiere+Brothers+-+Still+of+1st+ever+film+-+shot+on+the+19th+March+1895.png" /></a></li>
+            <li><a href="#"><img src="https://i.ytimg.com/vi/wovhikemM98/0.jpg" /></a></li>
+            <li><a href="#"><img src="https://lumieredance.files.wordpress.com/2012/09/lumiere25-august1935.jpeg?w=217&h=300" /></a></li>
+            <li><a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/51ZGJKEWYYL._AC_UL320_SR224,320_.jpg" /></a></li>
+            <li><a href="#"><img src="https://i.ytimg.com/vi/WH5NZo8Mm0M/hqdefault.jpg" /></a></li>
+        </ul>
+    </section>
+    <div class="bottom-nav">
+      <ul>
+        <li class="active"><a href="home.html">Home</a></li>
+        <li><a href="works.html">Works</a></li>
+        <li style="display: none;"><a href="thebrothers.html">The Brothers</a></li>
+        <li class=""><a href="cinematographe.html">Cinematographe</a></li>
+      </ul>
+    </div>
+    <script type="text/javascript">
+        $(function(){
+          var ul = $(".pe-thumbs");
+          ul.css({
+            "background-position" : -(ul.width() - window.innerWidth)/2 + "px center"
+          });
+        });
+          $(function() {
+
+              var Photo	= (function() {
+
+                      // list of thumbs
+                  var $list		= $('#pe-thumbs'),
+                      // the images
+                      $elems		= $list.find('img'),
+                      // maxScale : maximum scale value the image will have
+                      // minOpacity / maxOpacity : minimum (set in the CSS) and maximum values for the image's opacity
+                      settings	= {
+                          maxScale	: 1.4,
+                          maxOpacity	: 0.9,
+                          minOpacity	: Number( $elems.css('opacity') )
+                      },
+                      init		= function() {
+
+                          // minScale will be set in the CSS
+                          settings.minScale = _getScaleVal() || 1;
+                          _initEvents();
+
+                      },
+                      // Get Value of CSS Scale through JavaScript:
+                      // http://css-tricks.com/get-value-of-css-rotation-through-javascript/
+                      _getScaleVal= function() {
+
+                          var st = window.getComputedStyle($elems.get(0), null),
+                              tr = st.getPropertyValue("-webkit-transform") ||
+                                   st.getPropertyValue("-moz-transform") ||
+                                   st.getPropertyValue("-ms-transform") ||
+                                   st.getPropertyValue("-o-transform") ||
+                                   st.getPropertyValue("transform") ||
+                                   "fail...";
+
+                          if( tr !== 'none' ) {	 
+
+                              var values = tr.split('(')[1].split(')')[0].split(','),
+                                  a = values[0],
+                                  b = values[1],
+                                  c = values[2],
+                                  d = values[3];
+
+                              return Math.sqrt( a * a + b * b );
+
+                          }
+
+                      },
+                      _initEvents	= function() {
+
+                          // the proximity event
+                          $elems.on('proximity.Photo', { max: 80, throttle: 10, fireOutOfBounds : true }, function( event, proximity, distance ) {
+
+                              var $el			= $(this),
+                                  $li			= $el.closest('li'),
+                                  scaleVal	= proximity * ( settings.maxScale - settings.minScale ) + settings.minScale,
+                                  scaleExp	= 'scale(' + scaleVal + ')';
+
+                              // change the z-index of the element once it reaches the maximum scale value
+                              ( scaleVal === settings.maxScale ) ? $li.css( 'z-index', 1000 ) : $li.css( 'z-index', 1 );
+
+                              $el.css({
+                                  '-webkit-transform'	: scaleExp,
+                                  '-moz-transform'	: scaleExp,
+                                  '-o-transform'		: scaleExp,
+                                  '-ms-transform'		: scaleExp,
+                                  'transform'			: scaleExp,
+                                  'opacity'			: ( proximity * ( settings.maxOpacity - settings.minOpacity ) + settings.minOpacity )
+                              });
+
+                          });
+
+                      }
+
+                  return {
+                      init	: init
+                  };
+
+              })();
+
+              Photo.init();
+
+          });
+      </script>
+  </body>
+</html>

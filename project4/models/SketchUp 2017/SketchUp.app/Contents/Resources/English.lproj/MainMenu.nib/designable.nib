@@ -1,0 +1,1182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="257" id="311"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
+            <items>
+                <menuItem title="SketchUp" tag="-1" id="56">
+                    <menu key="submenu" title="SketchUp" systemMenu="apple" id="57">
+                        <items>
+                            <menuItem title="About SketchUp" tag="1" id="58">
+                                <connections>
+                                    <action selector="showAboutBox:" target="-1" id="865"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1061">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Preferences..." keyEquivalent="," id="129">
+                                <connections>
+                                    <action selector="showSketchUpPreferences:" target="257" id="671"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="License..." id="904">
+                                <connections>
+                                    <action selector="manageLicenses:" target="-1" id="905"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Check for Update" id="1840">
+                                <connections>
+                                    <action selector="checkWebUpdate:" target="257" id="1841"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="143">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Services" id="131">
+                                <menu key="submenu" title="Services" systemMenu="services" id="130"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="144">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hide SketchUp" keyEquivalent="h" id="134">
+                                <connections>
+                                    <action selector="hide:" target="-2" id="152"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="145">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-2" id="146"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="150">
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-2" id="153"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="149">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Quit SketchUp" keyEquivalent="q" id="136">
+                                <connections>
+                                    <action selector="terminate:" target="-2" id="139"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="File" tag="1" id="83">
+                    <menu key="submenu" title="File" id="81">
+                        <items>
+                            <menuItem title="New" tag="57600" keyEquivalent="n" id="82">
+                                <connections>
+                                    <action selector="newDocument:" target="-1" id="194"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Open..." tag="57601" keyEquivalent="o" id="72">
+                                <connections>
+                                    <action selector="openDocument:" target="-1" id="195"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Open Recent" tag="-2" id="124">
+                                <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="125">
+                                    <items>
+                                        <menuItem title="Clear Menu" id="126">
+                                            <connections>
+                                                <action selector="clearRecentDocuments:" target="-1" id="127"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="79">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Close" tag="57602" keyEquivalent="w" id="73">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="193"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Save" tag="57603" keyEquivalent="s" id="75">
+                                <connections>
+                                    <action selector="saveDocument:" target="572" id="1845"/>
+                                    <binding destination="572" name="enabled" keyPath="haveWritePermissions" id="220-Zu-PjX"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Save As..." tag="57604" keyEquivalent="S" id="80">
+                                <connections>
+                                    <action selector="saveDocumentAs:" target="-1" id="197"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Save A Copy As..." id="1456">
+                                <connections>
+                                    <action selector="saveCopy:" target="-1" id="1470"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Save As Template..." id="2002">
+                                <connections>
+                                    <action selector="saveAsTemplate:" target="-1" id="2004"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Revert" tag="57610" id="112">
+                                <connections>
+                                    <action selector="revertDocumentToSaved:" target="-1" id="198"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="2044"/>
+                            <menuItem title="Send to LayOut" id="1866">
+                                <connections>
+                                    <action selector="sendToLayOut:" target="-1" id="2161"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="74">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Geo-location" id="2038">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Geo-location" id="2039">
+                                    <items>
+                                        <menuItem title="Add Location..." id="2040">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="importFromGoogleEarth:" target="-1" id="2050"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Clear Location" id="2041">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="clearLocation:" target="-1" id="2047"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show Terrain" id="2042">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleTerrain:" target="-1" id="2048"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="3D Warehouse" id="1901">
+                                <menu key="submenu" title="3D Warehouse" id="1902">
+                                    <items>
+                                        <menuItem title="Share Component..." id="1903">
+                                            <connections>
+                                                <action selector="uploadSelectedComponent:" target="-1" id="1905"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Share Model..." id="1904">
+                                            <connections>
+                                                <action selector="shareWithGoogleEarthCommunity:" target="-1" id="1906"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Export" tag="108" id="992">
+                                <menu key="submenu" title="Export" id="993"/>
+                            </menuItem>
+                            <menuItem title="Import..." id="1846">
+                                <connections>
+                                    <action selector="runImporter:" target="-1" id="1849"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="525">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Page Setup..." tag="57605" keyEquivalent="P" id="77">
+                                <connections>
+                                    <action selector="runPageLayout:" target="-1" id="87"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Document Setup..." id="1286">
+                                <connections>
+                                    <action selector="runDocumentSetup:" target="-1" id="1287"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Print..." tag="57607" keyEquivalent="p" id="78">
+                                <connections>
+                                    <action selector="printDocument:" target="-1" id="542"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Edit" tag="2" id="163">
+                    <menu key="submenu" title="Edit" id="169">
+                        <items>
+                            <menuItem title="Undo" tag="301" keyEquivalent="z" id="158">
+                                <connections>
+                                    <action selector="editUndo:" target="-1" id="652"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Redo" tag="302" keyEquivalent="Z" id="173">
+                                <connections>
+                                    <action selector="editRedo:" target="-1" id="653"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="156">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Cut" tag="303" keyEquivalent="x" id="160">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="175"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy" tag="304" keyEquivalent="c" id="157">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="181"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" tag="305" keyEquivalent="v" id="171">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="176"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste In Place" tag="305" id="1856">
+                                <connections>
+                                    <action selector="pasteInPlace:" target="-1" id="1858"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Delete" tag="21021" id="164">
+                                <connections>
+                                    <action selector="editDelete:" target="-1" id="673"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Delete Guides" tag="21044" id="1934">
+                                <connections>
+                                    <action selector="eraseConstructionGeometry:" target="-1" id="1935"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1499">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Select All" tag="21101" keyEquivalent="a" id="172">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="179"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select None" tag="21102" keyEquivalent="A" id="316">
+                                <connections>
+                                    <action selector="deselectAll:" target="-1" id="665"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="321">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hide" tag="21052" keyEquivalent="e" id="1799">
+                                <connections>
+                                    <action selector="editHide:" target="-1" id="1800"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Unhide" id="1502">
+                                <menu key="submenu" title="Unhide" id="1501">
+                                    <items>
+                                        <menuItem title="Selected" tag="21152" id="1506">
+                                            <connections>
+                                                <action selector="editUnhide:" target="-1" id="1510"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Last" tag="21099" id="1505">
+                                            <connections>
+                                                <action selector="editUnhideLast:" target="-1" id="1508"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="All" tag="21053" keyEquivalent="E" id="1503">
+                                            <connections>
+                                                <action selector="editUnhideAll:" target="-1" id="1509"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1813">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Lock" id="1812">
+                                <connections>
+                                    <action selector="editLock:" target="-1" id="1818"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Unlock" id="1815">
+                                <menu key="submenu" title="Unlock" id="1814">
+                                    <items>
+                                        <menuItem title="Selected" id="1816">
+                                            <connections>
+                                                <action selector="editUnlockSelected:" target="-1" id="1819"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="All" id="1817">
+                                            <connections>
+                                                <action selector="editUnlockAll:" target="-1" id="1820"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1511">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Make Component..." tag="21083" keyEquivalent="G" id="707">
+                                <connections>
+                                    <action selector="makeComponent:" target="-1" id="709"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Make Group" tag="21182" keyEquivalent="g" id="708">
+                                <connections>
+                                    <action selector="makeGroup:" target="-1" id="710"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Close Group/Component" tag="21202" keyEquivalent="G" id="735">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                <connections>
+                                    <action selector="closeGroupOrComponent:" target="-1" id="742"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1737">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Intersect Faces" id="1948">
+                                <menu key="submenu" title="Intersect Faces" id="1949">
+                                    <items>
+                                        <menuItem title="With Model" tag="21214" id="1951">
+                                            <connections>
+                                                <action selector="intersectWithModel:" target="-1" id="1952"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="With Selection" id="1955">
+                                            <connections>
+                                                <action selector="intersectSelected:" target="-1" id="1956"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="With Context" id="1953">
+                                            <connections>
+                                                <action selector="intersectWithContext:" target="-1" id="1954"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="752">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Context Menu Flyout" tag="21531" id="1489">
+                                <menu key="submenu" title="Context Menu Flyout" id="1490">
+                                    <items>
+                                        <menuItem title="Item" id="1488"/>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="View" tag="3" id="1542">
+                    <menu key="submenu" title="View" id="1554">
+                        <items>
+                            <menuItem title="Tool Palettes" id="1830">
+                                <menu key="submenu" title="Tool Palettes" id="1831">
+                                    <items>
+                                        <menuItem title="Large Tool Set" tag="-1" id="1833">
+                                            <connections>
+                                                <action selector="toggleToolPalette:" target="257" id="1837"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Solid Tools" tag="-1" id="2130">
+                                            <connections>
+                                                <action selector="toggleSolidModelToolPalette:" target="257" id="2131"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="1939">
+                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                        </menuItem>
+                                        <menuItem title="Location" id="1940">
+                                            <connections>
+                                                <action selector="toggleGoogleToolPalette:" target="257" id="1958"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Warehouse" id="2159">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleWarehouseToolPalette:" target="-1" id="2160"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Scene Tabs" tag="10534" id="1556">
+                                <connections>
+                                    <action selector="togglePageTabsDsiplay:" target="-1" id="1562"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1728">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hidden Geometry" tag="21154" id="1700">
+                                <connections>
+                                    <action selector="viewShowHidden:" target="-1" id="1704"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Section Planes" tag="21347" id="1701">
+                                <connections>
+                                    <action selector="sectionToggleDisplay:" target="-1" id="1707"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Section Cuts" tag="21348" id="1703">
+                                <connections>
+                                    <action selector="sectionToggleActivation:" target="-1" id="1705"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Axes" tag="10522" id="1702">
+                                <connections>
+                                    <action selector="viewShowAxes:" target="-1" id="1706"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Guides" tag="21980" id="1936">
+                                <connections>
+                                    <action selector="viewShowGuides:" target="-1" id="1938"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1720">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Shadows" tag="10545" id="1716">
+                                <connections>
+                                    <action selector="toggleShadows:" target="-1" id="1719"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Fog" tag="10618" id="1942">
+                                <connections>
+                                    <action selector="toggleFog:" target="-1" id="1943"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1708">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Edge Style" id="1988">
+                                <menu key="submenu" title="Edge Style" id="1989">
+                                    <items>
+                                        <menuItem title="Edges" tag="241" id="1990">
+                                            <connections>
+                                                <action selector="toggleDisplayEdges:" target="-1" id="1998"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Back Edges" tag="242" id="2029">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleDisplayBackEdges:" target="-1" id="2033"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="1994">
+                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                        </menuItem>
+                                        <menuItem title="Profiles" tag="236" id="1991">
+                                            <connections>
+                                                <action selector="toggleProfiles:" target="-1" id="1995"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Depth Cue" tag="239" id="1992">
+                                            <connections>
+                                                <action selector="toggleDepthQue:" target="-1" id="1996"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Extension" tag="237" id="1993">
+                                            <connections>
+                                                <action selector="toggleExtensions:" target="-1" id="1997"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Face Style" id="1675">
+                                <menu key="submenu" title="Face Style" id="1677">
+                                    <items>
+                                        <menuItem title="X-ray" tag="10513" id="1944">
+                                            <connections>
+                                                <action selector="toggleGlobalTransparency:" target="-1" id="1945"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="1946">
+                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                        </menuItem>
+                                        <menuItem title="Wireframe" tag="10510" id="1672">
+                                            <connections>
+                                                <action selector="renderWireframe:" target="-1" id="1692"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hidden Line" tag="10511" id="1683">
+                                            <connections>
+                                                <action selector="renderHiddenLine:" target="-1" id="1684"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Shaded" tag="10512" id="1680">
+                                            <connections>
+                                                <action selector="renderShaded:" target="-1" id="1691"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Shaded With Textures" tag="10539" id="1673">
+                                            <connections>
+                                                <action selector="renderTextures:" target="-1" id="1689"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Monochrome" tag="10593" id="1674">
+                                            <connections>
+                                                <action selector="renderMonochrome:" target="-1" id="1693"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Component Edit" id="1696">
+                                <menu key="submenu" title="Component Edit" id="1694">
+                                    <items>
+                                        <menuItem title="Hide Rest of Model" tag="21327" id="1695">
+                                            <connections>
+                                                <action selector="toggleHideRestOfModel:" target="-1" id="1699"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Similar Components" tag="21328" id="1697">
+                                            <connections>
+                                                <action selector="toggleHideSimilarComponents:" target="-1" id="1698"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1721">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Animation" id="1773">
+                                <menu key="submenu" title="Animation" id="1768">
+                                    <items>
+                                        <menuItem title="Add Scene" tag="21067" keyEquivalent="+" id="1771">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="pageAdd:" target="-1" id="1776"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Update Scene" tag="21068" keyEquivalent="-" id="1766">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="pageUpdate:" target="-1" id="1777"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Delete Scene" id="1770">
+                                            <connections>
+                                                <action selector="pageDelete:" target="-1" id="1778"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="1767">
+                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                        </menuItem>
+                                        <menuItem title="Previous Scene" tag="10536" id="1764">
+                                            <connections>
+                                                <action selector="pagePrevious:" target="-1" id="1779"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Next Scene" tag="10535" id="1765">
+                                            <connections>
+                                                <action selector="pageNext:" target="-1" id="1775"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="1772">
+                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                        </menuItem>
+                                        <menuItem title="Play" tag="10552" id="1774">
+                                            <connections>
+                                                <action selector="slideshowStart:" target="-1" id="1781"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Settings" tag="21170" id="1769">
+                                            <connections>
+                                                <action selector="pageOptions:" target="-1" id="1780"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1835">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hide Toolbar" id="1545">
+                                <connections>
+                                    <action selector="toggleToolbarShown:" target="-1" id="1559"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Customize Toolbar ..." id="1541">
+                                <connections>
+                                    <action selector="runToolbarCustomizationPalette:" target="-1" id="1571"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Draw" tag="5" id="1311">
+                    <menu key="submenu" title="Draw" id="1312">
+                        <items>
+                            <menuItem title="Lines" id="2172">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Lines" id="2173">
+                                    <items>
+                                        <menuItem title="Line" tag="21020" keyEquivalent="l" id="2174">
+                                            <connections>
+                                                <action selector="selectLineTool:" target="-1" id="2176"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Freehand" tag="21031" keyEquivalent="f" id="2175">
+                                            <connections>
+                                                <action selector="selectFreehandTool:" target="-1" id="2177"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Arcs" id="2162">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Arcs" id="2163">
+                                    <items>
+                                        <menuItem title="Arc" tag="21069" keyEquivalent="j" id="2164">
+                                            <attributedString key="attributedTitle"/>
+                                            <connections>
+                                                <action selector="selectArc3PointTool:" target="-1" id="2170"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="2 Point Arc" tag="21065" id="2165">
+                                            <connections>
+                                                <action selector="selectArcTool:" target="-1" id="2168"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="3 Point Arc" tag="21071" id="2196">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="select3PointFitArcTool:" target="-1" id="2198"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Pie" tag="21070" id="2166">
+                                            <connections>
+                                                <action selector="selectArcPieTool:" target="-1" id="2171"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Shapes" id="2183">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Shapes" id="2184">
+                                    <items>
+                                        <menuItem title="Rectangle" tag="21094" keyEquivalent="k" id="2185">
+                                            <connections>
+                                                <action selector="selectRectangleTool:" target="-1" id="2193"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Rotated Rectangle" tag="24223" id="2199">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="selectRectangle3PointTool:" target="-1" id="2201"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Circle" tag="21096" id="2192">
+                                            <connections>
+                                                <action selector="selectCircleTool:" target="-1" id="2194"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Polygon" tag="21095" keyEquivalent=";" id="2191">
+                                            <connections>
+                                                <action selector="selectPolygonTool:" target="-1" id="2195"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Camera" tag="4" id="1314">
+                    <menu key="submenu" title="Camera" id="1315">
+                        <items>
+                            <menuItem title="Previous" tag="10529" id="1337">
+                                <connections>
+                                    <action selector="viewUndo:" target="-1" id="1350"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Next" tag="10529" id="1876">
+                                <connections>
+                                    <action selector="viewRedo:" target="-1" id="1947"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Standard Views" id="1385">
+                                <menu key="submenu" title="Standard Views" id="1382">
+                                    <items>
+                                        <menuItem title="Top" tag="10501" keyEquivalent="1" id="1388">
+                                            <connections>
+                                                <action selector="viewTop:" target="-1" id="1393"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Bottom" tag="10506" keyEquivalent="2" id="1387">
+                                            <connections>
+                                                <action selector="viewBottom:" target="-1" id="1395"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Front" tag="10502" keyEquivalent="3" id="1383">
+                                            <connections>
+                                                <action selector="viewFront:" target="-1" id="1391"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Back" tag="10505" keyEquivalent="4" id="1384">
+                                            <connections>
+                                                <action selector="viewBack:" target="-1" id="1390"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Left" tag="10504" keyEquivalent="5" id="1389">
+                                            <connections>
+                                                <action selector="viewLeft:" target="-1" id="1396"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Right" tag="10503" keyEquivalent="6" id="1381">
+                                            <connections>
+                                                <action selector="viewRight:" target="-1" id="1392"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Iso" tag="10507" keyEquivalent="7" id="1386">
+                                            <connections>
+                                                <action selector="viewIso:" target="-1" id="1394"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1336">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Parallel Projection" id="1397">
+                                <connections>
+                                    <action selector="viewParallelProjection:" target="-1" id="1891"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Perspective" tag="10519" id="1878">
+                                <connections>
+                                    <action selector="viewPerspective:" target="-1" id="1879"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Two-Point Perspective" id="1890">
+                                <connections>
+                                    <action selector="viewTwoPointPerspective:" target="-1" id="1892"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1709">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Match New Photo..." id="1883">
+                                <connections>
+                                    <action selector="cameraMatchNewPhoto:" target="257" id="1889"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Edit Matched Photo" id="1884">
+                                <menu key="submenu" title="Edit Matched Photo" id="1885"/>
+                                <connections>
+                                    <action selector="editPhotoMatch:" target="-1" id="1895"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1880">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Orbit" tag="10508" keyEquivalent="b" id="1339">
+                                <connections>
+                                    <action selector="selectOrbitTool:" target="-1" id="1354"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Pan" tag="10523" keyEquivalent="r" id="1341">
+                                <connections>
+                                    <action selector="selectDollyTool:" target="-1" id="1351"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom" tag="10509" keyEquivalent="\" id="1712">
+                                <connections>
+                                    <action selector="selectZoomTool:" target="-1" id="1715"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Field of View" tag="21494" id="1356">
+                                <connections>
+                                    <action selector="selectFieldOfViewTool:" target="-1" id="1495"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom Window" tag="10526" keyEquivalent="]" id="1710">
+                                <connections>
+                                    <action selector="selectZoomWindowTool:" target="-1" id="1713"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom Extents" tag="10527" keyEquivalent="[" id="1711">
+                                <connections>
+                                    <action selector="viewZoomExtents:" target="-1" id="1714"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom to Photo" tag="10527" keyEquivalent="[" id="1881">
+                                <connections>
+                                    <action selector="viewZoomImage:" target="-1" id="1957"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1355">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Position Camera" tag="21169" id="1343">
+                                <connections>
+                                    <action selector="selectPositionCameraTool:" target="-1" id="1353"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Walk" tag="10520" keyEquivalent="/" id="1344">
+                                <connections>
+                                    <action selector="selectWalkTool:" target="-1" id="1346"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Look Around" tag="10525" keyEquivalent="." id="1345">
+                                <connections>
+                                    <action selector="selectTurnTool:" target="-1" id="1348"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Image Igloo" tag="10631" id="2035">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="selectImageIglooTool:" target="-1" id="2036"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Tools" tag="6" id="769">
+                    <menu key="submenu" title="Tools" id="773">
+                        <items>
+                            <menuItem title="Select" tag="21022" id="1399">
+                                <connections>
+                                    <action selector="selectSelectionTool:" target="-1" id="1400"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Eraser" tag="21019" id="1417">
+                                <connections>
+                                    <action selector="selectEraseTool:" target="-1" id="1423"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paint Bucket" tag="21074" id="1414">
+                                <connections>
+                                    <action selector="selectPaintTool:" target="-1" id="1420"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1402">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Move" tag="21048" keyEquivalent="0" id="1406">
+                                <connections>
+                                    <action selector="selectMoveTool:" target="-1" id="1412"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Rotate" tag="21129" keyEquivalent="8" id="1405">
+                                <connections>
+                                    <action selector="selectRotateTool:" target="-1" id="1409"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Scale" tag="21236" keyEquivalent="9" id="1407">
+                                <connections>
+                                    <action selector="selectScaleTool:" target="-1" id="1410"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1401">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Push/Pull" tag="21041" keyEquivalent="=" id="1404">
+                                <connections>
+                                    <action selector="selectPushPullTool:" target="-1" id="1411"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Follow Me" tag="21429" id="1466">
+                                <connections>
+                                    <action selector="selectExtrudeTool:" target="-1" id="1467"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Offset" tag="21100" keyEquivalent="-" id="1403">
+                                <connections>
+                                    <action selector="selectOffsetTool:" target="-1" id="1408"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1668">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Outer Shell" id="2135">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="selectOuterShellTool:" target="-1" id="2136"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Solid Tools" id="2054">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Solid Tools" id="2055">
+                                    <items>
+                                        <menuItem title="Union" id="2059">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="selectUnionTool:" target="-1" id="2067"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Subtract" id="2060">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="selectDifferenceTool:" target="-1" id="2068"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Trim" id="2061">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="selectDifferenceNDTool:" target="-1" id="2069"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Intersect" id="2057">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="selectIntersectTool:" target="-1" id="2066"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Split" id="2071">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="selectBooleanSplitTool:" target="-1" id="2072"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                                <connections>
+                                    <action selector="showSolidModelToolsMenu:" target="-1" id="2148"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="2053">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Tape Measure" tag="21024" keyEquivalent="d" id="1415">
+                                <connections>
+                                    <action selector="selectMeasureTool:" target="-1" id="1419"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Protractor" tag="21057" id="1418">
+                                <connections>
+                                    <action selector="selectProtractorTool:" target="-1" id="1422"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Axes" tag="21126" keyEquivalent="f" id="1416">
+                                <connections>
+                                    <action selector="selectAxisTool:" target="-1" id="1421"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1424">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Dimensions" tag="21410" id="1663">
+                                <connections>
+                                    <action selector="selectDimensionTool:" target="-1" id="1666"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Text" tag="21405" id="1662">
+                                <connections>
+                                    <action selector="selectTextTool:" target="-1" id="1664"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="3D Text" tag="21405" id="1853">
+                                <connections>
+                                    <action selector="doThreeDText:" target="-1" id="1855"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1667">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Section Plane" tag="21337" keyEquivalent="y" id="1661">
+                                <connections>
+                                    <action selector="selectSectionPlaneTool:" target="-1" id="1665"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Window" tag="7" id="19">
+                    <menu key="submenu" title="Window" systemMenu="window" id="24">
+                        <items>
+                            <menuItem title="Minimize" keyEquivalent="m" id="23">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="37"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom" id="1793">
+                                <connections>
+                                    <action selector="performZoom:" target="-1" id="1794"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1633">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Model Info" tag="21076" keyEquivalent="I" id="1625">
+                                <connections>
+                                    <action selector="showModelPropertiesPanel:" target="257" id="1734"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Entity Info" tag="21032" keyEquivalent="i" id="1639">
+                                <connections>
+                                    <action selector="entityProperties:" target="-1" id="1658"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1659">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Materials" keyEquivalent="C" id="1629">
+                                <connections>
+                                    <action selector="orderFrontColorPanel:" target="-1" id="1651"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Components" id="1635">
+                                <connections>
+                                    <action selector="showComponentBrowser:" target="-1" id="1652"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Styles" id="1869">
+                                <connections>
+                                    <action selector="showStyleBrowser:" target="-1" id="1870"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1871">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Layers" tag="704" id="1641">
+                                <connections>
+                                    <action selector="showLayerPanel:" target="-1" id="1829"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Outliner" id="1827">
+                                <connections>
+                                    <action selector="showOutliner:" target="-1" id="1828"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Scenes" tag="21080" id="1634">
+                                <connections>
+                                    <action selector="showPagePanel:" target="-1" id="1646"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1872">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Show Fonts" keyEquivalent="t" id="1782">
+                                <connections>
+                                    <action selector="orderFrontFontPanel:" target="1201" id="1783"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1873">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Shadows" tag="10533" id="1630">
+                                <connections>
+                                    <action selector="showShadowsPanel:" target="-1" id="1655"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Fog" tag="703" id="1850">
+                                <connections>
+                                    <action selector="showFogSettingsPanel:" target="-1" id="1852"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Match Photo" id="1874">
+                                <connections>
+                                    <action selector="showPhotoMatchPanel:" target="-1" id="1875"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Soften Edges" tag="21383" id="1632">
+                                <connections>
+                                    <action selector="showSoftenEdgesPanel:" target="-1" id="1649"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Instructor" id="1910">
+                                <connections>
+                                    <action selector="showInstructor:" target="257" id="1911"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1795">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="3D Warehouse" id="2200">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="browse3DWarehouse:" target="-1" id="2202"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Extension Warehouse" id="2157">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="browseExtensionStore:" target="-1" id="2158"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Extension Manager" id="afH-LC-kS5" userLabel="Extension Manager">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showExtensionManager:" target="257" id="Fp8-lR-w13"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="2156"/>
+                            <menuItem title="Hide Panels" id="1838">
+                                <connections>
+                                    <action selector="toggleInspectors:" target="-1" id="1839"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="760">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Bring All to Front" id="5">
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="1798"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Help" tag="8" id="103">
+                    <menu key="submenu" title="Help" id="106">
+                        <items>
+                            <menuItem title="Welcome To SketchUp…" id="2005">
+                                <connections>
+                                    <action selector="showWelcomePanel:" target="-1" id="2007"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Knowledge Center" id="1914">
+                                <connections>
+                                    <action selector="showOnlineHelpCenter:" target="257" id="2009"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="2144"/>
+                            <menuItem title="Contact Us" id="2021">
+                                <connections>
+                                    <action selector="contactUs:" target="257" id="2023"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <customObject id="257" userLabel="SketchUpAppDelegate" customClass="SketchUpAppDelegate">
+            <connections>
+                <outlet property="editItemMenuItem" destination="1489" id="1491"/>
+                <outlet property="editPhotoMatchMenu" destination="1885" id="1893"/>
+                <outlet property="exportersMenuItem" destination="992" id="1810"/>
+                <outlet property="solidModelToolsPaletteMenuItem_" destination="2130" id="2139"/>
+                <outlet property="solidToolsMenuItem_" destination="2054" id="2140"/>
+                <outlet property="toolbarsMenuItem" destination="1830" id="1836"/>
+            </connections>
+        </customObject>
+        <customObject id="572" userLabel="SketchUpDocumentController" customClass="SketchUpDocumentController"/>
+        <customObject id="1201" userLabel="Font Manager" customClass="NSFontManager"/>
+        <menuItem title="Item" id="2187">
+            <modifierMask key="keyEquivalentModifierMask"/>
+        </menuItem>
+        <userDefaultsController representsSharedInstance="YES" id="Omk-Me-6xj"/>
+    </objects>
+</document>

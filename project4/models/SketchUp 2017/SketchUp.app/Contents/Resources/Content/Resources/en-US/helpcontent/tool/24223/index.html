@@ -1,0 +1,36 @@
+<html>
+<script type="text/javascript" src="../../js/openURL.js"></script>
+<head>
+<title>Rotated Rectangle Tool</title>
+<link href="../../HelpContent.css" rel="stylesheet" type="text/css">
+</head>
+<body class="body">
+<p><a href="index.html" id="DrawTool-Rotated-Rectangle"><span class="blackheader"><img src="images/animation-rotated-rectangle.gif" border="0"></span></a><script>modifyAnchor("DrawTool-Rotated-Rectangle","3000084")</script></p>
+<p><a href="index.html" id="DrawTool-Rotated-Rectangle_"><span class="blackheader">Rotated Rectangle Tool</span></a><script>modifyAnchor("DrawTool-Rotated-Rectangle_","3000084")</script></p>
+<ul>
+  <li>Draw rectangular Face entities. </li> 
+</ul>
+<p><span class="blacksubheader">Tool Operation</span></p>
+<ol>
+  <li>Click to set first corner. Optionally, click and drag first point to set drawing plane.</li> 
+  <li>Move your cursor around the protractor to set the direction of the first edge.</li> 
+  <li>Click to set second corner.</li> 
+  <li>Move your cursor to set the length and angle of the second edge.</li> 
+  <li>Click to set third and final corner.</li> 
+  <li>Esc = Cancel Operation. </li>
+</ol>
+<p><span class="blacksubheader"> Modifier Keys</span></p> 
+<ul id="elementToModify"> 
+  <li>Hold Shift = Lock inferences</li>
+  <li>Alt (after 1st click) = Lock drawing plane for first edge</li>
+  <li>Alt (on a locked plane, after first click) = Set protractor baseline</li>
+  <li>Alt (after 2nd click) = Set protractor baseline</li>
+  <li>Arrow keys (before 1st click) = Lock Protractor Rotation Axis direction (Up=Blue, Left=Green, Right=Red, Down=Parallel)</li>
+  <li>Arrow keys (after 1st click) = Lock drawing direction to specific inference direction (Up=Blue, Left=Green, Right=Red, Down=Parallel/Perpendicular)</li>
+  <script>replaceText("elementToModify", "Mac", 1, "Command (after 1st click) = Lock drawing plane for first edge");</script>
+  <script>replaceText("elementToModify", "Mac", 2, "Command (on a locked plane, after 1st click) = Set protractor baseline");</script>
+  <script>replaceText("elementToModify", "Mac", 3, "Command (after 2nd click) = Set protractor baseline");</script>
+</ul>
+<p><a href="index.html" id="DrawTool-Rotated-Rectangle__"><span class="blacksubheader">Click to learn about more advanced operations...</span></a><script>modifyAnchor("DrawTool-Rotated-Rectangle__","3000084")</script></p>
+</body>
+</html>

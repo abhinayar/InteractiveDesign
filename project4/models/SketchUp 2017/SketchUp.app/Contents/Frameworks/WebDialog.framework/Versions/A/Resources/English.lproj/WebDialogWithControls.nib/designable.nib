@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <development version="6300" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="WebDialog">
+            <connections>
+                <outlet property="_contentView" destination="62" id="63"/>
+                <outlet property="_controlsBox" destination="51" id="58"/>
+                <outlet property="_webView" destination="16" id="60"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="62" userLabel="Custom View">
+            <rect key="frame" x="0.0" y="0.0" width="720" height="680"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <box title="Box" boxType="oldStyle" borderType="none" titlePosition="noTitle" id="51">
+                    <rect key="frame" x="0.0" y="0.0" width="535" height="48"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                    <view key="contentView">
+                        <rect key="frame" x="0.0" y="0.0" width="535" height="48"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </box>
+                <webView id="16" customClass="PluginDisablingWebView">
+                    <rect key="frame" x="0.0" y="48" width="720" height="632"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <webPreferences key="preferences" identifier="webView" defaultFontSize="16" defaultFixedFontSize="13"/>
+                </webView>
+            </subviews>
+        </customView>
+    </objects>
+</document>

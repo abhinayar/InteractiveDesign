@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="UnitsPropertiesController">
+            <connections>
+                <outlet property="anglePrecisionMenu" destination="19" id="61"/>
+                <outlet property="angleSnapMenu" destination="33" id="63"/>
+                <outlet property="displayUnitsCheck" destination="10" id="81"/>
+                <outlet property="enableAngleSnappingCheck" destination="28" id="62"/>
+                <outlet property="enableLengthSnappingCheck" destination="34" id="65"/>
+                <outlet property="forceInchDisplayCheck" destination="51" id="66"/>
+                <outlet property="lengthFormatMenu" destination="11" id="59"/>
+                <outlet property="lengthPrecisionMenu" destination="22" id="64"/>
+                <outlet property="lengthSnapEdit" destination="47" id="67"/>
+                <outlet property="lengthUnitsMenu" destination="36" id="60"/>
+                <outlet property="view" destination="5" id="58"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="5" userLabel="View">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="79">
+                    <rect key="frame" x="0.0" y="130" width="350" height="5"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <button toolTip="Always display inches when using Architectural format." id="51">
+                    <rect key="frame" x="27" y="157" width="310" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Force display of 0&quot;" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="118">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onForceInchDisplayChanged:" target="-2" id="76"/>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="50">
+                    <rect key="frame" x="1" y="106" width="72" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Precision:" id="117">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="47">
+                    <rect key="frame" x="264" y="199" width="81" height="22"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="116">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="lengthSnapLengthChanged:" target="-2" id="75"/>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" id="44">
+                    <rect key="frame" x="0.0" y="134" width="353" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Angle Units" id="115">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="40">
+                    <rect key="frame" x="-11" y="255" width="80" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Format:" id="114">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="39">
+                    <rect key="frame" x="-3" y="229" width="72" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Precision:" id="113">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton toolTip="Select the Decimal units" verticalHuggingPriority="750" id="36">
+                    <rect key="frame" x="215" y="249" width="133" height="26"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <popUpButtonCell key="cell" type="push" title="Centimeters" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="20" id="112">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" id="29">
+                            <items>
+                                <menuItem title="Inches" id="45"/>
+                                <menuItem title="Feet" id="18"/>
+                                <menuItem title="Millimeters" id="48"/>
+                                <menuItem title="Centimeters" state="on" id="20"/>
+                                <menuItem title="Meters" id="30"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="lengthUnitsChanged:" target="-2" id="70"/>
+                    </connections>
+                </popUpButton>
+                <button id="34">
+                    <rect key="frame" x="27" y="201" width="236" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Enable length snapping:" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="111">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="lengthSnappingChanged:" target="-2" id="78"/>
+                    </connections>
+                </button>
+                <popUpButton verticalHuggingPriority="750" id="33">
+                    <rect key="frame" x="261" y="75" width="87" height="26"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <popUpButtonCell key="cell" type="push" title="45°" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="24" id="110">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" id="32">
+                            <items>
+                                <menuItem title="1°" id="35"/>
+                                <menuItem title="5°" id="41"/>
+                                <menuItem title="10°" id="15"/>
+                                <menuItem title="15°" id="37"/>
+                                <menuItem title="30°" id="14"/>
+                                <menuItem title="45°" state="on" id="24"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="angleSnapAngleChanged:" target="-2" id="74"/>
+                    </connections>
+                </popUpButton>
+                <button id="28">
+                    <rect key="frame" x="28" y="80" width="225" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Enable angle snapping:" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="109">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="angleSnappingChanged:" target="-2" id="73"/>
+                    </connections>
+                </button>
+                <popUpButton toolTip="Select the display precision" verticalHuggingPriority="750" id="22">
+                    <rect key="frame" x="70" y="223" width="142" height="26"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <popUpButtonCell key="cell" type="push" title="1/16&quot;" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="46" id="108">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" id="49">
+                            <items>
+                                <menuItem title="0&quot;" id="6"/>
+                                <menuItem title="1/2&quot;" id="26"/>
+                                <menuItem title="1/4&quot;" id="21"/>
+                                <menuItem title="1/8&quot;" id="43"/>
+                                <menuItem title="1/16&quot;" state="on" id="46"/>
+                                <menuItem title="1/32&quot;" id="27"/>
+                                <menuItem title="1/64&quot;" id="31"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="lengthPrecisionChanged:" target="-2" id="71"/>
+                    </connections>
+                </popUpButton>
+                <popUpButton verticalHuggingPriority="750" id="19">
+                    <rect key="frame" x="71" y="100" width="81" height="26"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <popUpButtonCell key="cell" type="push" title="0.000" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="102" id="107">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" id="13">
+                            <items>
+                                <menuItem title="0" id="16"/>
+                                <menuItem title="0.0" id="52"/>
+                                <menuItem title="0.00" id="101"/>
+                                <menuItem title="0.000" state="on" id="102"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="anglePrecisionChanged:" target="-2" id="72"/>
+                    </connections>
+                </popUpButton>
+                <popUpButton toolTip="Select the units display format" verticalHuggingPriority="750" id="11">
+                    <rect key="frame" x="70" y="249" width="142" height="26"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <popUpButtonCell key="cell" type="push" title="Architectural" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="25" id="106">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" id="23">
+                            <items>
+                                <menuItem title="Architectural" state="on" id="25"/>
+                                <menuItem title="Decimal" id="17"/>
+                                <menuItem title="Engineering" id="8"/>
+                                <menuItem title="Fractional" id="84"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="lengthFormatChanged:" target="-2" id="69"/>
+                    </connections>
+                </popUpButton>
+                <button toolTip="Do not display the units string when using Decimal format" id="10">
+                    <rect key="frame" x="27" y="179" width="310" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="Display units format" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="105">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onDisplayUnitsChanged:" target="-2" id="82"/>
+                    </connections>
+                </button>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="9">
+                    <rect key="frame" x="0.0" y="279" width="350" height="5"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField verticalHuggingPriority="750" id="7">
+                    <rect key="frame" x="0.0" y="283" width="353" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Length Units" id="104">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
+    </objects>
+</document>

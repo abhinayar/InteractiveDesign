@@ -1,0 +1,20 @@
+/* CSS Document */
+
+.body 				{	font-size:83%; font-family: Arial, sans-serif; margin-right:0; margin-left:0; color:#333333; line-height:1.2; }
+.totd_tablink		{	font-size:83%; font-family: Arial, sans-serif; margin-right:0; margin-left:0; color:#333333; line-height:1.2; text-decoration:none; font-weight: bold}
+.list 				{	font-size:83%; font-family: Arial, sans-serif; margin-right:0; margin-left:0; color:#333333; line-height:1.5; }
+.greybody 			{	font-size:83%; font-family: Arial, sans-serif; margin:0 0 0.8em 0; color:#333333; line-height:1.2; }
+.greybodysmall 		{	font-size:75%; font-family: Arial, sans-serif; margin:0 0 0.8em 0; color:#333333; }
+.colorbody			{	font-size:100%; font-family: Arial, sans-serif; text-transform:uppercase; margin:0 0 0 0; color:#1950be; }
+.colorbodybold		{	font-size:100%; font-family: Arial, sans-serif; font-weight:bold; text-transform:uppercase; margin:0 0 0 0; color:#1950be; }
+.whitebody 			{	font-size:83%; font-family: Arial, sans-serif; margin-right:0; margin-left:0; color:#FFFFFF; line-height:1.2; }
+.blacksubheader		{	font-size:83%; font-family: Arial, sans-serif; color:#000000; line-height:normal; font-weight: bold; line-height:1.5;  }
+.subheader          {   font-size:83%; font-family: Arial, sans-serif; margin:0 0 .4em 0; font-size:1em; font-weight:bold; color:#333333; line-height:normal; }
+.header 			{	font-size:83%; font-family: Arial, sans-serif; font-size:1.5em; margin-top:0; color: #FFFFFF; line-height:normal; }
+ol					{	list-style-type: disk; padding: 0; margin: 0; margin-left: 0; }
+ul					{	list-style-type: disk; padding: 0; margin:0 0 0 0; line-height: 1.2; }
+li					{	margin:0 0 0.2em 0; }
+a:link 				{	color: #0000FF; text-decoration: none; }
+a:visited	 		{	color: #CC0000; text-decoration: none; }
+a:hover 			{	color: #CC0000; text-decoration: underline; }
+.link 				{   font-size:83%; font-family: Arial, sans-serif; text-decoration:underline; CURSOR: hand; COLOR: blue; }

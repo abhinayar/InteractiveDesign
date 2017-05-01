@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="WelcomeController">
+            <connections>
+                <outlet property="addLicenseButton_" destination="559" id="ysv-l9-MrL"/>
+                <outlet property="bottomBackgroundView_" destination="486" id="678"/>
+                <outlet property="expansionView_" destination="510" id="583"/>
+                <outlet property="learnContentView_" destination="28" id="103"/>
+                <outlet property="learnLoadingIndicator_" destination="380" id="NER-Ga-Qey"/>
+                <outlet property="learnLoadingView_" destination="378" id="nYE-5Z-vlA"/>
+                <outlet property="licenseContentView_" destination="37" id="104"/>
+                <outlet property="startSkethUpButton_" destination="487" id="tkh-oF-V4w"/>
+                <outlet property="templateContentView_" destination="68" id="112"/>
+                <outlet property="templateController_" destination="314" id="321"/>
+                <outlet property="topBackgroundView_" destination="485" id="679"/>
+                <outlet property="window_" destination="5" id="108"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Welcome to SketchUp" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="Window2" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" utility="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="112" y="80" width="1000" height="668"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <value key="minSize" type="size" width="213" height="113"/>
+            <view key="contentView" autoresizesSubviews="NO" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="1000" height="668"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView autoresizesSubviews="NO" id="485" customClass="MultipurposeView">
+                        <rect key="frame" x="0.0" y="59" width="1000" height="608"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabView drawsBackground="NO" type="noTabsNoBorder" id="534">
+                                <rect key="frame" x="0.0" y="418" width="1000" height="71"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <tabViewItems>
+                                    <tabViewItem label="Pro" identifier="" id="535" userLabel="Tab View Item">
+                                        <view key="view" autoresizesSubviews="NO" id="536">
+                                            <rect key="frame" x="0.0" y="0.0" width="1000" height="71"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <customView autoresizesSubviews="NO" id="554" customClass="MultipurposeView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="71"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <textField verticalHuggingPriority="750" id="562">
+                                                            <rect key="frame" x="157" y="7" width="656" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="No Default Template" id="645">
+                                                                <font key="font" size="12" name="ArialMT"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <binding destination="327" name="value" keyPath="selection.defaultTemplateName" id="585"/>
+                                                                <binding destination="117" name="textColor" keyPath="selection.textColor" id="588"/>
+                                                            </connections>
+                                                        </textField>
+                                                        <textField verticalHuggingPriority="750" id="560">
+                                                            <rect key="frame" x="157" y="29" width="656" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Not licensed" id="643">
+                                                                <font key="font" size="12" name="ArialMT"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <binding destination="117" name="value" keyPath="selection.licenseStatus" id="629"/>
+                                                                <binding destination="117" name="textColor" keyPath="selection.licenseStatusColor" id="696"/>
+                                                            </connections>
+                                                        </textField>
+                                                        <button verticalHuggingPriority="750" id="559">
+                                                            <rect key="frame" x="814" y="27" width="161" height="28"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <buttonCell key="cell" type="push" title="Add License" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="642">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="smallSystem"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="enterLicense:" target="-2" id="574"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" id="558">
+                                                            <rect key="frame" x="814" y="1" width="161" height="28"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <buttonCell key="cell" type="push" title="Choose Template" bezelStyle="rounded" alignment="center" controlSize="small" state="on" borderStyle="border" inset="2" id="641">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="smallSystem"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="chooseTemplates:" target="-2" id="573"/>
+                                                                <binding destination="117" name="enabled" keyPath="selection.enableChooseTemplateButton" id="611"/>
+                                                            </connections>
+                                                        </button>
+                                                        <textField verticalHuggingPriority="750" id="557">
+                                                            <rect key="frame" x="2" y="7" width="153" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Default Template:" id="640">
+                                                                <font key="font" size="12" name="ArialMT"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <binding destination="117" name="textColor" keyPath="selection.textColor" id="610"/>
+                                                            </connections>
+                                                        </textField>
+                                                        <textField verticalHuggingPriority="750" id="555">
+                                                            <rect key="frame" x="2" y="28" width="153" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Licensed To:" id="638">
+                                                                <font key="font" size="12" name="ArialMT"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <binding destination="117" name="textColor" keyPath="selection.textColor" id="JdB-nO-fD3"/>
+                                                            </connections>
+                                                        </textField>
+                                                    </subviews>
+                                                </customView>
+                                            </subviews>
+                                        </view>
+                                    </tabViewItem>
+                                </tabViewItems>
+                                <connections>
+                                    <binding destination="117" name="selectedIndex" keyPath="selection.versionIndex" id="601"/>
+                                </connections>
+                            </tabView>
+                            <customView autoresizesSubviews="NO" id="510" customClass="TabExpansionView">
+                                <rect key="frame" x="0.0" y="0.0" width="1000" height="410"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate_" destination="-2" id="572"/>
+                                </connections>
+                            </customView>
+                        </subviews>
+                    </customView>
+                    <customView autoresizesSubviews="NO" id="486" customClass="MultipurposeView">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="60"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button id="490">
+                                <rect key="frame" x="30" y="19" width="17" height="18"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="654">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="setAlwaysShowOnStartup:" target="-2" id="681"/>
+                                    <binding destination="117" name="value" keyPath="selection.alwaysShowOnStartup" id="689">
+                                        <dictionary key="options">
+                                            <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                        </dictionary>
+                                    </binding>
+                                    <binding destination="117" name="hidden" keyPath="selection.hideAlwaysShowOnStartupControl" id="680"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" id="489">
+                                <rect key="frame" x="51" y="20" width="296" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Always Show on Startup" id="653">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="117" name="hidden" keyPath="selection.hideAlwaysShowOnStartupControl" id="597"/>
+                                </connections>
+                            </textField>
+                            <button verticalHuggingPriority="750" id="488">
+                                <rect key="frame" x="362" y="7" width="240" height="45"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <buttonCell key="cell" type="squareTextured" title="No thanks, Exit" bezelStyle="texturedSquare" alignment="center" borderStyle="border" inset="2" id="652">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="18"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="declineNonCommercialUse:" target="-2" id="691"/>
+                                    <binding destination="117" name="hidden" keyPath="selection.hideButton0" id="598"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" id="487">
+                                <rect key="frame" x="610" y="7" width="360" height="45"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <buttonCell key="cell" type="squareTextured" title="Start using SketchUp" bezelStyle="texturedSquare" alignment="center" borderStyle="border" inset="2" id="651">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="18"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissPanel:" target="-2" id="570"/>
+                                    <binding destination="117" name="title" keyPath="selection.button1Text" id="595"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </customView>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="116"/>
+            </connections>
+        </window>
+        <window title="LearnWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="27" userLabel="LearnWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="87" y="495" width="1000" height="350"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <value key="minSize" type="size" width="213" height="107"/>
+            <view key="contentView" autoresizesSubviews="NO" id="28">
+                <rect key="frame" x="0.0" y="0.0" width="1000" height="350"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </view>
+        </window>
+        <window title="LicenseWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="36" userLabel="LicenseWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="96" y="410" width="1000" height="350"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <value key="minSize" type="size" width="213" height="107"/>
+            <view key="contentView" autoresizesSubviews="NO" id="37">
+                <rect key="frame" x="0.0" y="0.0" width="1000" height="350"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </view>
+        </window>
+        <window title="TemplateWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="67" userLabel="TemplateWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="83" y="485" width="1000" height="350"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <value key="minSize" type="size" width="189.95500000000001" height="5"/>
+            <view key="contentView" autoresizesSubviews="NO" id="68">
+                <rect key="frame" x="0.0" y="0.0" width="1000" height="350"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView autoresizesSubviews="NO" id="447" customClass="MultipurposeView">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="350"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView horizontalLineScroll="68" horizontalPageScroll="10" verticalLineScroll="68" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="477">
+                                <rect key="frame" x="0.0" y="0.0" width="1000" height="350"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <clipView key="contentView" id="OYe-kC-uOF">
+                                    <rect key="frame" x="1" y="1" width="987" height="348"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="66" id="478">
+                                            <rect key="frame" x="0.0" y="0.0" width="987" height="68"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn identifier="thumbnail" width="66" minWidth="60" maxWidth="1000" id="479">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Thumb">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </tableHeaderCell>
+                                                    <imageCell key="dataCell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" id="671"/>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                </tableColumn>
+                                                <tableColumn identifier="text" width="912" minWidth="109" maxWidth="1000" id="481">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Name, Description">
+                                                        <font key="font" size="12" name="ArialMT"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" id="672">
+                                                        <font key="font" size="12" name="ArialMT"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                </tableColumn>
+                                            </tableColumns>
+                                            <connections>
+                                                <action selector="templateSelected:" target="314" id="636"/>
+                                                <outlet property="dataSource" destination="314" id="634"/>
+                                                <outlet property="delegate" destination="314" id="635"/>
+                                            </connections>
+                                        </tableView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" controlSize="small" horizontal="YES" id="676">
+                                    <rect key="frame" x="-100" y="-100" width="403" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="677">
+                                    <rect key="frame" x="988" y="1" width="11" height="348"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                    </customView>
+                </subviews>
+            </view>
+        </window>
+        <objectController id="117" userLabel="Welcome.NSObjectController">
+            <declaredKeys>
+                <string>alwaysShowAtStartup</string>
+                <string>displayWelcomeOnStartup</string>
+                <string>versionIndex_</string>
+                <string>evalTimeRemaining</string>
+                <string>isEvaluation</string>
+                <string>licenseStatus</string>
+                <string>welcomeAppName</string>
+                <string>defaultTemplateName</string>
+                <string>useSketchUpButtonTitle</string>
+                <string>isPro</string>
+                <string>isProAndEvalTimeExpired</string>
+                <string>isLicensed</string>
+                <string>versionIndex</string>
+                <string>evalTimeRemainingString</string>
+                <string>templates</string>
+                <string>isExpired</string>
+                <string>isEvalTimeExpired</string>
+                <string>backgroundImage</string>
+                <string>panelBackgroundImage</string>
+                <string>panelBackgroundImageName</string>
+                <string>panelBackgroundColor</string>
+                <string>family_icons</string>
+                <string>familyIcon</string>
+                <string>familyIconName</string>
+                <string>isLicensedOK</string>
+                <string>isLicensedUsersExceeded</string>
+                <string>evalTimeRemainingStringColor</string>
+                <string>evalTimeRemainingColor</string>
+                <string>evalTimeRemainingBold</string>
+                <string>learnTitle</string>
+                <string>isUnlicensedExpired</string>
+                <string>textColor</string>
+                <string>hideShowOnStartup</string>
+                <string>hideAlwaysShowOnStartupControl</string>
+                <string>hideRevertToFreeButton</string>
+                <string>enableChooseTemplateButton</string>
+                <string>hideButton0</string>
+                <string>button2Text</string>
+                <string>button1Text</string>
+                <string>hideButton1</string>
+            </declaredKeys>
+            <connections>
+                <outlet property="content" destination="-2" id="118"/>
+            </connections>
+        </objectController>
+        <userDefaultsController id="183">
+            <declaredKeys>
+                <string>displayWelcomeOnStartup</string>
+                <string>isEvaluation</string>
+            </declaredKeys>
+        </userDefaultsController>
+        <customObject id="314" userLabel="TemplateController" customClass="TemplateController">
+            <connections>
+                <outlet property="templateTableView_" destination="478" id="630"/>
+                <outlet property="templateTextColumn_" destination="481" id="632"/>
+                <outlet property="templateThumbnailColumn_" destination="479" id="633"/>
+            </connections>
+        </customObject>
+        <objectController id="327" userLabel="Template.NSObjectController">
+            <declaredKeys>
+                <string>defaultTemplateName</string>
+                <string>learnBackgroundImage</string>
+                <string>textColor</string>
+            </declaredKeys>
+            <connections>
+                <outlet property="content" destination="314" id="328"/>
+            </connections>
+        </objectController>
+        <customView autoresizesSubviews="NO" id="378" userLabel="View">
+            <rect key="frame" x="0.0" y="0.0" width="126" height="51"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="380">
+                    <rect key="frame" x="20" y="20" width="16" height="16"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </progressIndicator>
+                <textField verticalHuggingPriority="750" id="379">
+                    <rect key="frame" x="41" y="20" width="68" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Loading…" id="665">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
+    </objects>
+</document>
