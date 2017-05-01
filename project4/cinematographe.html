@@ -1,0 +1,269 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <style>
+      * {
+        text-rendering: optimizeLegibility;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-family: 'Playfair Display';
+      }
+      .app {
+        width: 100%;
+        height: 100%;
+      }
+      .bottom-nav {
+        height: 120px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        display: inline-block;
+        color: #aaa;
+        background: #000;
+        font-size: 21px;
+        font-family: 'Playfair Display'
+      } .bottom-nav ul {
+        display: inline-block;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        list-style: none;
+        position: absolute;
+        bottom: 36px;
+      } .bottom-nav li {
+        display: inline-block;
+        padding: 0 45px;
+      }.bottom-nav a {
+        color: inherit;
+        text-decoration: none;
+        text-transform: uppercase;
+      } .bottom-nav li.active {
+        color: #fff;
+        text-align: center;
+      } .bottom-nav li:before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background: none;
+        border: 1px solid #aaa;
+        border-radius: 50%;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        opacity: 0;
+      } .bottom-nav li.active:before {
+        border-color: #fff;
+        background: #fff;
+        opacity: 1;
+      } .bottom-nav li:hover {
+        color: #ddd;
+        transition: all 100ms ease;
+      } .bottom-nav li:hover:before {
+        opacity: 1;
+        transition: all 100ms ease;
+      }
+      
+      
+      .app.cinema .l-half, .app.cinema .r-half {
+        width: 50%;
+        display: inline-block;
+        height: 100%;
+        float: left;
+      }
+      .app.cinema .l-half {
+      }
+      .app.cinema .r-half {
+        
+      }
+      
+      #rContainer {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: transparent;
+        position: relative;
+      } #rContainer canvas {
+        z-index: 999 !important;
+      }
+      
+      .fullscreen-bg {
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: 50%;
+          height: 100%;
+          overflow: hidden;
+          z-index: -1;
+      }
+
+      .fullscreen-bg__video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 150%;
+        margin-left: -25%;
+          height: auto;
+      }
+      
+      .model-hide {
+        font-size: 16px;
+        color: #fff;
+        width: 100px;
+        height: 40px;
+        border: 2px solid #fff;
+        position: absolute;
+        bottom: 140px;
+        right: 30px;
+        text-align: center;
+        padding-top: 7px;
+        z-index: 9999;
+      } .model-hide:hover {
+        background: #fff;
+        transition: all 150ms ease;
+        cursor: pointer;
+        color: #000;
+      }
+      
+      .hidden {
+        display: none;
+      }
+      
+      .l-half {
+        background: #555;
+        color: #fff;
+        padding: 0 120px;
+        font-size: 1.2em;
+        line-height: 2em;
+        padding-top: 30px;
+      } .l-half hr {
+        width: 80%;
+        margin-left: 0;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app cinema">
+      <div class="l-half">
+        <h1>The Cinematographe</h1>
+        <hr class="main">
+        <p>
+          Cinématographe, the first motion-picture apparatus, was used as both camera and projector.
+          <br><br>
+          The invention of Louis and Auguste Lumière, manufacturers of photographic materials of Lyon, France, it was based in part on the Kinetoscope of Thomas A. Edison in the United States and in part on the Théâtre Optique of Émile Reynaud in Paris. From Edison’s invention the Lumières took the idea of a sprocket-wound film and from Reynaud that of projecting the successive frames on a screen. The Cinématographe also functioned as a camera and could be used to make extra prints of the film.
+          <br><br>
+          The Lumières slowed the rate of exposure in projection from the 46 frames a second used by Edison to 16 fps. The first public demonstration of the Cinématographe took place at the Grand Café, Boulevard des Capucines, Paris, on Dec. 28, 1895; within months the device was being used throughout Europe and North America.
+        </p>
+      </div>
+      <div class="r-half">
+        <div id="rContainer">
+          <div class="model-hide shown">
+            HIDE
+          </div>
+          <!--<div class="fullscreen-bg">
+            <video loop autoplay poster="img/cinemaStill.jpg" class="fullscreen-bg__video">
+            <source src="video/cinematographe.mp4" type="video/mp4">
+            </video>
+          </div>-->
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.min.js"></script>
+        <script src="js/threejs/collada.js"></script>
+		<script src="js/threejs/orbit.js"></script>
+		<script src="js/threejs/detector.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+		<script>
+			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+			var container, stats;
+			var camera, scene, renderer, controls;
+			init();
+			animate();
+			function init() {
+				container = document.getElementById( 'rContainer' );
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+				camera.position.set( 4, 2.4, 4 );
+                camera.aspect = (window.innerWidth/2) / window.innerHeight;
+				scene = new THREE.Scene();
+				// collada
+				var loader = new THREE.ColladaLoader();
+				loader.options.convertUpAxis = true;
+				loader.load( 'models/cinema.dae', function ( collada ) {
+					var object = collada.scene;
+					object.scale.set( 0.1, 0.05, 0.075 );
+					object.position.set( -4.5, 0, 1.1);
+					object.rotation.set( -0.01, 0, 0.02);
+					scene.add( object );
+				} );
+				//
+				//var gridHelper = new THREE.GridHelper( 0, 0 );
+				//scene.add( gridHelper );
+				//
+				var ambientLight = new THREE.AmbientLight( 0xbbbbbb );
+				scene.add( ambientLight );
+				var directionalLight = new THREE.DirectionalLight( 0x333333 );
+				directionalLight.position.set( 0, 1, 0.3).normalize();
+				scene.add( directionalLight );
+				//
+				renderer = new THREE.WebGLRenderer({ alpha: true });
+                renderer.setClearColor( 0xffffff, 0);
+				renderer.setPixelRatio( window.devicePixelRatio * 2);
+				renderer.setSize( window.innerWidth/2, window.innerHeight );
+              
+				container.appendChild( renderer.domElement );
+				//
+				controls = new THREE.OrbitControls( camera, renderer.domElement );
+				controls.rotateSpeed = 0.7;
+                controls.minDistance = 5;
+                controls.maxDistance = 10;
+				
+				//
+				window.addEventListener( 'resize', onWindowResize, false );
+			}
+			function onWindowResize() {
+				camera.aspect = (window.innerWidth/1) / window.innerHeight;
+				camera.updateProjectionMatrix();
+				//renderer.setSize( window.innerWidth, window.innerHeight );
+			}
+			function animate() {
+				requestAnimationFrame( animate );
+				render();
+			}
+			function render() {
+				renderer.render( scene, camera );
+			}
+          
+            $(document).ready(function(){
+              $(".model-hide").click(function(){
+                if ($(this).hasClass("shown")) {
+                  $(this).removeClass("shown").addClass("hide");
+                  $(this).text("UNHIDE");
+                  $("#rContainer canvas").hide();
+                } else {
+                  $(this).removeClass("hide").addClass("shown");
+                  $(this).text("HIDE");
+                  $("#rContainer canvas").show();
+                }
+              });
+            });
+		</script>
+      </div>
+    </div>
+    <div class="bottom-nav">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="works.html">Works</a></li>
+        <li><a href="thebrothers.html">The Brothers</a></li>
+        <li class="active"><a>Cinematographe</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

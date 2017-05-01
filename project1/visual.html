@@ -171,22 +171,6 @@
               targets.helix.push(object);
             } 
             
-            //Make DOM listenable
-            //var domEvents	= new THREEx.DomEvents(camera, renderer.domElement);
-            //Click function
-            /*
-            domEvents.addEventListener(, 'click', function(){
-              alert("click");
-              var imgName = $(this).data("target");
-              $(".overlay img").attr("src", "./img/" + imgName + ".png");
-              $(".overlay img").attr("alt", $(".overlay img").attr("alt") + imgName);
-              
-              if ($(".overlay").hasClass("closed")) {
-                $(".overlay").fadeIn(1500).removeClass("closed").addClass("open");
-              }
-            });
-            */
-            
             //3JS renderer
             renderer = new THREE.CSS3DRenderer();
             renderer.setSize(window.innerWidth, window.innerHeight);
