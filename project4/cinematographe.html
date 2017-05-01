@@ -28,7 +28,8 @@
         color: #aaa;
         background: #000;
         font-size: 21px;
-        font-family: 'Playfair Display'
+        font-family: 'Playfair Display';
+        z-index: 9999;
       } .bottom-nav ul {
         display: inline-block;
         text-align: center;
@@ -108,9 +109,22 @@
           position: absolute;
           top: 0;
           left: 0;
-          width: 150%;
-        margin-left: -25%;
           height: auto;
+          width: 250%;
+          margin-left: -75%;
+      }
+      
+      @media (min-width: 1200px) {
+        .fullscreen-bg__video {
+          width: 200%;
+          margin-left: -50%; 
+        }
+      }
+      @media (min-width: 1590px) {
+        .fullscreen-bg__video {
+          width: 150%;
+          margin-left: -25%;
+        }
       }
       
       .model-hide {
@@ -137,42 +151,119 @@
       }
       
       .l-half {
-        background: #555;
-        color: #fff;
-        padding: 0 120px;
-        font-size: 1.2em;
+        background: #fff;
+        color: #333;
+        padding: 0 80px;
+        font-size: 1em;
         line-height: 2em;
-        padding-top: 30px;
-      } .l-half hr {
-        width: 80%;
+        overflow: scroll;
+      } .l-half hr.main {
+        width: 100%;
         margin-left: 0;
-        margin-top: 20px;
+        margin-left: 10%;
+      } .l-half hr.main.top {
+        margin-left: -10%;
+      }
+      
+      @media(min-width: 1356px) {
+        .l-half {
+          padding: 0 120px;
+          font-size: 1.2em;
+          line-height: 2em;
+        }
+      }
+      
+      .title {
+        height: 80%;
+        padding-top: 30%;
+      } .title .small {
+        font-size: 32px;
+      } .title .large {
+        display: block;
+        font-size: 42px;
+        margin: 45px 0;
+        margin-bottom: 55px;
+      } 
+      
+      .down {
+        margin-top: 40%;
+        width: 100%;
+        text-align: center;
+      } .down img {
+        max-width: 50px;
+        margin: 0 auto;
+      } 
+      
+      @media (min-width: 1550px) {
+        .title .large {
+          display: block;
+          font-size: 60px;
+          margin-bottom: 65px;
+        }
+        
+        .down {
+          margin-top: 25%;
+          width: 100%;
+          text-align: center;
+        }
+      }
+      
+      .main-desc {
+        margin-top: 10%;
+        width: 60%;
+        margin-right: 20%;
+        margin-left: auto;
+      }
+      
+      .sub-content {
+        margin-top: 20%;
+        margin-bottom: 20%;
+      } .images {
+        margin-top: 120px;
+      } .images img {
+        width: 100%;
+        margin-bottom: 30px;
       }
     </style>
   </head>
   <body>
     <div class="app cinema">
       <div class="l-half">
-        <h1>The Cinematographe</h1>
-        <hr class="main">
-        <p>
-          Cinématographe, the first motion-picture apparatus, was used as both camera and projector.
-          <br><br>
+        <div class="title wow fadeIn">
+          <hr class="main top">
+          <h1>
+            <span class="large">Le Cinematographe</span>
+          </h1>
+          <hr class="main">
+          <p class="main-desc wow fadeInDown">
+            Cinématographe, the first motion-picture apparatus, was used as both camera and projector.
+          </p>
+          <div class="down wow pulse" data-wow-iteration="infinite"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/221782-200.png"></div>
+        </div>
+        <div class="sub-content">
           The invention of Louis and Auguste Lumière, manufacturers of photographic materials of Lyon, France, it was based in part on the Kinetoscope of Thomas A. Edison in the United States and in part on the Théâtre Optique of Émile Reynaud in Paris. From Edison’s invention the Lumières took the idea of a sprocket-wound film and from Reynaud that of projecting the successive frames on a screen. The Cinématographe also functioned as a camera and could be used to make extra prints of the film.
           <br><br>
           The Lumières slowed the rate of exposure in projection from the 46 frames a second used by Edison to 16 fps. The first public demonstration of the Cinématographe took place at the Grand Café, Boulevard des Capucines, Paris, on Dec. 28, 1895; within months the device was being used throughout Europe and North America.
-        </p>
+          <div class="images">
+            <img src="http://l7.alamy.com/zooms/de3f6e456e704c3ead21f26ab0cce85f/the-lumiere-cinematographe-introduced-in-1895-btkabe.jpg">
+            <img src="http://lowres-picturecabinet.com.s3-eu-west-1.amazonaws.com/43/main/33/112653.jpg">
+            <img src="http://lowres-picturecabinet.com.s3-eu-west-1.amazonaws.com/43/main/8/87391.jpg">
+            <img src="https://c1.staticflickr.com/5/4098/4862590768_a64202b7b9_b.jpg">
+            <img src="https://s-media-cache-ak0.pinimg.com/originals/ef/be/e1/efbee1bdd304a336601ec5258b50a06d.png">
+            <img src="http://l7.alamy.com/zooms/1d4a6378745f4940ac2fa5511bcfe166/lumieres-cinematographe-circa-1895-cx4adj.jpg">
+          </div>
+        </div>
       </div>
       <div class="r-half">
         <div id="rContainer">
           <div class="model-hide shown">
             HIDE
           </div>
-          <!--<div class="fullscreen-bg">
+          <div class="fullscreen-bg">
             <video loop autoplay poster="img/cinemaStill.jpg" class="fullscreen-bg__video">
             <source src="video/cinematographe.mp4" type="video/mp4">
             </video>
-          </div>-->
+          </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.min.js"></script>
         <script src="js/threejs/collada.js"></script>
@@ -253,6 +344,8 @@
                   $("#rContainer canvas").show();
                 }
               });
+              
+              new WOW().init();
             });
 		</script>
       </div>
@@ -261,7 +354,7 @@
       <ul>
         <li><a href="home.html">Home</a></li>
         <li><a href="works.html">Works</a></li>
-        <li><a href="thebrothers.html">The Brothers</a></li>
+        <li style="display: none;"><a href="thebrothers.html">The Brothers</a></li>
         <li class="active"><a>Cinematographe</a></li>
       </ul>
     </div>
